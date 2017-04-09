@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/bin/rm -f /var/usr/bin/run-homebrew-js-service
+
+exit 0

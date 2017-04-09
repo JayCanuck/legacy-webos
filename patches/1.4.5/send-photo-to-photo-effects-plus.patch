@@ -1,0 +1,36 @@
+Name: Send Photo To Photo Effects Plus
+Version: 1.4.5-1
+Author: Jason Robitaille
+Description: This will add a 'Send to Photo Effects' option in the Photos application  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.photos/app/controllers/fullscreen-assistant.js
++++ /usr/palm/applications/com.palm.app.photos/app/controllers/fullscreen-assistant.js
+@@ -139,6 +139,10 @@
+ 				command: 'share-wallpaper',
+ 				disabled: !this.sceneModel.canSetWallpaper()
+ 			},{
++				label: $L('Send to Photo Effects'),
++				command: 'send-photoeffects',
++				disabled: false
++			},{
+ 				label: $L('Share via email'),
+ 				command: 'share-email',
+ 				disabled: !this.sceneModel.canEmail()
+@@ -641,6 +645,17 @@
+ 		case 'share-wallpaper':
+ 			this.handleSetAsWallpaper();
+ 			break;
++		case 'send-photoeffects':
++			this.controller.serviceRequest('palm://com.palm.applicationManager', {
++				method: 'launch',
++				parameters: {
++					id: "com.rustyapps.photoeffectsplus",
++					params: {
++						filepath:this.currentUrl
++					}
++				}
++ 			});
++			break;
+ 		case 'share-family':
+ 			this.handleShareWithFamily();
+ 			break;

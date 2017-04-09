@@ -1,0 +1,19 @@
+[
+    {"source": "app/models/Preferences.js"},
+    {"source": "app/models/Date.js"},
+    {"source": "app/models/Services.js"},
+    {"source": "app/assistants/app-assistant.js"},
+    {
+        "scenes": "main",
+        "source": "app/assistants/main-assistant.js"
+    },
+    {
+        "scenes": "warning",
+        "source": "app/assistants/warning-assistant.js"
+    },
+    {
+        "scenes": "launchlist",
+        "source": "app/assistants/launchlist-assistant.js"
+    },
+    {"source": "app/assistants/input-dialog-assistant.js"}
+]

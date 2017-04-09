@@ -1,0 +1,16 @@
+[
+    {"source": "app\/assistants\/stage-assistant.js"},
+    {
+        "source": "app\/assistants\/listview-assistant.js",
+        "scenes": "listview"
+    },
+    {
+            "source": "app\/models\/preferences.js"
+    },
+    {
+            "source": "app\/models\/common.js"
+    },
+    {
+            "source": "app\/assistants\/settings-assistant.js"
+    }
+]

@@ -1,0 +1,64 @@
+.header-icon {
+	height:100%;
+	width:45px;
+	min-height:40px;
+	background-repeat:no-repeat;
+	background-position: center center;
+	float:left;
+	padding-left:10px;
+}
+
+.header-title {
+	height:100%;
+	line-height:40px;
+	font-size:0.95em;
+	margin-left:56px;
+	margin-right:5px;
+}
+
+.palm-row-wrapper {
+	padding-top:5px;
+	padding-bottom:1px;
+	min-height:48px;
+	vertical-align:middle;
+}
+
+hr {
+	margin: 0px;
+	padding: 0px;
+	height: 1px;
+	border: 0;
+	background-color:#bfbfbd;
+	border-bottom:solid 1px #f1f1f0;
+}
+
+.palm-dark hr {
+	background-color:#1b1e20 !important;
+	border-bottom:solid 1px #5b5f63 !important;
+}
+
+.device-image {
+	max-width:480px;
+	padding-left: 15%;
+	padding-right: 15%;
+	width: 70%;
+	height: auto;
+}
+
+.device-image-half {
+	max-width:320px;
+	width: 100%;
+	height: auto;
+}
+
+.computer-image {
+	max-width:700px;
+	padding-left: 2%;
+	padding-right: 2%;
+	width: 96%;
+	height: auto;
+}
+
+#btnDevMode {
+	font-size:smaller !important;
+}

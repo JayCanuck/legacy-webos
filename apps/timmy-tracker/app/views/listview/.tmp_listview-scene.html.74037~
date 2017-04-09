@@ -1,0 +1,8 @@
+<div class="header center" id="title">
+	<img src="images/title2.png" id="headerImage"/>
+</div>
+<div class="palm-header-spacer"></div>
+<div class="palm-group">
+	<div class="palm-group-title" x-mojo-loc=''>Nearest</div>
+	<div x-mojo-element="List" id="listNear"></div>
+</div>

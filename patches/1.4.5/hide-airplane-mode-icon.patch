@@ -1,0 +1,15 @@
+Name: Hide Airplane Mode Icon
+Version: 1.4.5-1
+Author: Jason Robitaille
+Description: Hides the airplane mode icon from the top bar.  (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/stylesheets/systemui.css
++++ /usr/lib/luna/system/luna-systemui/stylesheets/systemui.css
+@@ -252,6 +252,7 @@
+ 
+ #rssi.flight-mode {
+ 	background: url(../images/rssi-flightmode.png) center center no-repeat;
++	display:none;
+ }
+ 
+ #rssi.error {

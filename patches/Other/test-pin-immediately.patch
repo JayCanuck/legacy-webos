@@ -1,0 +1,38 @@
+Name: Test PIN Immediately
+Version: 1.4.0-1
+Author: Anonymous
+Description: Modifies the PIN input screen so that it accepts a simple PIN as soon as the last number is entered, instead of requiring enter.  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.phone/app/controllers/pin-assistant.js
++++ /usr/palm/applications/com.palm.app.phone/app/controllers/pin-assistant.js
+@@ -129,6 +129,7 @@
+ 		if (this.pinModel.pin.length < this.MAX_PIN_LENGTH) {
+ 			this.pinModel.pin += digit;
+ 			this.controller.modelChanged(this.pinModel, this);
++			this.testPinImmediate();
+ 		}
+ 	},
+ 	onDeviceLockModeChanged: function(response) {		
+@@ -321,6 +322,21 @@
+ 			"number": PlatformType.getDefaultEmergencyNumber()
+ 		});
+ 	},
++	testPinImmediate: function() {
++		if (! this.testPinRequest && this.pinModel.pin !== '' ) {
++			 this.testPinRequest = new Mojo.Service.Request('palm://com.palm.systemmanager', {
++				method: 'matchDevicePasscode',
++				parameters: {
++					passCode: this.pinModel.pin
++				},
++				onSuccess: this.onTestPinSuccess.bind(this),
++				onFailure: function() { },
++				onComplete: function() {
++					delete this.testPinRequest;
++				}.bind(this)
++			});
++		}
++	},
+ 	testPin: function() {
+ 		if ( ! this.testPinRequest && this.pinModel.pin !== '' ) {		
+ 			// we will only allow 3 bad attempts before placing a lock
+\ No newline at end of file

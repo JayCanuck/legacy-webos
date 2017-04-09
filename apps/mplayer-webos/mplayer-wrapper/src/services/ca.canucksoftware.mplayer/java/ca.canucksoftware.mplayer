@@ -1,0 +1,22 @@
+description "MPlayer Service"
+
+start on started java-serviceboot
+
+script
+	sleep 10
+	returnTrue=0
+	tries=0
+	while [ $returnTrue -eq 0 -a $tries -le 20 ]
+	do
+		returnVal=$(luna-send -n 1 luna://ca.canucksoftware.mplayer/status '{}' 2>&1)
+		tries=`expr $tries + 1`
+		if [ "$returnVal" = "** Message: serviceResponse Handling: 2, {\"returnValue\":true}" ]
+		then
+			returnTrue=1
+		else
+			sleep 10
+		fi
+	done
+end script
+
+#respawn

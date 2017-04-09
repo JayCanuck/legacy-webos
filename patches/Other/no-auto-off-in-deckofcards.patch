@@ -1,0 +1,16 @@
+Name: No auto-off in deckofcARds
+Version: 2.1.0-1
+Author: Jason Robitaille
+Description: The screen will no longer turn itself off in the deckofcARds app  (MIT license)
+
+--- .orig/media/cryptofs/apps/usr/palm/applications/com.joe-hoffman.deckofcards/app/assistants/main-assistant.js
++++ /media/cryptofs/apps/usr/palm/applications/com.joe-hoffman.deckofcards/app/assistants/main-assistant.js
+@@ -4,6 +4,7 @@
+ MainAssistant.prototype = {
+ 	setup: function() {
+ 		this.controller.enableFullScreenMode(true);
++		this.controller.stageController.setWindowProperties({blockScreenTimeout:true});
+ 		Ares.setupSceneAssistant(this);
+ 	},
+ 	cleanup: function() {
+\ No newline at end of file

@@ -1,0 +1,34 @@
+Name: Save and Edit Source in Browser
+Version: 1.4.5-1
+Author: Jason Robitaille
+Description: Adds a "Save & Edit Source" option to the web browser's application menu in the "Page" submenu  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.browser/app/controllers/page-assistant.js
++++ /usr/palm/applications/com.palm.app.browser/app/controllers/page-assistant.js
+@@ -792,6 +792,7 @@
+ 					label: $L("Page"),
+ 					items: [
+ 						MenuData.ApplicationMenu.AddToLauncher,
++						{label:"Save & Edit Source", command:"save-edit-cmd"},
+ 						MenuData.ApplicationMenu.SharePage]
+ 				},
+ 				MenuData.ApplicationMenu.ShowBookmarks,
+@@ -2120,6 +2121,18 @@
+ 					this.showBookmarkDialog(BookmarkDialogAssistant.createLaunchpointTask, urlReference);
+ 					break;
+ 
++				case "save-edit-cmd":
++					this.controller.serviceRequest("palm://com.palm.applicationManager", {
++						method: "open",
++						parameters: {
++							id: "ca.canucksoftware.internalz",
++							params: {
++								target: this.currentUrl
++							}
++						}
++					});
++					break;
++					
+ 				case MenuData.ApplicationMenu.SharePage.command:
+ 					this._shareUrl(this.currentUrl, this._getDisplayTitle(), true /*capture*/);
+ 					break;

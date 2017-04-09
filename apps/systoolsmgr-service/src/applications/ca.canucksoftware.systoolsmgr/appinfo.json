@@ -1,0 +1,53 @@
+{
+	"id": "ca.canucksoftware.systoolsmgr",
+	"serviceId": "ca.canucksoftware.systoolsmgr",
+	"version": "1.0.0",
+	"vendor": "Jason Robitaille",
+	"type": "web",
+	"main": "index.html",
+	"title": "SysToolsMgr",
+	"icon": "icon.png",
+	"description": "This is power homebrew service for webOS. It contains many useful system functions, including LED flash control, and is publicly available for any developer to use.",
+	"donate": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9500502",
+	"changelog": [
+		{
+			"version": "1.0.0",
+			"changes": [
+				"Recoded into a Node.js service for webOS 2.0 compatibility",
+				"Greatly improved frontend app",
+				"Service can now be fully uninstalled via orange+tap in launcher"
+			]
+		},
+		{
+			"version": "0.3.0",
+			"changes": [
+				"Added faster java and luna restart functions",
+				"Updated ShellScript and CommandLine classes for bugfixes and better performance",
+				"Added a CPU temperature function for users of UberKernel",
+				"Added a frontend temporary GUI to tell you if initial installation was successful or not"
+			]
+		},
+		{
+			"version": "0.2.3",
+			"changes": [
+				"Minor bugfixes"
+			]
+		},
+		{
+			"version": "0.2.2",
+			"changes": [
+				"Much-improved flashlight functions",
+				"Added multithreaded strobe LED functionality",
+				"Added ntp time sync function (by request)",
+				"Fixed issue affecting commandline stdout/stderr reporting"
+			]
+		},
+		{
+			"version": "0.1.0",
+			"changes": [
+				"Initial release"
+			]
+		},
+	],
+	"copyright": "&copy; Copyright 2010-2011, Jason Robitaille",
+}

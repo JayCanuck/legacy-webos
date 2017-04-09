@@ -1,0 +1,27 @@
+Name: Hide VoiceMail Button
+Version: 3.0.0-1
+Author: Pulp, Jason Robitaille
+Description: Hides the VoiceMail button in the phone application.  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.phone/phoneApp/source/PhoneTabsMenu.js
++++ /usr/palm/applications/com.palm.app.phone/phoneApp/source/PhoneTabsMenu.js
+@@ -6,7 +6,7 @@
+ 		{icon: "../images/menu-icon-contacts.png",label: $L("CONTACTS"), value: "contactlookup"},  
+ 		{icon: "../images/menu-icon-favorites.png", label: $L("FAVORITES"),value: "favorites"},
+ 		{icon: "../images/menu-icon-call-log.png", label: $L("CALL-LOG"), value: "calllog"},   
+- 	  {icon: "../images/menu-icon-voicemail.png", label: $L("VOICEMAIL"), value: "voicemail", className: "voicemail-icon", components: [
++ 	  {icon: "../images/menu-icon-voicemail.png", label: $L("VOICEMAIL"), value: "voicemail", className: "voicemail-icon", style:"display:none !important;", components: [
+ 			{name: "voicemailCountWrapper",  className: "voicemail-count-wrapper", showing: false, components: [
+ 				{name: "voicemailCount", className: "voicemail-count"},
+ 				{kind:"Image", src: "../images/voicemail-play-icon.png", name: "unknownpositiveCountImg"},
+--- .orig/usr/palm/applications/com.palm.app.phone/phoneApp/built.js
++++ /usr/palm/applications/com.palm.app.phone/phoneApp/built.js
+@@ -111,7 +111,7 @@
+ icon: "../images/menu-icon-voicemail.png",
+ value: "voicemail",
+ className: "voicemail-icon",
+-style: "position:relative;",
++style: "position:relative; display:none !important",
+ components: [ {
+ name: "voicemailCountWrapper",
+ className: "voicemail-count-wrapper",

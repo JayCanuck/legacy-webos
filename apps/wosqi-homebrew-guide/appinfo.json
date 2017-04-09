@@ -1,0 +1,38 @@
+{
+	"id": "ca.canuckcoding.wosqi.guide",
+	"version": "1.0.0",
+	"vendor": "Jason Robitaille",
+	"type": "web",
+	"main": "index.html",
+	"title": "WOSQI Homebrew Guide",
+	"icon": "images/icons/icon.png",
+	"smallicon": "images/icons/mini.png",
+	"copyright": "&copy; Copyright 2009-2011, Jason Robitaille<br>Header icons by Oxygen Team, under CC BY-SA 3.0",
+	"support": {
+		"resources": [
+			{
+				"type": "web",
+				"label": "Discussion Forums",
+				"url": "http://forums.precentral.net/canuck-coding/"
+			},
+			{
+				"type": "web",
+				"label": "PreCentral",
+				"url": "http://precentral.net"
+			},
+			{
+				"type": "web",
+				"label": "webOSroundup",
+				"url": "http://www.webosroundup.com"
+			},
+			{
+				"type": "web",
+				"label": "Donate",
+				"url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9500502"
+			}
+		]
+	},
+	"splashicon": "images/icons/icon-256x256.png",
+	"visible": true,
+	"uiRevision":2
+}

@@ -1,0 +1,18 @@
+Name: Add Clock to Exhibition
+Version: 2.1.0-1
+Author: Jason Robitaille
+Description: Adds the Clock application to the exhibition mode  (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
+@@ -4022,6 +4022,10 @@
+ },
+ 
+ appMgrInit: function() {
++	this.clockDockModeRequest = new Mojo.Service.Request('palm://com.palm.applicationManager', {
++		method: 'addDockModeLaunchPoint',
++		parameters: {appId:"com.palm.app.clock"}
++	});
+ 	//Get all launch points
+ 	this.getAppListServiceRequest = new Mojo.Service.Request('luna://com.palm.applicationManager', {
+ 	        method: 'listApps',

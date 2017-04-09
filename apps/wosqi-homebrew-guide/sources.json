@@ -1,0 +1,60 @@
+[
+    {"source": "app/assistants/stage-assistant.js"},
+    {"source": "app/assistants/chooser-assistant.js"},
+    {
+        "scenes": "headers",
+        "source": "app/assistants/headers-assistant.js"
+    },
+    {
+        "scenes": "changelog",
+        "source": "app/assistants/changelog-assistant.js"
+    },
+    {
+        "scenes": "homebrew",
+        "source": "app/assistants/homebrew-assistant.js"
+    },
+    {
+        "scenes": "settingup",
+        "source": "app/assistants/settingup-assistant.js"
+    },
+    {
+        "scenes": "installing",
+        "source": "app/assistants/installing-assistant.js"
+    },
+    {
+        "scenes": "local",
+        "source": "app/assistants/local-assistant.js"
+    },
+    {
+        "scenes": "advanced",
+        "source": "app/assistants/advanced-assistant.js"
+    },
+    {
+        "scenes": "troubleshooter",
+        "source": "app/assistants/troubleshooter-assistant.js"
+    },
+    {
+        "scenes": "problem1",
+        "source": "app/assistants/problem1-assistant.js"
+    },
+    {
+        "scenes": "problem2",
+        "source": "app/assistants/problem2-assistant.js"
+    },
+    {
+        "scenes": "problem3",
+        "source": "app/assistants/problem3-assistant.js"
+    },
+    {
+        "scenes": "problem4",
+        "source": "app/assistants/problem4-assistant.js"
+    },
+    {
+        "scenes": "problem5",
+        "source": "app/assistants/problem5-assistant.js"
+    },
+    {
+        "scenes": "other",
+        "source": "app/assistants/other-assistant.js"
+    }
+]

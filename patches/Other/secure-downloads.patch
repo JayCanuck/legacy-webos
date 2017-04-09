@@ -1,0 +1,198 @@
+Name: Secure Downloads
+Version: 3.0.4-1
+Author: GyroJoe, Jason Robitaille
+Description: Allows for secure downloads in the browser. CookieJar app required.  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.browser/source/BrowserApp.js
++++ /usr/palm/applications/com.palm.app.browser/source/BrowserApp.js
+@@ -26,6 +26,7 @@
+ 		{name: "launchApplicationService", kind: "PalmService", service: enyo.palmServices.application, method: "open", onFailure: "gotResourceError"},
+ 		{name: "addToLauncherService", kind: "PalmService", service: enyo.palmServices.application, method: "addLaunchPoint"},
+ 		{name: "resourceInfoService", kind: "PalmService", service: enyo.palmServices.application, method: "getResourceInfo", onSuccess: "gotResourceInfo", onFailure: "gotResourceError"},
++		{name: "getCookiesService", kind: enyo.PalmService, service: "palm://com.gyrocode.cookiejar.service/", method: "getCookies", onSuccess: "gotCookies", onFailure: "gotResourceError"},
+ 		{kind: enyo.Pane, flex: 1, height: "100%", lazyViews: [
+ 			{name: "startPage", kind: "StartPage", 
+ 				onUrlChange: "processUrlChange",
+@@ -45,7 +46,8 @@
+ 				onUrlRedirected: "openResource",
+ 				onClose: "browserClosed",
+ 				onShow: "browserShown",
+-				onHide: "browserHidden"
++				onHide: "browserHidden",
++				onDownloadLogin: "downloadLogin"
+ 			},
+ 			{name: "preferences", kind: "Preferences",
+ 				onPreferenceChanged: "preferenceChanged",
+@@ -377,7 +379,7 @@
+ 	gotResourceInfo: function(inSender, inResponse, inRequest) {
+ 		var uri = enyo.uri.parseUri(inResponse.uri);
+ 		if (inResponse.appIdByExtension == enyo.fetchAppId()) {
+-			this.downloadResource(inResponse.uri, inRequest.params.mime);
++			this.$.getCookiesService.call({"host": uri.host}, {"uri": inResponse.uri, "mime": inRequest.params.mime, "appId": inResponse.appIdByExtension});
+ 		} else if (inResponse.canStream) {
+ 			this.openResourceWithApp(inResponse.appIdByExtension, inResponse.uri, inRequest.params.mime);
+ 		} else if (uri.scheme != "http" && uri.scheme != "https" && uri.scheme != "ftp") {
+@@ -383,7 +385,7 @@
+ 		} else if (uri.scheme != "http" && uri.scheme != "https" && uri.scheme != "ftp") {
+ 			this.openResource(inResponse.uri);
+ 		} else {
+-			this.downloadResource(inResponse.uri, inRequest.params.mime);
++			this.$.getCookiesService.call({"host": uri.host}, {"uri": inResponse.uri, "mime": inRequest.params.mime, "appId": inResponse.appIdByExtension});
+ 		}
+ 	},
+ 	gotResourceError: function(inSender, inResponse) {
+@@ -390,9 +392,12 @@
+ 		this.$.toaster.close();
+ 		this.$.downloadError.openPopup();
+ 	},
+-	downloadResource: function(inUrl, inMime) {
+-		this.downloads.unshift({url: inUrl, mimetype: inMime});
+-		this.$.downloadService.call({target: inUrl, mime: inMime});
++	gotCookies: function (inSender, inResponse, inRequest) {
++		this.downloadResource(inRequest.uri, inRequest.mime, inRequest.appId, inResponse.cookieHeader);
++	},
++	downloadResource: function(inUrl, inMime, inAppId, inCookieHeader) {
++		this.downloads.unshift({url: inUrl, mimetype: inMime, appId: inAppId});
++		this.$.downloadService.call({target: inUrl, mime: inMime, cookieHeader:inCookieHeader});
+ 		this.showDownloads();
+ 		this.$.toaster.open();
+ 	},
+@@ -399,7 +404,12 @@
+ 	openDownloadedFile: function(inSender, inIndex) {
+ 		var d = this.downloads[inIndex];
+ 		if (d.completed && !d.aborted && !d.interrupted) {
+-			this.$.launchApplicationService.call({target: d.destPath + d.destFile});
++			if (!d.appId)
++			{
++				this.$.launchApplicationService.call({target: d.destPath + d.destFile});
++			} else {
++				this.$.launchApplicationService.call({id: d.appId, params: {target: d.destPath + d.destFile, mimeType: d.mimetype}});
++			}
+ 		}
+ 	},
+ 	cancelDownload: function(inSender, inIndex) {
+@@ -430,7 +440,7 @@
+ 	findDownload: function(inObj, inSkipUrl) {
+ 		for (var i=0, d; d=this.downloads[i]; i++) {
+ 			if (d.ticket && d.ticket == inObj.ticket) {
+-				return d;
++				return [d, i];
+ 			}
+ 			if (!inSkipUrl && d.url && d.url == inObj.url) {
+ 				return d;
+@@ -433,7 +443,7 @@
+ 				return d;
+ 			}
+ 			if (!inSkipUrl && d.url && d.url == inObj.url) {
+-				return d;
++				return [d, i];
+ 			}
+ 		}
+ 	},
+@@ -438,7 +448,9 @@
+ 		}
+ 	},
+ 	gotDownloadStatus: function(inSender, inResponse) {
+-		var d = this.findDownload(inResponse);
++		var down = this.findDownload(inResponse);
++		var d = down[0];
++		var did = down[1];
+ 		if (d) {
+ 			// download manager returns the wrong mimetype
+ 			inResponse.mimetype = d.mimetype;
+@@ -455,6 +467,11 @@
+ 			if (this.$.downloads.showing) {
+ 				this.$.downloads.setDownloads(this.downloads);
+ 			}
++			if (d.completed && d.httpStatus == 401) {
++				var filename = d.destFile.replace(/%20/g, " ");
++				this.downloadLoginIndex = did;
++				this.$.browser.showDownloadUserPasswordDialog(filename);
++			}
+ 		}
+ 	},
+ 	gotDownloadFailure: function(inSender, inResponse) {
+@@ -458,6 +475,7 @@
+ 		}
+ 	},
+ 	gotDownloadFailure: function(inSender, inResponse) {
++		console.log("Download failed");
+ 		this.log(inResponse);
+ 	},
+ 	refreshDownloads: function() {
+@@ -634,5 +652,14 @@
+ 			default:
+ 				this.$.pane.back(e);
+ 		}
+-	}
++	},
++	downloadLogin: function(inSender, inUsername, inPassword) {
++		var u = this.downloads[this.downloadLoginIndex].url;
++		var uri = enyo.uri.parseUri(u);
++		var c = encodeURIComponent(inUsername) + ":" + encodeURIComponent(inPassword) + "@";
++		u = u.replace(uri.scheme + "://", uri.scheme + "://" + c);
++		
++		this.downloads[this.downloadLoginIndex] = {url: u};
++		this.$.downloadService.call({target: u});
++ 	}
+ });
+--- .orig/usr/palm/applications/com.palm.app.browser/source/Browser.js
++++ /usr/palm/applications/com.palm.app.browser/source/Browser.js
+@@ -18,7 +18,8 @@
+ 		onPrint: "",
+ 		onUrlRedirected: "",
+ 		// called when user wants to leave the browser
+-		onClose: ""
++		onClose: "",
++		onDownloadLogin: ""
+ 	},
+ 	components: [
+ 		{name: "launchApplicationService", kind: enyo.PalmService, service: enyo.palmServices.application, method: "open"},
+@@ -77,6 +78,11 @@
+ 			{name: "userInput", kind: "Input", spellcheck: false, autocorrect: false, autoCapitalize: "lowercase", hint: $L("Username...")},
+ 			{name: "passwordInput", kind: "PasswordInput", hint: $L("Password...")}
+ 		]},
++		{name: "downloadLoginDialog", kind: "AcceptCancelPopup", onResponse: "downloadLoginResponse", onClose: "downloadCloseLogin", components: [
++			{name: "downloadLoginMessage", className: "browser-dialog-body enyo-text-body "},
++			{name: "downloadUserInput", kind: "Input", spellcheck: false, autocorrect: false, autoCapitalize: "lowercase", hint: $L("Username...")},
++			{name: "downloadPasswordInput", kind: "PasswordInput", hint: $L("Password...")}
++		]},
+ 		{name: "sslDialog", kind: "Popup", onClose: "sslConfirmResponse", components: [
+ 			{name: "sslConfirmMessage", className: "browser-dialog-body enyo-text-body "},
+ 			{kind: enyo.HFlexBox, components: [
+@@ -277,6 +283,12 @@
+ 		this.$.loginMessage.setContent(msg);
+ 		this.showPopup(this.$.loginDialog);
+ 	},
++	showDownloadUserPasswordDialog: function(inMsg) {
++		this.$.downloadLoginDialog.validateComponents();
++		var msg = "The file " + inMsg + " requires a username and password";
++		this.$.downloadLoginMessage.setContent(msg);
++		this.showPopup(this.$.downloadLoginDialog);
++	},
+ 	loginResponse: function(inSender, inAccept) {
+ 		this.sendDialogResponse(this, inAccept, this.$.userInput.getValue(), this.$.passwordInput.getValue());
+ 	},
+@@ -280,6 +292,11 @@
+ 	loginResponse: function(inSender, inAccept) {
+ 		this.sendDialogResponse(this, inAccept, this.$.userInput.getValue(), this.$.passwordInput.getValue());
+ 	},
++	downloadLoginResponse: function(inSender, inAccept) {
++		if (inAccept) {
++			this.doDownloadLogin(this.$.downloadUserInput.getValue(), this.$.downloadPasswordInput.getValue());
++		}
++	},
+ 	sendDialogResponse: function(inSender, inAccepted) {
+ 		this.log(inAccepted);
+ 		if (inAccepted) {
+@@ -292,6 +309,10 @@
+ 		this.$.userInput.forceBlur();
+ 		this.$.passwordInput.forceBlur();
+ 	},
++	downloadCloseLogin: function() {
++		this.$.downloadUserInput.forceBlur();
++		this.$.downloadPasswordInput.forceBlur();
++	},
+ 	openContextMenu: function(inSender, inEvent, inTapInfo) {
+ 		if (inTapInfo.isLink || inTapInfo.isImage) {
+ 			this.$.context.openAtTap(inEvent, inTapInfo);

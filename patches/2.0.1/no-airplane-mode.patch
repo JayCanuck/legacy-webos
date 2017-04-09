@@ -1,0 +1,17 @@
+Name: No Airplane Mode in Device Menu
+Version: 3.0.1-1
+Author: Jason Robitaille
+Description: Removes the airplane mode toggle from the device menu  (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/devicemenu-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/devicemenu-assistant.js
+@@ -94,4 +94,5 @@
+-		if(this.barAssistant.getAirplaneMode()) 			
+-			this.controller.get('dm_airplanemode_status').innerHTML = $L('Turn off Airplane Mode');
+-		else
+-			this.controller.get('dm_airplanemode_status').innerHTML = $L('Turn on Airplane Mode');
++		this.controller.get('dm_airplanemode').style.display="none";
++		var elem = this.controller.get('dm_airplanemode').previousSibling;
++		while(elem.innerHTML==null || elem.className.indexOf("palm-section-divider")<0)
++			elem = elem.previousSibling;
++		elem.style.display = "none";

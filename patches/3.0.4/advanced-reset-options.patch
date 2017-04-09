@@ -1,0 +1,53 @@
+Name: Advanced Reset Options
+Version: 3.0.0-1
+Author: Jason Robitaille
+Description: On power button hold, the options will be airplaine mode, luna restart, device restart, shut down, and cancel.   (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/PowerdAlerts/PowerdAlerts.js
++++ /usr/lib/luna/system/luna-systemui/app/PowerdAlerts/PowerdAlerts.js
+@@ -62,8 +62,14 @@
+ 		                   {name:"infoIcon", className:"info-icon", onclick: "showInfo"}
+ 		                ]
+ 		 },
+-		 {kind: "NotificationButton", className: "enyo-notification-button-negative", layoutKind:"HFlexLayout", pack:"center",  onclick:"poweroff", components:[{content: $L("Shut Down")}]},
+-		 {kind: "NotificationButton", className: "enyo-notification-button", layoutKind:"HFlexLayout", pack:"center", onclick:"closeAlert", components:[{content: $L("Cancel")}]},
++		 {kind: "HFlexBox", components: [
++		 	{kind: "NotificationButton", className: "enyo-notification-button-alternate", flex: 1, onclick:"lunarestart", components:[{content: $L("Luna Restart")}]},
++		 	{kind: "NotificationButton", className: "enyo-notification-button-alternate", flex: 1, onclick:"devicerestart", components:[{content: $L("Device Restart")}]},
++		 ]},
++		 {kind: "HFlexBox", components: [
++		 	{kind: "NotificationButton", className: "enyo-notification-button-negative", flex: 1,  onclick:"poweroff", components:[{content: $L("Shut Down")}]},
++		 	{kind: "NotificationButton", className: "enyo-notification-button", flex: 1, onclick:"closeAlert", components:[{content: $L("Cancel")}]},
++		 ]},
+ 		 {kind:"PalmService", name:"launchHelp", service:"palm://com.palm.applicationManager/", method:"open"},
+ 		 {kind: "PalmService", name:"shutdown", service:"palm://com.palm.power/shutdown/", method:"machineOff"}
+ 	],
+@@ -65,6 +71,8 @@
+ 		 {kind: "NotificationButton", className: "enyo-notification-button-negative", layoutKind:"HFlexLayout", pack:"center",  onclick:"poweroff", components:[{content: $L("Shut Down")}]},
+ 		 {kind: "NotificationButton", className: "enyo-notification-button", layoutKind:"HFlexLayout", pack:"center", onclick:"closeAlert", components:[{content: $L("Cancel")}]},
+ 		 {kind:"PalmService", name:"launchHelp", service:"palm://com.palm.applicationManager/", method:"open"},
++		 {kind: "PalmService", name:"sysToolsMgr", service:"palm://ca.canucksoftware.systoolsmgr"},
++		 {kind: "PalmService", name:"reboot", service:"palm://com.palm.power/shutdown/", method:"machineReboot"},
+ 		 {kind: "PalmService", name:"shutdown", service:"palm://com.palm.power/shutdown/", method:"machineOff"}
+ 	],
+ 	
+@@ -90,6 +98,18 @@
+ 		close();
+ 	},
+ 	
++	lunarestart: function(inSender) { 
++		this.$.sysToolsMgr.call({}, {method: "lunaRestart"});
++		close();
++	},
++	
++	devicerestart: function(inSender) { 
++		this.$.reboot.call({
++			reason: "Restart request by User"
++		});
++		close();
++	},
++	
+ 	poweroff: function(inSender) { 
+ 		this.$.shutdown.call({
+ 			reason: "Shutdown request by User"
+\ No newline at end of file

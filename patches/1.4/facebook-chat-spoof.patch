@@ -1,0 +1,10 @@
+Name: Facebook Chat Spoof
+Version: 1.4.0-1
+Author: robvanvliet, Jason Robitaille
+Description: Add a facebook account as if it where a gmail account, so <username>@chat.facebook.com  (MIT license)
+
+--- .orig/etc/hosts
++++ /etc/hosts
+@@ -2,1 +2,2 @@
+ 127.0.0.1 palm-webos-device
++69.63.181.104 talk.google.com

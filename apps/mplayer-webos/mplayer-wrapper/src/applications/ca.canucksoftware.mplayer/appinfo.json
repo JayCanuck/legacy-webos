@@ -1,0 +1,25 @@
+{
+	"id": "ca.canucksoftware.mplayer",
+	"version": "1.0.2",
+	"vendor": "Jason Robitaille",
+	"type": "web",
+	"main": "index.html",
+	"title": "MPlayer",
+	"icon": "icon.png",
+	"noWindow":true,
+	"smallicon": "mini.png",
+	"copyright": "Licensed under GPL v2.<br>webOS app, Node.js service, and Java service by Jason Robitaille.<br>App icon by <a href=\"http://marc2o.deviantart.com/art/MPlayer-OSX-Extended-Icon-112650864\">marc2o</a>.<br>File icons by <a href=\"http://dreamxis.deviantart.com/art/Yuuminco-102166678\">dreamxis</a>.<br>Mplayer binary built on Ubuntu 10.10 32bit Linux using the WebOS-Internals <a href=\"http://www.webos-internals.org/wiki/WebOS_Internals_PDK\">WIDK</a> using the standard MPlayer <a href=\"http://git.libav.org/?p=mplayer;a=summary\">source</a> patched with a <a href=\"http://forums.precentral.net/web-os-development/271789-mplayer-1-0-a-7.html#post2812223\">patch</a> originally by Chomper and <a href=\"http://git.webos-internals.org/?p=preware/cross-compile.git;a=tree;f=packages/media/mplayer\">modified</a> by WebOS-Internals for WIDK usage.",
+	"support": {
+		"url": "http://m.forums.precentral.net/canuck-coding/",
+		"resources": [
+			{
+				"type": "web",
+				"label": "Source Code",
+				"url": "http://code.google.com/p/mplayer-webos/"
+			}
+		]
+	},
+	"splashicon": "icon-256x256.png",
+	"keywords" : [ "MPlayer", "video", "audio", "media", "music" ],
+	"visible": true
+}

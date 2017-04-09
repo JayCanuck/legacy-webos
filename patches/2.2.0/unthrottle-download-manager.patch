@@ -1,0 +1,9 @@
+--- .orig/etc/palm/luna.conf
++++ /etc/palm/luna.conf
+@@ -115,5 +115,5 @@
+ [DownloadManager]
+ MaxQueueLength=128
+ MaxConcurrent=2
+-MaxRecvSpeed=65536
++MaxRecvSpeed=-1
+ 

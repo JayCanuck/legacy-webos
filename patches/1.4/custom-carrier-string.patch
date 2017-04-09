@@ -1,0 +1,23 @@
+Name: Custom Carrier String
+Version: 1.4-1
+Author: WebOS Theme Builder
+Description: Custom carrier string for the launcher.
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
+@@ -573,6 +573,6 @@
+ 			if(this.demoBuild)
+ 				this.carrierText = "Palm";
+ 			else	
+-				this.carrierText = $L(payload.extended.networkName.escapeHTML());
++				this.carrierText = "carrier text here";  /*Edit this line*/
+ 			$('carrier').innerHTML = this.carrierText;	   	
+ 			if(payload.extended.registration == 'home') {			
+@@ -939,6 +939,6 @@
+ 				if(this.demoBuild)
+ 					this.carrierText = "Palm";
+ 				else	
+-					this.carrierText = $L(networkMsg.networkName.escapeHTML());
++					this.carrierText = "carrier text here";  /*Edit this line*/
+ 				$('carrier').innerHTML = this.carrierText;
+ 				this.simlocked = false;

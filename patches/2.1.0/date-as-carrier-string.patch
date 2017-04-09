@@ -1,0 +1,78 @@
+Name: Date As Carrier String
+Version: 2.0.1-1
+Author: Jason Robitaille
+Description: Replace the carrier string with the date.
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
+@@ -341,7 +341,7 @@
+ 	if (payload.title) {
+ 		
+ 		if (payload.id == "com.palm.app.phone" || payload.id == "com.palm.app.stk") { 
+-			Mojo.Dom.get('appname').innerHTML = this.carrierText;
++			Mojo.Dom.get('appname').innerHTML = payload.appmenu || payload.title;
+ 			this.phoneIsForeground = true;
+ 		}
+ 		else if (this.isPreferences(payload))  {
+@@ -442,7 +442,7 @@
+ 	if (payload.locked != null) {
+ 		if (payload.locked) {
+ 			Mojo.Dom.get('clock').hide();
+-			Mojo.Dom.get('date').show();
++			Mojo.Dom.get('date').hide();
+ 			this.deviceLocked = true;
+ 		}
+ 		else {
+@@ -682,8 +682,8 @@
+ 				this.updateRSSIIcon("flight-mode");
+ 			}
+ 			else {
+-				this.carrierText = $L("Phone offline");
+-				this.currentCarrierText = "Phone offline";
++				this.carrierText = new Date().toDateString();
++				this.currentCarrierText = this.carrierText;
+ 				Mojo.Dom.get('carrier').innerHTML = this.carrierText;
+ 			}							
+ 			Mojo.Dom.get('roaming').hide();
+@@ -714,8 +714,8 @@
+ 				this.currentCarrierText = "Palm";
+ 			}
+ 			else {
+-				this.carrierText = $L(payload.extended.networkName.escapeHTML());
+-				this.currentCarrierText = payload.extended.networkName.escapeHTML();
++				this.carrierText = new Date().toDateString();
++				this.currentCarrierText = this.carrierText;
+ 			}
+ 			Mojo.Dom.get('carrier').innerHTML = this.carrierText;	   	
+ 			if(payload.extended.registration == 'home') {			
+@@ -1107,8 +1107,8 @@
+ 				this.updateRSSIIcon("flight-mode");
+ 			}
+ 			else {
+-				this.carrierText = $L("Phone offline");
+-				this.currentCarrierText = "Phone offline";
++				this.carrierText = new Date().toDateString();
++				this.currentCarrierText = this.carrierText;
+ 				Mojo.Dom.get('carrier').innerHTML = this.carrierText;
+ 			}
+ 			Mojo.Dom.get('datanet').className = 'off';
+@@ -1133,8 +1133,8 @@
+ 					this.currentCarrierText = "Palm";
+ 				}
+ 				else {
+-					this.carrierText = $L(networkMsg.networkName.escapeHTML());
+-					this.currentCarrierText = networkMsg.networkName.escapeHTML();
++					this.carrierText = new Date().toDateString();
++					this.currentCarrierText = this.carrierText;
+ 				}
+ 				Mojo.Dom.get('carrier').innerHTML = this.carrierText;
+ 				this.simlocked = false;
+@@ -2912,6 +2912,8 @@
+ 	
+ 	Mojo.Log.error("UpdateClockEveryMinute " + date);
+ 	
++	this.carrierText = new Date().toDateString();
++	Mojo.Dom.get('carrier').innerHTML = this.carrierText;
+ 	if(Mojo.Format.using12HrTime()) 
+ 		format = Mojo.Format.getFormatHash()['shortTime12'];
+ 	else

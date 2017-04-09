@@ -1,0 +1,17 @@
+Changes /etc/fstab to reduce the size of the tmp file system to 32MB, incraesing available ram for apps.
+
+
+
+Index: /etc/fstab
+===================================================================
+--- .orig/etc/fstab
++++ /etc/fstab
+@@ -5,6 +5,6 @@ rootfs	/	ext3	ro,suid,dev,exec,auto,nous
+ /dev/mapper/store-update	/var/lib/update	ext3	noauto,noatime	0	0
+ proc	/proc	proc	defaults	0	0
+ devpts	/dev/pts	devpts	mode=0620,gid=5	0	0
+-tmpfs	/tmp	tmpfs	size=64M,mode=1777	0	0
+-tmpfs	/media/ram	tmpfs	defaults	0	0
++tmpfs	/tmp	tmpfs	size=32M,mode=1777	0	0
++tmpfs	/media/ram	tmpfs	size=64M	0	0
+ /dev/mapper/store-media	/media/internal	vfat	utf8,shortname=mixed	0	0

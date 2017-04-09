@@ -1,0 +1,10 @@
+<div class="palm-dark">
+	<table class="palm-divider"><tbody>
+		<tr>
+			<td class="left"></td>
+			<td class="label">#{version}</td>
+			<td class="line" width="100%"></td>
+			<td class="right"></td>
+		</tr>
+	</tbody></table>
+</div>

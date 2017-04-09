@@ -1,0 +1,36 @@
+{
+	"id": "com.example.service.app",
+	"service": "com.example.service.srv",
+	"version": "1.0.0",
+	"vendor": "John Doe",
+	"type": "web",
+	"main": "index.html",
+	"title": "My Service Example",
+	"icon": "icon.png",
+	"description": "This is a service that does something.",
+	"donate": "put donation url here",
+	"changelog": [
+		{
+			"version": "1.1.1",
+			"changes": [
+				"Some other change",
+				"Blah blah blah"
+			]
+		},
+		{
+			"version": "1.1.0",
+			"changes": [
+				"A new change or feature",
+				"Another change of some other sort",
+				"Yet another change"
+			]
+		},
+		{
+			"version": "1.0.0",
+			"changes": [
+				"Initial release"
+			]
+		},
+	],
+	"copyright": "&copy; Copyright 2010, John Doe",
+}

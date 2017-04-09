@@ -1,0 +1,95 @@
+Name: Optimize Clock for Exhibition
+Version: 2.1.0-1
+Author: Jason Robitaille
+Description: Optimizes the Clock app for when used in exhibition mode  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.clock/app/controllers/app-assistant.js
++++ /usr/palm/applications/com.palm.app.clock/app/controllers/app-assistant.js
+@@ -19,6 +19,7 @@
+ 	
+ 	
+ 	this.clocClock = false;
++	this.exhibitClock = false;
+ 	
+ 	this.changeTheme = this.changeTheme.bind(this);
+ 	
+@@ -45,6 +46,7 @@
+ AppAssistant.prototype.handleLaunch = function(params) {
+ 	
+ 	if(params){
++		this.dockMode = params.dockMode
+ 		switch (params.action) {
+ 			case "ring":
+ 				this.ring(params);
+@@ -151,7 +153,7 @@
+ AppAssistant.prototype.launchClock = function(sceneParams) {
+ 	var clockStage = this.controller.getStageController('clock');
+ 
+-	if (clockStage) {
++	if (clockStage && !this.dockMode) {
+ 		clockStage.window.focus(); 
+ 		if (sceneParams) {
+ 			clockStage.delegateToSceneAssistant("showScene", sceneParams);
+@@ -165,7 +167,11 @@
+ 		var f = function(stageController) {
+ 			stageController.pushScene('clock', sceneParams);
+ 		}.bind(this);
+-		this.controller.createStageWithCallback({name: 'clock', lightweight: true}, f);		
++		if(this.dockMode && !this.controller.getStageController('exhibition-clock')) {
++			this.controller.createStageWithCallback({name: 'exhibition-clock', lightweight: true}, f, "dockMode");	
++		} else {
++			this.controller.createStageWithCallback({name: 'clock', lightweight: true}, f);
++		}
+ 	}
+ };
+ 
+@@ -176,6 +182,9 @@
+ 		//console.log("clocK Clock themeName changed " + themeName);
+ 		this.clocClock.changeThemeProxy(themeName);
+ 	}
++	if(this.exhibitClock){
++		this.exhibitClock.changeThemeProxy(themeName);
++	}
+ };
+ 
+ AppAssistant.prototype.launchAlarmList = function() {
+--- .orig/usr/palm/applications/com.palm.app.clock/app/controllers/clock-assistant.js
++++ /usr/palm/applications/com.palm.app.clock/app/controllers/clock-assistant.js
+@@ -68,7 +68,12 @@
+ 		this.controller.document.body.addClassName(Mojo.Locale.getCurrentLocale());
+ 		
+ 		//add ourself to the app assistant
+-		this.appAssistant.clocClock = this;
++		if(this.controller.stageController.window.name=="exhibition-clock") {
++			this.appAssistant.exhibitClock = this;
++		} else {
++			this.appAssistant.clocClock = this;
++		}
++		
+ 		
+ 		this.updateClockHelper = this.updateClockHelper.bind(this);
+ 	},
+@@ -156,6 +161,9 @@
+ 	},
+ 	
+ 	showMenu: function(event) {
++		if(this.controller.stageController.window.name=="exhibition-clock") {
++			return;
++		}
+ 		if(this.timeOutCounter){
+ 			this.hideMenu();
+ 		}else{
+@@ -183,7 +191,11 @@
+ 	
+ 	aboutToActivate: function(){
+ 		if(this.firstActivation){
+-			this.showMenu();
++			if(this.controller.stageController.window.name!="exhibition-clock") {
++				this.showMenu();
++			} else {
++				this.hideMenu();
++			}
+ 			this.firstActivation = false;
+ 		}else{
+ 			
+\ No newline at end of file

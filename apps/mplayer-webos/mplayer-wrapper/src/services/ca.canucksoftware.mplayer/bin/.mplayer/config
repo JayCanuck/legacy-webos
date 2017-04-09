@@ -1,0 +1,35 @@
+#-------------------------------------------#
+# Warlord9159 Config file. testing......... #
+#-------------------------------------------#
+
+# Write your default config options here!
+
+#==========
+# Display #
+#==========
+#-------------------------
+# Fix for slower phone's.*
+#-------------------------
+framedrop=1
+hardframedrop=0
+double="yes"
+
+#========
+# Audio #
+#========
+#------------------------
+# Fix A/V Sync problems.*
+#------------------------
+
+mc=.20
+autosync =30
+
+#=========
+# Memory #
+# Cache  #
+#=========
+#------------------
+# Memory Settings.*
+#------------------
+-cache=10000 #kb
+-cache-min=100 #%

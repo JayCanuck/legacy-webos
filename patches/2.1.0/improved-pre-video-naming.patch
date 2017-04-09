@@ -1,0 +1,28 @@
+Name: Improved PRE Video Naming
+Version: 2.0.1-1
+Author: Jason Robitaille
+Description: Will output videos from the camera in the format: PRE_YYYY-MM-DD-hhmmss.mp4  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.camera/javascripts/camera-control.js
++++ /usr/palm/applications/com.palm.app.camera/javascripts/camera-control.js
+@@ -936,7 +936,19 @@
+ 				else {
+ 					var videocaptureoptions = {};
+ 					videocaptureoptions.title = Mojo.Format.formatDate( new Date(), { date: 'medium', time: 'short' });
+-					cam.startVideoCapture(null, videocaptureoptions);
++					var videofile = null;
++					if(!this.scene.sublaunch) {
++						var date = new Date();
++						var YYYY = date.getFullYear();
++						var MM = (1+date.getMonth()); if (MM<10) { MM = "0"+MM; }
++						var DD = (0+date.getDate()); if (DD<10) { DD = "0"+DD; }
++						var hh = date.getHours(); if (hh < 10) { hh = "0"+hh; }
++						var mm = date.getMinutes(); if (mm < 10) { mm = "0"+mm; }
++						var ss = date.getSeconds(); if (ss < 10) { ss = "0"+ss; }
++						var fileBase = "_" + YYYY + "-" +  MM + "-" + DD + "-" + hh + mm + ss;
++						videofile = "/media/internal/DCIM/100PALM/PRE" + fileBase + ".mp4";
++					}
++					cam.startVideoCapture(videofile, videocaptureoptions);
+ 				}
+ 
+ 				break;

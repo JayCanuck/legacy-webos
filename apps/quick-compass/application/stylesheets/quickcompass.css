@@ -1,0 +1,47 @@
+#mojo-scene-main {
+	height:100%;
+	width:100%;
+}
+
+.background {
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:-100;
+	width:100%;
+	height:auto;
+	min-height:100%;
+	overflow-y:hidden;
+}
+
+.compass {
+	height:300px;
+	width:300px;
+	margin-left:auto;
+	margin-right:auto;
+	
+	background:url(../images/compass.png) center center no-repeat;
+}
+
+#needle {
+	height:300px;
+	width:300px;
+	margin-left:auto;
+	margin-right:auto;
+	background:url(../images/needle.png) center center no-repeat;
+}
+
+#degrees {
+	width:70%;
+	text-align:center;
+	padding: 10px 5px 10px 5px;
+	margin-left:auto;
+	margin-right:auto;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	background: rgba(166,166,166,0.6);
+}
+
+#radioType {
+	opacity:0.6;
+}
+

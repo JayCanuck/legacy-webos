@@ -1,0 +1,26 @@
+Name: Improved Weather Channel
+Version: 1.4.5-1
+Author: Northguard
+Description: Removes the ads from the Weather Channel app. Also fixes the incorrect 36-hour Celcius calculations
+
+--- .orig/media/cryptofs/apps/usr/palm/applications/com.weather.palm/app/utils/twcConverter.js
++++ /media/cryptofs/apps/usr/palm/applications/com.weather.palm/app/utils/twcConverter.js
+@@ -31,3 +31,3 @@
+     this.temp36 = function(deg) {
+-        return (parseInt(deg, 10)).toFixed(0) + '&deg; C';
++        return (parseInt(fToC(deg), 10)).toFixed(0) + '&deg; C';
+     };
+--- .orig/media/cryptofs/apps/usr/palm/applications/com.weather.palm/stylesheets/twci.css
++++ /media/cryptofs/apps/usr/palm/applications/com.weather.palm/stylesheets/twci.css
+@@ -13,3 +13,5 @@
+ #adcontainer p a {
++    display:none;
++    visibility:hidden;
+     font-size: 13px;
+ }
+@@ -78,3 +80,5 @@
+ #ad {
++    display:none;
++    visibility:hidden;
+     text-align: center;
+ }

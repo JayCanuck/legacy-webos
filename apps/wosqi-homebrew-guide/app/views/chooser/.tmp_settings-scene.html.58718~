@@ -1,0 +1,9 @@
+<div class="palm-dialog-title">Settings</div>
+<div class="palm-dialog-separator"></div>
+<div class="palm-dialog-content">
+	<div x-mojo-element="CheckBox" id="cbEnter"></div>Turn LED on, on entering<br>
+	<div x-mojo-element="CheckBox" id="cbExit"></div>Turn LED off, on exiting<br>
+</div>
+<div class="palm-dialog-buttons center">
+	<div class="dismiss palm-button" id="closeButton" x-mojo-tap-highlight="momentary">&#171;Back</div>
+</div>

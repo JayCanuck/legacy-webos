@@ -1,0 +1,105 @@
+--- .orig/usr/palm/applications/com.palm.app.musicplayer/app/controllers/songs-assistant.js
++++ /usr/palm/applications/com.palm.app.musicplayer/app/controllers/songs-assistant.js
+@@ -35,6 +35,8 @@
+ 			dividerTemplate: useAlphaHeaders ? 'songs/group_separator' : null,
+ 			optimizedOptIn: true,
+ 			fixedHeightItems : true,
++			swipeToDelete: true,
++			autoconfirmDelete: true,
+ 			formatters: {
+ 				songArtist: Util.artistFormatter,
+ 				songAlbum: Util.albumFormatter,
+@@ -100,13 +102,33 @@
+ 	},
+ 
+ 	handleDelete: function(event){			
+-		var songID = parseInt(event.item.songID);			
+-		var musicPlayer = musicPlayerSingleton.getInstance();
+-		musicPlayer.deleteSong(-1, songID);			
+-		
+-		// do the actual file delete
+-		AppAssistant.dbService.deleteFile(event.item.songPath);
+-			
++		event.stop(event);
++		this.deletePath = event.item.songPath;
++		//this.deleteID = event.item.songID;
++		this.controller.showAlertDialog({
++			onChoose: function(value) {
++				if (value == 'Yes') {
++					//var songID = parseInt(this.deleteID);			
++					//var musicPlayer = musicPlayerSingleton.getInstance();
++					//musicPlayer.deleteSong(-1, songID);
++					this.controller.serviceRequest('palm://com.palm.mediadb/', {
++						method: 'deletefile',
++						parameters: {
++							path: this.deletePath
++						},
++						onSuccess: function() {
++							this.controller.showBanner("Song deleted!", "");
++						}.bind(this)
++					});
++				}
++			},
++			title: $L("Delete?"),
++			message: $L("Are you sure you want to delete \"" + event.item.songName + "\"?" + " This cannot be undone."),
++			choices:[
++				{label:$L('Yes'), value:"Yes", type:'affirmative'},  
++				{label:$L('No'), value:"No", type:'negative'} 
++			]
++		});	
+ 	},
+ 
+ 	
+--- .orig/usr/palm/applications/com.palm.app.musicplayer/app/controllers/albumsongs-assistant.js
++++ /usr/palm/applications/com.palm.app.musicplayer/app/controllers/albumsongs-assistant.js
+@@ -29,6 +29,8 @@
+ 			filterFunction: this.requestSongsList.bind(this),
+ 			optimizedOptIn: true,
+ 			fixedHeightItems : true,
++			swipeToDelete: true,
++			autoconfirmDelete: true,
+ 			formatters: {
+ 				songArtist: Util.artistFormatter,
+ 				songAlbum: Util.albumFormatter,
+@@ -83,13 +85,33 @@
+ 	},
+ 
+ 	handleDelete: function(event){			
+-		var songID = parseInt(event.item.songID);			
+-		var musicPlayer = musicPlayerSingleton.getInstance();
+-		musicPlayer.deleteSong(-1, songID);			
+-		
+-		// do the actual file delete
+-		AppAssistant.dbService.deleteFile(event.item.songPath);
+-			
++		event.stop(event);
++		this.deletePath = event.item.songPath;
++		this.deleteID = event.item.songID;
++		this.controller.showAlertDialog({
++			onChoose: function(value) {
++				if (value == 'Yes') {
++					var songID = parseInt(this.deleteID);			
++					var musicPlayer = musicPlayerSingleton.getInstance();
++					musicPlayer.deleteSong(-1, songID);
++					this.controller.serviceRequest('palm://com.palm.mediadb/', {
++						method: 'deletefile',
++						parameters: {
++							path: this.deletePath
++						},
++						onSuccess: function() {
++							this.controller.showBanner("Song deleted!", "");
++						}.bind(this)
++					});
++				}
++			},
++			title: $L("Delete?"),
++			message: $L("Are you sure you want to delete \"" + event.item.songName + "\"?" + " This cannot be undone."),
++			choices:[
++				{label:$L('Yes'), value:"Yes", type:'affirmative'},  
++				{label:$L('No'), value:"No", type:'negative'} 
++			]
++		});	
+ 	},
+ 	
+ 	requestSongsList : function(filter, widget, offset, limit){
+\ No newline at end of file

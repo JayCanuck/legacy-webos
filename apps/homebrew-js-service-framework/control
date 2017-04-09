@@ -1,0 +1,8 @@
+Package: ca.canucksoftware.js-service-framework
+Version: 1.0.0
+Section: misc
+Priority: optional
+Architecture: all
+Maintainer: Jason Robitaille
+Description: Homebrew JS Service Framework
+Source: {"MinWebOSVersion":"2.0.0","Category":"Utilities","LastUpdated":"1294101941","License":"MIT Open Source","Type":"Linux Application","FullDescription":"A basic script that can be used in custom d-bus files for js services so that they can be run without a jail.","Title":"Homebrew JS Service Framework"}

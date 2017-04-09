@@ -1,0 +1,132 @@
+{
+	"id": "ca.canucksoftware.systoolsmgr",
+	"description": "SysToolsMgr Service",
+	"services": [
+		{
+			"name": "ca.canucksoftware.systoolsmgr",
+			"description": "Custom odds-and-ends service for various webOS functions",
+			"commands": [
+				{
+					"name": "status",
+					"assistant": "StatusAssistant",
+					"public": true
+                		},
+                		{
+					"name": "version",
+					"assistant": "VersionAssistant",
+					"public": true
+                		},
+                		{
+					"name": "setDisplay",
+					"assistant": "SetDisplayAssistant",
+					"public": true
+                		},
+                		{
+					"name": "onWhenConnected",
+					"assistant": "OnWhenConnectedAssistant",
+					"public": true
+				},
+				{
+					"name": "javaGC",
+					"assistant": "JavaGCAssistant",
+					"public": true
+				},
+				{
+					"name": "javascriptGC",
+					"assistant": "JavascriptGCAssistant",
+					"public": true
+                		},
+                		{
+					"name": "runningApps",
+					"assistant": "RunningAppsAssistant",
+					"public": true
+				},
+				{
+					"name": "runningProcesses",
+					"assistant": "RunningProcessesAssistant",
+					"public": true
+				},
+				{
+					"name": "killProcess",
+					"assistant": "KillProcessAssistant",
+					"public": true
+				},
+				{
+					"name": "cpuLoad",
+					"assistant": "CpuLoadAssistant",
+					"public": true
+				},
+				{
+					"name": "cpuTemperature",
+					"assistant": "CpuTemperatureAssistant",
+					"public": true
+				},
+				{
+					"name": "memInfo",
+					"assistant": "MemInfoAssistant",
+					"public": true
+                		},
+                		{
+					"name": "cpuInfo",
+					"assistant": "CpuInfoAssistant",
+					"public": true
+				},
+				{
+					"name": "syncTime",
+					"assistant": "SyncTimeAssistant",
+					"public": true
+				},
+				{
+					"name": "rescan",
+					"assistant": "RecanAssistant",
+					"public": true
+				},
+				{
+					"name": "javaRestart",
+					"assistant": "JavaRestartAssistant",
+					"public": true
+				},
+				{
+					"name": "novacomRestart",
+					"assistant": "NovacomRestartAssistant",
+					"public": true
+				},
+				{
+					"name": "lunaRestart",
+					"assistant": "LunaRestartAssistant",
+					"public": true
+				},
+				{
+					"name": "deviceRestart",
+					"assistant": "DeviceRestartAssistant",
+					"public": true
+				},
+				{
+					"name": "flashOn",
+					"assistant": "FlashOnAssistant",
+					"public": true
+				},
+				{
+					"name": "flashOff",
+					"assistant": "FlashOffAssistant",
+					"public": true
+				},
+				{
+					"name": "setFlash",
+					"assistant": "SetFlashAssistant",
+					"public": true
+				},
+				{
+					"name": "flashState",
+					"assistant": "FlashStateAssistant",
+					"public": true
+				},
+				{
+					"name": "hasFlash",
+					"assistant": "HasFlashAssistant",
+					"public": true
+				}
+			] 
+		}
+	]
+}

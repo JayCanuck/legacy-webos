@@ -1,0 +1,39 @@
+Name: Phone Always Offline
+Version: 1.4-1
+Author: Jason Robitaille
+Description: Keeps the phone radio always off (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/models/telephonyService.js
++++ /usr/lib/luna/system/luna-systemui/app/models/telephonyService.js
+@@ -22,7 +22,7 @@
+ 	
+ 	var request = new Mojo.Service.Request(TelephonyService.identifier, {
+ 			method: 'powerSet',
+-			parameters: {'state':state}, 
++			parameters: {'state':'off'}, 
+ 			onSuccess: callback,
+ 			onFailure: failCallback
+ 		});
+@@ -34,7 +34,7 @@
+ 	
+ 	var request = new Mojo.Service.Request(TelephonyService.identifier, {
+ 			method: 'powerSet',
+-			parameters: {'state':state, 'save':saveState}, 
++			parameters: {'state':'off', 'save':saveState}, 
+ 			
+ 		});
+ 		
+\ No newline at end of file
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
+@@ -713,6 +713,10 @@
+  * Initialize telephony
+  */
+ phoneInit: function() {
++	this.controller.serviceRequest('palm://com.palm.telephony', {
++		method: 'powerSet',
++		parameters: {'state': 'off'}
++	});
+ 	// Get the Phone Type
+ 	this.getPhoneType();
+ 	

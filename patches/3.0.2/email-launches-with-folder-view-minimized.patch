@@ -1,0 +1,28 @@
+Name: Email Lauches With Folder View Minimized
+Version: 3.0.0-1
+Author: Jason Robitaille
+Description: When the Email app launches, it'll launch with the folder view minimized  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.email/mail/source/MailApp.js
++++ /usr/palm/applications/com.palm.app.email/mail/source/MailApp.js
+@@ -386,7 +386,11 @@
+ 	},
+ 	
+ 	showMainApp: function() {
+-		this.$.slidingPane.selectViewImmediate(this.$.folderSliding);
++		if(this.$.mailSliding.getShowing()) {
++			this.$.slidingPane.selectViewImmediate(this.$.mailSliding);
++		} else {
++			this.$.slidingPane.selectViewImmediate(this.$.folderSliding);
++		}
+ 		this.selectView(this.$.slidingPane);
+ 	},
+ 	
+@@ -462,6 +466,7 @@
+     foldersLoaded: function() {
+         if(this.waitingForFolders) {
+             this.displayFirstFolder();
++            this.$.slidingPane.selectViewImmediate(this.$.mailSliding);
+             this.waitingForFolders = false;
+         }
+     },

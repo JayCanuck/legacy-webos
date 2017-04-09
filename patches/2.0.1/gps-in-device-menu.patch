@@ -1,0 +1,71 @@
+Name: GPS in Device Menu
+Version: 2.0.1-1
+Author: Jason Robitaille
+Description: Adds a GPS toggle to the device menu  (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/devicemenu-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/devicemenu-assistant.js
+@@ -163,2 +163,3 @@
+ 		this.controller.get('wifi_pref').addEventListener(Mojo.Event.tap,this.handleWiFiLaunch.bind(this));
++		this.controller.get('dm_gps').addEventListener(Mojo.Event.tap, this.toggleGPS.bindAsEventListener(this));
+ 		this.controller.get('vpn_pref').addEventListener(Mojo.Event.tap,this.handleVPNLaunch.bind(this));
+@@ -225,6 +226,25 @@
+ 		this.apModeInProgress = false;
+ 	},
+ 	
++	toggleGPS: function(event) {
++		this.gpsEnabled = !this.gpsEnabled;
++		this.controller.serviceRequest('palm://com.palm.location', {
++			method: 'setUseGps',
++			parameters: {
++				useGps: this.gpsEnabled
++			}
++		});
++		this.setGPSLabel();
++	},
++
++	setGPSLabel: function() {
++		if(this.gpsEnabled) {
++			this.controller.get('gpsStatus').innerText = "On";
++		} else {
++			this.controller.get('gpsStatus').innerText = "Off";
++		}
++	},
++	
+ 	updateAirplaneModeProgress: function() {
+ 		if(this.barAssistant.getAirplaneMode()) {
+ 			this.controller.get('dm_airplanemode_status').innerHTML = $L('Turning on Airplane Mode');
+@@ -1454,6 +1474,15 @@
+ 				);
+ 			}
+ 
++			this.controller.serviceRequest('palm://com.palm.location', {
++				method: 'getUseGps',
++				parameters: {},
++				onSuccess: function(response) {
++					this.gpsEnabled = response.useGps;
++					this.setGPSLabel();
++				}.bind(this)
++			});
++
+ 			//animate the scrim onto the scene and then the submenu
+ 			Mojo.Animation.animateStyle(self.scrim, 'opacity', 'bezier', {
+ 						from: 0,
+--- .orig/usr/lib/luna/system/luna-systemui/app/views/devicemenu/devicemenu-scene.html
++++ /usr/lib/luna/system/luna-systemui/app/views/devicemenu/devicemenu-scene.html
+@@ -89,6 +89,15 @@
+ 					
+ 				</div>	
+ 				
++				<div class="palm-section-divider"></div>
++
++				<div class="palm-row" id="dm_gps" x-mojo-tap-highlight='momentary'><div class="palm-row-wrapper">
++					<div class="title truncating-text">
++						<div class="label right" id="gpsStatus">&nbsp;</div>
++						<span x-mojo-loc=''>GPS</span>
++					</div>
++				</div></div>
++
+ 				<div class="palm-section-divider"></div>
+ 				
+ 				<div id="dm_airplanemode" class="palm-row last menu-end" x-mojo-tap-highlight='momentary'><div class="palm-row-wrapper">

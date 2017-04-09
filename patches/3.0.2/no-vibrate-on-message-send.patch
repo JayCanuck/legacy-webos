@@ -1,0 +1,17 @@
+Name: No Vibrate On Message Send
+Version: 3.0.0-1
+Author: Jason Robitaille
+Description: Will prevent vibrate/sounds on sending messages in the Messaging app. Does not affect vibrations/sounds from receiving messages  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.messaging/app/conversations/ConversationList.js
++++ /usr/palm/applications/com.palm.app.messaging/app/conversations/ConversationList.js
+@@ -1010,7 +1010,7 @@
+ 		this.$.richText.setValue("");
+ 		
+ 		// play a sound for sending message
+-		this.playSoundNotification({ isSent: true });
++		//this.playSoundNotification({ isSent: true });
+ 		
+ //if app is throw away, and closeConversation() is not called, then following line should be called to clear unread count everytime user send a message
+ //todo:if we have "pane" cleaup event, then following line should be called.
+\ No newline at end of file

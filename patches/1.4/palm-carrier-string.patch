@@ -1,0 +1,43 @@
+Name: "Palm" Carrier String
+Version: 1.4-1
+Author: Jason Robitaille
+Description: Custom carrier string of "Palm" for the launcher.  Note: also replaces "phone offline" message.  (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
+@@ -547,7 +547,7 @@
+ 				$('rssi').className = "flight-mode";
+ 			}
+ 			else {
+-				this.carrierText = $L("Phone offline");
++				this.carrierText = "Palm";
+ 				$('carrier').innerHTML = this.carrierText;
+ 			}							
+ 			$('roaming').hide();
+@@ -573,7 +573,7 @@
+ 			if(this.demoBuild)
+ 				this.carrierText = "Palm";
+ 			else	
+-				this.carrierText = $L(payload.extended.networkName.escapeHTML());
++				this.carrierText = "Palm";
+ 			$('carrier').innerHTML = this.carrierText;	   	
+ 			if(payload.extended.registration == 'home') {			
+ 				$('roaming').hide();
+@@ -916,7 +916,7 @@
+ 				this.updateAirplaneModeProgress('phone');
+ 			}
+ 			else {
+-				this.carrierText = $L("Phone offline");
++				this.carrierText = "Palm";
+ 				$('carrier').innerHTML = this.carrierText;
+ 			}
+ 			$('datanet').className = 'off';
+@@ -939,7 +939,7 @@
+ 				if(this.demoBuild)
+ 					this.carrierText = "Palm";
+ 				else	
+-					this.carrierText = $L(networkMsg.networkName.escapeHTML());
++					this.carrierText = "Palm";
+ 				$('carrier').innerHTML = this.carrierText;
+ 				this.simlocked = false;
+ 				

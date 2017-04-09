@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=ca.canucksoftware.systoolsmgr
+Exec=/var/usr/bin/run-homebrew-js-service /media/cryptofs/apps/usr/palm/services/ca.canucksoftware.systoolsmgr

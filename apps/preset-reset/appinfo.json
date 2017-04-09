@@ -1,0 +1,11 @@
+{
+	"id": "ca.canucksoftware.presetreset",
+	"version": "0.2.2",
+	"vendor": "Canuck Software",
+	"type": "web",
+	"main": "index.html",
+	"title": "Preset Reset",
+	"icon": "icon.png",
+	"noWindow": true,
+	"noDeprecatedStyles": true
+}

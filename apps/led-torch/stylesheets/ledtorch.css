@@ -1,0 +1,49 @@
+.slider {
+	position:relative;
+	left:-15px;
+	top:10px;
+}
+
+.sliderLabel {
+	position:relative;
+	width:100%;
+	text-align:center;
+	font-size:0.85em;
+}
+
+#currBright {
+	top:-5px;
+}
+
+#speedLabel {
+	top:-15px;
+}
+
+.palm-dark {
+	background-color: #292929 !important;
+}
+
+#drawerStrobe {
+	background-color: #292929 !important;
+}
+
+.dim {
+	color: gray !important;
+}
+
+.palm-slider-button {
+  background: url(../images/slider-button-press.png) !important;
+  background: url(../images/slider-button.png) center center no-repeat !important;
+}
+.palm-slider-button.selected {
+  background: url(../images/slider-button-press.png) center center no-repeat !important;
+}
+
+.palm-slider-background {
+  -webkit-border-image: url(../images/slider-background-3tile.png) 0 4 0 4 repeat repeat !important;
+}
+
+.palm-dialog-title {
+	text-align:center;
+}
+

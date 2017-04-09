@@ -1,0 +1,34 @@
+Name: LED Notifications in TweetMe
+Version: 1.4.5-1
+Author: Jason Robitaille
+Description: Adds LED notifications to TweetMe, so the center gesture area LED will blink when you get new messages  (MIT license)
+
+--- .orig/media/cryptofs/apps/usr/palm/applications/com.catalystmediastudios.tweetme/javascripts/notifications.js
++++ /media/cryptofs/apps/usr/palm/applications/com.catalystmediastudios.tweetme/javascripts/notifications.js
+@@ -101,6 +101,7 @@
+       Mojo.Log.info('No Dashboard exists yet, creating one now');
+       Mojo.Controller.getAppController().playSoundNotification('vibrate', '', '');
+       var pushDashboard = function (stageController){
++      	stageController.indicateNewContent(true);
+         Mojo.Log.info('Pushing dashboard scene 1!');
+         try {
+           Mojo.Controller.getAppController().showBanner('You have new tweets', {action: 'show-splash-menu'}, '');
+\ No newline at end of file
+--- .orig/media/cryptofs/apps/usr/palm/applications/com.catalystmediastudios.tweetme/app/assistants/app-assistant.js
++++ /media/cryptofs/apps/usr/palm/applications/com.catalystmediastudios.tweetme/app/assistants/app-assistant.js
+@@ -42,6 +42,7 @@
+   } else if (args.action && args.action === 'show-splash-menu') {
+     var stageController = this.appController.getStageController('TweetMe');
+     if (stageController) {
++      stageController.indicateNewContent(false);
+       stageController.activate();
+       TM.helpers.popToBottomScene(args);
+     } else {
+@@ -138,6 +139,7 @@
+   Mojo.Log.info('Pushing the first scene!!!!');
+   Mojo.Event.listen(stageController.document, 'keydown', QuickBar.showQuickActions.bindAsEventListener(this, stageController));
+   TM.helpers.setupFontSize(stageController);
++  stageController.indicateNewContent(false);
+ 	if (TM.prefs.userInfo && TM.prefs.userInfo.name && TM.prefs.oauthAccessToken) {
+ 		stageController.pushScene('home', params);
+ 		// Force check timelines on start!

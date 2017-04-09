@@ -1,0 +1,16 @@
+Name: Edit Any Video
+Version: 1.4.1-1
+Author: Jason Robitaille
+Description: Allows all videos to be edited  (MIT license)
+
+--- .orig/usr/palm/frameworks/private/metascene.videos/submission/76/javascript/assistants/details-assistant.js
++++ /usr/palm/frameworks/private/metascene.videos/submission/76/javascript/assistants/details-assistant.js
+@@ -3,7 +3,7 @@
+ /*globals exports, metascene, Element, Util, $LF, Mojo, MojoLoader, VideoService*/
+ 
+ var DetailsAssistant = function(params){	
+-	this.captured = params.captured;
++	this.captured = true;
+ 	this.params = params;
+ 	this.videoDescription = params.videoDescription ?  params.videoDescription : "";
+ 	this.videoUrl = params.target;

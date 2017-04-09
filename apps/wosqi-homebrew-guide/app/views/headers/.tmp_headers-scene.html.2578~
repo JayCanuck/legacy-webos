@@ -1,0 +1,39 @@
+<div class="palm-page-header">
+     <div class="palm-page-header-wrapper">
+        <div class="icon" style="background-image:url(icon.png); margin-left:10px;"></div>
+        <div class="title left un-capitalize" align="center" style="margin-left:55px;">WOSQI Homebrew Guide</div>
+     </div>
+</div>
+
+<div class="palm-list">
+	<div id="homebrew" class="palm-row first" x-mojo-tap-highlight="momentary"><div class="palm-row-wrapper">
+		<div class="header-icon" style="background-image:url(images/info.png);"></div>
+		<div class="header-title">What is homebrew?</div>
+	</div></div>
+	<div class="palm-section-divider">
+	<div id="settingup" class="palm-row" x-mojo-tap-highlight="momentary"><div class="palm-row-wrapper">
+		<div class="header-icon" style="background-image:url(images/setup.png);"></div>
+		<div class="header-title">Setting up WOSQI</div>
+	</div></div>
+	<div class="palm-section-divider">
+	<div id="installing" class="palm-row" x-mojo-tap-highlight="momentary"><div class="palm-row-wrapper">
+		<div class="header-icon" style="background-image:url(images/apps.png);"></div>
+		<div class="header-title">Installing homebrew packages</div>
+	</div></div>
+	<div class="palm-section-divider">
+	<div id="local" class="palm-row" x-mojo-tap-highlight="momentary"><div class="palm-row-wrapper">
+		<div class="header-icon" style="background-image:url(images/local.png);"></div>
+		<div class="header-title">Installing .ipk and .patch files</div>
+	</div></div>
+	<div class="palm-section-divider">
+	<div id="advanced" class="palm-row" x-mojo-tap-highlight="momentary"><div class="palm-row-wrapper">
+		<div class="header-icon" style="background-image:url(images/advanced.png);"></div>
+		<div class="header-title">Advanced Features</div>
+	</div></div>
+	<div class="palm-section-divider">
+	<div id="troubleshooter" class="palm-row last" x-mojo-tap-highlight="momentary"><div class="palm-row-wrapper">
+		<div class="header-icon" style="background-image:url(images/troubleshoot.png);"></div>
+		<div class="header-title">Problem Troubleshooter</div>
+	</div></div>
+</div>
+<hr>

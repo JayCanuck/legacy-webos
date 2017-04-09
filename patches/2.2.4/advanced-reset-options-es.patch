@@ -1,0 +1,84 @@
+Name: Advanced Reset Options (ES)
+Version: 2.2.0-1
+Author: Jason Robitaille
+Description: On power button hold, it goes straight to the reset options, with airplaine mode, java restart, and luna restart added, and skips the swap-battery/shutdown prompt. Spanish language.  (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
+@@ -2426,7 +2426,7 @@
+ 		    var f = function(stageController){
+ 		      stageController.pushScene('poweroffalert',this);
+ 		    }.bind(this);
+-		    var params = {name: 'PowerOffAlert', height: 175,lightweight:true};		    	    
++		    var params = {name: 'PowerOffAlert', height: 290,lightweight:true};
+ 		    appController.createStageWithCallback(params,f,'popupalert');
+         }
+ 	//Close the Storage Alert and create a USB dashboard.
+--- .orig/usr/lib/luna/system/luna-systemui/resources/es/views/poweroffalert/poweroffalert-scene.html
++++ /usr/lib/luna/system/luna-systemui/resources/es/views/poweroffalert/poweroffalert-scene.html
+@@ -1,4 +1,7 @@
+ <div class="system-notification power-off">
+ 		<div class="palm-notification-button affirmative" x-mojo-tap-highlight="immediate" id='flightmode'></div>
+-		<div class="palm-notification-button negative" x-mojo-tap-highlight="immediate" id='poweroff'>Apagar/Reiniciar</div>
++		<div class="palm-notification-button alternate" x-mojo-tap-highlight="immediate" id='luna' x-mojo-loc=''>Reiniciar Luna</div>
++		<div class="palm-notification-button alternate" x-mojo-tap-highlight="immediate" id='restart' x-mojo-loc=''>Reiniciar Dispositivo</div>
++		<div class="palm-notification-button negative" x-mojo-tap-highlight="immediate" id='shutdown' x-mojo-loc=''>Apagar</div>
+ 		<div class="palm-notification-button" x-mojo-tap-highlight="immediate" id='cancel'>Cancelar</div>
+\ No newline at end of file
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/poweroffalert-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/poweroffalert-assistant.js
+@@ -7,7 +7,9 @@
+     
+     setup: function() {		
+ 		var flightMode = this.flightMode.bindAsEventListener(this);
+-		var powerOff = this.powerOff.bindAsEventListener(this);
++		var luna = this.luna.bindAsEventListener(this);
++		var restart = this.restart.bindAsEventListener(this);
++		var shutdown = this.shutdown.bindAsEventListener(this);
+ 		var cancel = this.cancel.bindAsEventListener(this);
+ 		var launchAirplaneModeHelp = this.launchAirplaneModeHelp.bindAsEventListener(this);
+ 		this.flightMode = this.barAssistant.getAirplaneMode();
+@@ -16,7 +19,9 @@
+ 		else
+ 			this.controller.get('flightmode').innerHTML = "<div class='info-icon' id='airplaneInfo' x-mojo-touch-feedback='immediate'></div>" + $L('Airplane Mode');
+ 			
+-		this.controller.get('poweroff').addEventListener(Mojo.Event.tap, powerOff);
+ 		this.controller.get('flightmode').addEventListener(Mojo.Event.tap, flightMode);
++		this.controller.get('luna').addEventListener(Mojo.Event.tap, luna);
++		this.controller.get('restart').addEventListener(Mojo.Event.tap, restart);
++		this.controller.get('shutdown').addEventListener(Mojo.Event.tap, shutdown);
+ 		this.controller.get('cancel').addEventListener(Mojo.Event.tap, cancel);
+ 		this.controller.get('airplaneInfo').addEventListener(Mojo.Event.tap, launchAirplaneModeHelp);
+@@ -46,6 +52,32 @@
+ 		this.controller.window.close();
+ 	},
+ 	
++	java: function() {
++		this.controller.serviceRequest('palm://ca.canucksoftware.systoolsmgr', {
++			method: "javaRestart",
++			parameters: {}
++		});
++		this.controller.window.close();
++	},
++	
++	luna: function() {
++		this.controller.serviceRequest('palm://ca.canucksoftware.systoolsmgr', {
++			method: "lunaRestart",
++			parameters: {}
++		});
++		this.controller.window.close();
++	},
++	
++	restart: function() {
++		this.barAssistant.machineReboot("Restart selected by User in PowerOff Dialog");
++		this.controller.window.close();
++	},
++	
++	shutdown:function() {
++		this.barAssistant.machineOffNow("Shutdown request by User");
++		this.controller.window.close();
++	},
++	
+ 	flightMode:function(event) {
+ 		
+ 		var targetId = event.target.id;

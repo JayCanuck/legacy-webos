@@ -1,0 +1,15 @@
+Name: PDF View Not Removable
+Version: 1.4.5-1
+Author: Jason Robitaille
+Description: This will flag the PDF View app as not removable in the launcher  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.pdfviewer/appinfo.json
++++ /usr/palm/applications/com.palm.app.pdfviewer/appinfo.json
+@@ -11,6 +11,6 @@
+         "Adobe",
+         "PDF Viewer"
+     ],
+-	"removable": true
++	"removable": false
+ }
+ 

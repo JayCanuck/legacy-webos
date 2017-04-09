@@ -1,0 +1,16 @@
+Name: Reduce Minimum Brightness
+Version: 3.0.2-1
+Author: Jason Robitaille
+Description: Reduces the minimum brightness in the Screen & Lock app (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.screenlock/source/ScreenLockPrefApp.js
++++ /usr/palm/applications/com.palm.app.screenlock/source/ScreenLockPrefApp.js
+@@ -23,7 +23,7 @@
+ 					]},
+ 					{kind: "Item", layoutKind:"VFlexLayout", tapHighlight: false, components: [
+ 					                                                   						{content: $L("Brightness")},
+-					                                                   						{kind: "Slider", name:"brightnessSlider", position: 0, minimum:10, maximum:100, onChange:"brightnessChange"}
++					                                                   						{kind: "Slider", name:"brightnessSlider", position: 0, minimum:1, maximum:100, onChange:"brightnessChange"}
+ 					                                                   					]},
+ 					{kind: "Item", layoutKind:"HFlexLayout", tapHighlight: false, 
+ 					        components: [

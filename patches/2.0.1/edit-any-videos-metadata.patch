@@ -1,0 +1,25 @@
+Name: Edit Any Video's Metadata
+Version: 2.0.1-1
+Author: Jason Robitaille
+Description: Will let you edit the metadata (title and description) of any video  (MIT license)
+
+--- .orig/usr/palm/frameworks/metascene.videos/submission/100/javascript/assistants/details-assistant.js
++++ /usr/palm/frameworks/metascene.videos/submission/100/javascript/assistants/details-assistant.js
+@@ -72,7 +72,7 @@
+ 		textFieldAttrs,
+ 		this.titleModel = {
+ 			value: this.video.title || "",
+-			disabled: !this.video.capturedOnDevice
++			disabled: false
+ 	});
+ 	
+ 	this.controller.setupWidget("desc_preview",
+@@ -79,7 +79,7 @@
+ 	   textFieldAttrs,
+ 	   this.descModel = {
+ 		   value: this.video.description || "",
+-		   disabled: !this.video.capturedOnDevice
++		   disabled: false
+ 	});
+ 
+ 	//slight workaround, since it seems that these won't render correctly as regular textfield labels...

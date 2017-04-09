@@ -1,0 +1,9 @@
+{
+	"id": "ca.canucksoftware.ledtorch",
+	"version": "0.2.7",
+	"vendor": "Jason Robitaille",
+	"type": "web",
+	"main": "index.html",
+	"title": "LED Torch",
+	"icon": "icon.png"
+}

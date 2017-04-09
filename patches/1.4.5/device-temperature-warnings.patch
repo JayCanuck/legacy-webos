@@ -1,0 +1,76 @@
+Name: Device Temperature Warnings
+Version: 1.4.5-1
+Author: Jason Robitaille
+Description: This will check the device temperature every 5 minutes and will issue a warning at 50°C and a different, more serious warning if it reaches 55°C. Both temperatures are the general maximum you should have. Higher temperatures can lead to device bricking.  (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
+@@ -1881,6 +1881,8 @@
+ 	this.powerSource['usb'] = false;
+ 	this.powerSource['inductive'] = false;
+ 	this.powerdServiceUp = false;
++	this.tempStatusTimer.cancel();
++	this.tempStatusTimer = undefined;
+ 	return;
+ },
+ 
+@@ -1887,6 +1889,59 @@
+ powerInitialize: function() {
+ 	Mojo.Log.info("SystemUI - Power service online!");
+ 	this.powerdServiceUp = true;
++	if(!this.tempStatusTimer) {
++		this.tempStatusTimer = window.setTimeout(this.getTemperatureDetails.bind(this), 300000);
++	}
++},
++
++getTemperatureDetails: function() {
++	this.tempStatusTimer = window.setTimeout(this.getTemperatureDetails.bind(this), 300000);
++	this.tempRequest1 = this.controller.serviceRequest('palm://ca.canucksoftware.systoolsmgr', {
++		method: 'cpuTemperature',
++		onSuccess: function(payload) {
++			if(payload.value) {
++				this.handleBatteryStatus({temperature_C:payload.value});
++			}
++		}.bind(this),
++		onFailure: function(err) {
++			this.tempRequest2 = this.controller.serviceRequest('palm://com.palm.bus/signal/', {
++				method: 'addmatch',
++				parameters: {
++					"category":"/com/palm/power",
++					"method":"batteryStatus"
++				},
++				onSuccess : this.handleBatteryStatus.bind(this),
++				onComplete: function() { delete this.tempRequest2; }.bind(this)
++			});
++			this.tempRequest3 = this.controller.serviceRequest('palm://com.palm.power/com/palm/power/', {
++				method: 'batteryStatusQuery',
++				onComplete: function() { delete this.tempRequest3; }.bind(this)
++			});
++		}.bind(this),
++		onComplete: function() { delete this.tempRequest1; }.bind(this)
++	});
++},
++
++handleBatteryStatus: function(payload) {
++	if(payload.temperature_C) {
++		if(payload.temperature_C >= 55) {
++			var bannerText = "Critical! Device temperature too high";
++			var soundClassName = this.onActiveCall ? "none" : "notifications";			
++			this.controller.showBanner({
++				messageText: bannerText,
++				icon: "/usr/lib/luna/system/luna-systemui/images/notification-small-error.png",
++				soundClass: soundClassName
++			},""); 
++		} else if(payload.temperature_C >= 50) {
++			var bannerText = "Warning: Device temperature is high";
++			var soundClassName = this.onActiveCall ? "none" : "notifications";			
++			this.controller.showBanner({
++				messageText: bannerText,
++				icon: "/usr/lib/luna/system/luna-systemui/images/notification-small-error.png",
++				soundClass: soundClassName
++			},""); 
++		}
++	}
+ },
+ 
+ /*

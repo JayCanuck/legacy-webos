@@ -1,0 +1,26 @@
+Name: Move/Reply-All Button Swap
+Version: 2.0.1-1
+Author: Jason Robitaille
+Description: Swaps around the "move to folder" menu option and the "reply to all" button  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.email/app/controllers/message-assistant.js
++++ /usr/palm/applications/com.palm.app.email/app/controllers/message-assistant.js
+@@ -134,8 +134,8 @@
+ 		this.cmdMenuModel = {
+ 				visible:true,
+ 				items: [
++					{label:$L('Move'),     icon:'file',     command:'move'},
+ 					{label:$L('Reply'),     icon:'reply',     command:'reply'},
+-					{label:$L('Reply all'), icon:'reply-all', command:'replyAll'},
+ 					{label:$L('Forward'),   icon:'forward-email', command:'forward'},
+ 					{label:$L('Delete'),    icon:'delete',    command:'delete', disabled: this.readonly}
+ 				]};
+@@ -159,7 +159,7 @@
+ 				this.kEmailEditItems,
+ 				this.markUnreadMenuItem,
+ 				this.markSetFlagMenuItem,
+-				this.moveToFolderMenuItem,
++				{label:$L('Reply All'), command:'replyAll'},
+ 				this.showRecipientsMenuItem,
+ 				//this.openInNewCardMenuItem,
+ 				Mojo.Menu.prefsItem,

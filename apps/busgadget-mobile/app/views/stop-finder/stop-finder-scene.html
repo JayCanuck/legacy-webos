@@ -1,0 +1,58 @@
+<img src="images/backdrop.png" class="backdrop"/>
+<div class="borderOverlay"></div>
+<div class="palm-header truncating-text">
+	<img src="images/logo.png" class="mainIcon"/>
+	<span class="mainTitle">BUSgadget</span>
+</div>
+<div class="palm-header-spacer"></div>
+<div class="mainContent">
+	<div class="palm-group unlabeled name-group">
+		<div class="palm-list">
+			<div class="palm-row first">
+				<div class="palm-row-wrapper textfield-group" x-mojo-focus-highlight="true">
+					<div class="title">
+						<div id="numberBox" x-mojo-element="TextField"></div>
+					</div>
+				</div>
+			</div>
+			<div class="palm-section-divider"></div>
+			<div class="palm-row last">
+				<div class="palm-row-wrapper" x-mojo-focus-highlight="true">
+					<div class="title">
+						<div id="numberButton" x-mojo-element="Button"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="palm-group unlabeled name-group">
+		<div class="palm-list">
+			<div id="gpsButtonRow" class="palm-row single">
+				<div class="palm-row-wrapper textfield-group" x-mojo-focus-highlight="true">
+					<div class="title">
+						<div id="gpsButton" x-mojo-element="Button"></div>
+					</div>
+				</div>
+			</div>
+			<div id="gpsResultsContainer">
+				<div class="palm-section-divider"></div>
+				<div class="palm-row last">
+					<div class="palm-row-wrapper" x-mojo-focus-highlight="true">
+						<div class="title">
+							<div id="gpsSpinContainer" class="spinnerContainer">
+								<center>
+									<div x-mojo-element="Spinner" id="gpsSpinner"></div>
+								</center>
+							</div>
+							<div x-mojo-element="Drawer" id="gpsDrawer">
+								<div x-mojo-element="List" id="listGPS"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bottomFade"></div>

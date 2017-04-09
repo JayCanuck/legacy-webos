@@ -1,0 +1,47 @@
+Name: Prevent Log Uploads to Palm
+Version: 1.4.1-1
+Author: Jason Robitaille
+Description: Sets the maximum number of daily log uploads to 0 and sets the log URLs to loopback 127.0.0.1. Also prevents the upload daemon from starting on boot.
+
+--- .orig/etc/uploadd.conf
++++ /etc/uploadd.conf
+@@ -6,7 +6,7 @@
+ 
+ [uploadd]
+ MinTimeBetweenUploads=10
+-MaxUploadsPerDay=20
++MaxUploadsPerDay=0
+ MaxUploadSize=2M
+ DefaultServer=rdx
+ 
+@@ -13,3 +13,3 @@
+ [SERVER=rdx]
+-RepositoryURL=https://<HOST>/palmcsext/prefRequest?prefkey=APPLICATIONS,RDX_SRV
+-UploadURL=https://<HOST>/palmcsext/RDFileReceiver
++RepositoryURL=http://127.0.0.1
++UploadURL=http://127.0.0.1
+@@ -17,3 +17,3 @@
+ [SERVER=context]
+-RepositoryURL=https://<HOST>/palmcsext/prefRequest?prefkey=APPLICATIONS,RDX_SRV
+-UploadURL=https://<HOST>//palmcsext/RDFileReceiver
++RepositoryURL=http://127.0.0.1
++UploadURL=http://127.0.0.1
+--- .orig/etc/event.d/uploadd
++++ /etc/event.d/uploadd
+@@ -8,7 +8,7 @@
+ # uses upstart to restart jobs when the installation is complete.
+ stop on started start_update
+ 
+-respawn
++#respawn
+ 
+ console output
+ 
+@@ -12,6 +12,6 @@
+ 
+ console output
+ 
+-exec /usr/bin/uploadd -v
++#exec /usr/bin/uploadd -v
+ 
+ 

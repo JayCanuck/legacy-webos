@@ -1,0 +1,16 @@
+Name: Enable Landscape in Google Maps
+Version: 1.4.0-1
+Author: Jason Robitaille
+Description: Enables landscape mode in Google Maps.  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.maps/app/assistants/mapshell-assistant.js
++++ /usr/palm/applications/com.palm.app.maps/app/assistants/mapshell-assistant.js
+@@ -33,6 +33,8 @@
+ 		timer = new Date();
+ 		*/
+ 		
++		this.controller.stageController.setWindowOrientation('free');
++		
+ 		var appMenuAttrs = {
+ 			omitDefaultItems: true
+ 		};

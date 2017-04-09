@@ -1,0 +1,18 @@
+{
+	"id": "ca.canuckcoding.timmytracker",
+	"version": "1.1.0",
+	"vendor": "Canuck Coding",
+	"vendorurl": "http://canuckcoding.ca",
+	"type": "web",
+	"main": "index.html",
+	"title": "Timmy Tracker",
+	"icon": "icon.png",
+	"smallicon": "mini.png",
+	"copyright": "&copy; Copyright 2011-2012, Jason Robitaille",
+	"support": {
+		"email": {
+			"address": "support@canuckcoding.ca",
+			"subject": "Support Request"
+		}
+	}
+}

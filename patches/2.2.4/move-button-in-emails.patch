@@ -1,0 +1,23 @@
+Name: Move Button in Emails
+Version: 2.0.1-1
+Author: Jason Robitaille
+Description: Adds a move-to-folder button in email messages  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.email/app/controllers/message-assistant.js
++++ /usr/palm/applications/com.palm.app.email/app/controllers/message-assistant.js
+@@ -134,6 +134,7 @@
+ 		this.cmdMenuModel = {
+ 				visible:true,
+ 				items: [
++					{label:$L('Move'),     icon:'file',     command:'move'},
+ 					{label:$L('Reply'),     icon:'reply',     command:'reply'},
+ 					{label:$L('Reply all'), icon:'reply-all', command:'replyAll'},
+ 					{label:$L('Forward'),   icon:'forward-email', command:'forward'},
+@@ -159,7 +160,6 @@
+ 				this.kEmailEditItems,
+ 				this.markUnreadMenuItem,
+ 				this.markSetFlagMenuItem,
+-				this.moveToFolderMenuItem,
+ 				this.showRecipientsMenuItem,
+ 				//this.openInNewCardMenuItem,
+ 				Mojo.Menu.prefsItem,

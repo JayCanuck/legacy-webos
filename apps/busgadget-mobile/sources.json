@@ -1,0 +1,15 @@
+[
+    {"source": "app/assistants/stage-assistant.js"},
+    {"source": "app/assistants/settings-assistant.js"},
+    {"source": "app/models/common.js"},
+    {"source": "app/models/preferences.js"},
+    {"source": "app/models/winnipeg-transit.js"},
+    {
+        "scenes": "stop-finder",
+        "source": "app/assistants/stop-finder-assistant.js"
+    },
+    {
+        "scenes": "listings",
+        "source": "app/assistants/listings-assistant.js"
+    }
+]

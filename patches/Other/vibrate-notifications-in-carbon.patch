@@ -1,0 +1,23 @@
+Name: Vibrate Notifications in Carbon
+Version: 2.1.0-1
+Author: Jason Robitaille
+Description: Removes the notification sound for Carbon and replaces it with 2 quick vibrates.  (MIT license)
+
+--- .orig/media/cryptofs/apps/usr/palm/applications/com.dotsandlines.carbon/app/smoke/Smoke.js
++++ /media/cryptofs/apps/usr/palm/applications/com.dotsandlines.carbon/app/smoke/Smoke.js
+@@ -226,10 +226,14 @@
+        message = screen_name + ": " + message;
+    }
+    
+     
++   Mojo.Controller.getAppController().playSoundNotification("vibrate", "");
++   window.setTimeout(function() {
++       Mojo.Controller.getAppController().playSoundNotification("vibrate", "");
++   }.bind(this), 400);
+    var banner_params = {
+                 //soundClass: 'pirate', 
+-			    soundFile: 'sounds/1.mp3',
++			    //soundFile: 'sounds/1.mp3',
+ 			    messageText: message
+    };
+    var launch_params = {

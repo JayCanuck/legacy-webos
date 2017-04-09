@@ -1,0 +1,30 @@
+<div class="palm-header truncating-text">Setting up WOSQI</div>
+<div class="palm-header-spacer"></div>
+<table id="stage1" class="palm-divider collapsible" x-mojo-tap-highlight="momentary"><tbody>
+	<tr>
+		<td class="left"></td>
+		<td class="label">On your device</td>
+		<td class="line" width="100%"></td>
+		<td><div id="arrowStage1" class="palm-arrow-expanded arrow_button"></div></td>
+		<td class="right"></td>
+	</tr>
+</tbody></table>
+<div x-mojo-element="Drawer" id="drawerStage1">
+	<div class="palm-body-text">
+		This scene "setup" was generated on 2011-09-01 at 02:38:24.
+	</div>
+</div>
+<table id="stage2" class="palm-divider collapsible" x-mojo-tap-highlight="momentary"><tbody>
+	<tr>
+		<td class="left"></td>
+		<td class="label">On your computer</td>
+		<td class="line" width="100%"></td>
+		<td><div id="arrowStage2" class="palm-arrow-expanded arrow_button"></div></td>
+		<td class="right"></td>
+	</tr>
+</tbody></table>
+<div x-mojo-element="Drawer" id="drawerStage2">
+	<div class="palm-body-text">
+		This scene "setup" was generated on 2011-09-01 at 02:38:24.
+	</div>
+</div>

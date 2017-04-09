@@ -1,0 +1,11 @@
+{
+  "id": "ca.canucksoftware.mplayer",
+  "package_format_version": 2,
+  "loc_name": "MPlayer",
+  "version": "1.0.2",
+  "icon": "icon.png",
+  "miniicon": "icon.png",
+  "vendor": "Jason Robitaille",
+  "app": "ca.canucksoftware.mplayer",
+  "services": ["ca.canucksoftware.mplayer"]
+}

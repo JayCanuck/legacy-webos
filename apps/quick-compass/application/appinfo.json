@@ -1,0 +1,27 @@
+{
+	"id": "ca.canuckcoding.compass",
+	"version": "1.0.1",
+	"vendor": "Canuck Coding",
+	"type": "web",
+	"main": "index.html",
+	"title": "Quick Compass",
+	"icon": "images/icon.png",
+	"smallicon": "images/mini.png",
+	"copyright": "&copy; Copyright 2011, Jason Robitaille<br>App icon by <a href=\"http://sargsyan.deviantart.com\">Sargsyan</a>",
+	"support": {
+		"email": {
+			"address": "support@canuckcoding.ca",
+			"subject": "Support Request"
+		},
+		"resources": [
+			{
+				"type": "web",
+				"label": "Discussion Forums",
+				"url": "http://m.forums.precentral.net/canuck-coding/"
+			}
+		]
+	},
+	"splashicon": "images/icon-256x256.png",
+	"visible": true,
+	"uiRevision": 2
+}

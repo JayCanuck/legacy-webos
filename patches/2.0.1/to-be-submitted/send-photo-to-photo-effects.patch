@@ -1,0 +1,35 @@
+Name: Send Photo To Photo Effects
+Version: 2.0.1-1
+Author: Jason Robitaille
+Description: This will add a 'Send to Photo Effects' option in the Photos application  (MIT license)
+
+--- .orig/usr/palm/frameworks/photos/submission/42/javascript/models/local-full-model.js
++++ /usr/palm/frameworks/photos/submission/42/javascript/models/local-full-model.js
+@@ -224,6 +224,9 @@
+ 			label: internals.$L('Set wallpaper'),
+ 			command: 'share-wallpaper'
+ 		},{
++			label: $L('Send to Photo Effects'),
++			command: 'send-photoeffects',
++		},{
+ 			label: internals.$L('Share via email'),
+ 			command: 'share-email'
+ 		},{
+@@ -302,6 +305,17 @@
+ 			// this is directly from the imageview widget
+ 			this.handleSetAsWallpaper(cropParams.filePath);
+ 			return true;
++		case 'send-photoeffects':
++			this.controller.serviceRequest('palm://com.palm.applicationManager', {
++				method: 'launch',
++				parameters: {
++					id: "com.rustyapps.photoeffects",
++					params: {
++						filepath:cropParams.filePath
++					}
++				}
++ 			});
++			break;
+ 		case 'share-contact':
+ 			this.handleAssignToContact(cropParams.filePath);
+ 			return true;

@@ -1,0 +1,28 @@
+Name: Web Search Uses Google HK
+Version: 1.4.5-1
+Author: Jason Robitaille
+Description: Uses google.com.hk rather than google.com for searchs done within the web browser  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.browser/app/controllers/urlsearch-controller.js
++++ /usr/palm/applications/com.palm.app.browser/app/controllers/urlsearch-controller.js
+@@ -277,6 +277,9 @@
+ 		this._searchProviders.each(function(provider) {
+ 
+ 			if (providers.indexOf(provider.id) != -1) {
++				if(provider.id=="google") {
++					provider.weburl = "http://www.google.com.hk/m/search?client=ms-palm-webOS&channel=bm&q=#{query}";
++				}
+ 				this._chosenProviders.push(provider);
+ 			}
+ 
+--- .orig/usr/palm/applications/com.palm.app.browser/app/controllers/preferences-assistant.js
++++ /usr/palm/applications/com.palm.app.browser/app/controllers/preferences-assistant.js
+@@ -30,7 +30,7 @@
+ 
+ 	id: 'google',
+ 	title: $L('Google'),
+-	weburl: $L('http://www.google.com/m/search?client=ms-palm-webOS&channel=bm&q=#{query}')
++	weburl: $L('http://www.google.com.hk/m/search?client=ms-palm-webOS&channel=bm&q=#{query}')
+ };
+ 
+ PreferencesAssistant.prototype.setup = function() {

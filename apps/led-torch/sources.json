@@ -1,0 +1,10 @@
+[
+    {"source": "app\/assistants\/stage-assistant.js"},
+    {"source": "app\/models\/Preferences.js"},
+    {"source": "app\/models\/TorchService.js"},
+    {
+        "source": "app\/assistants\/main-assistant.js",
+        "scenes": "main"
+    },
+    {"source": "app\/assistants\/settings-assistant.js"}
+]

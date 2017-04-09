@@ -1,0 +1,11 @@
+<br>
+<br>
+<br>
+<div x-mojo-element="Button" id="btnFlash"></div>
+<br>
+<br>
+<div class="palm-group" id="group">
+	<div class="palm-group-title" x-mojo-loc=''>Brightness</div>
+	<div id="currBright" class="dim"></div>
+	<div x-mojo-element="Slider" id="sliderScale"></div><br>
+</div>

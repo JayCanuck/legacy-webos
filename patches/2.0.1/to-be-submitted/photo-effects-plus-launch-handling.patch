@@ -1,0 +1,81 @@
+Name: Photo Effects Plus Launch Handling
+Version: 2.0.1-1
+Author: Jason Robitaille
+Description: Adds external launch handling to Photo Effects Plus application  (MIT license)
+
+--- .orig/media/cryptofs/apps/usr/palm/applications/com.rustyapps.photoeffectsplus/appinfo.json
++++ /media/cryptofs/apps/usr/palm/applications/com.rustyapps.photoeffectsplus/appinfo.json
+@@ -8,1 +8,2 @@
++        "noWindow": true,
+         "icon": "icon64.png",
+--- .orig/media/cryptofs/apps/usr/palm/applications/com.rustyapps.photoeffectsplus/app/assistants/stage-assistant.js
++++ /media/cryptofs/apps/usr/palm/applications/com.rustyapps.photoeffectsplus/app/assistants/stage-assistant.js
+@@ -1,4 +1,5 @@
+-function StageAssistant() {
++function AppAssistant(appController){
++	this.controller = appController;
+ }
+ 
+ StageAssistant.prototype.setup = function() {
+@@ -1,10 +2,13 @@
+ function StageAssistant() {
+ }
+ 
+-StageAssistant.prototype.setup = function() {
+-	this.cookie = new Mojo.Model.Cookie("privacyAccepted");
+-	if( this.cookie.get() ){
+-		this.controller.pushScene({name: "main", disableSceneScroller: false});
++AppAssistant.prototype.handleLaunch = function(params) {
++    	this.stageName = "PhotoEffects";
++    	this.params = params || {};
++	var stageController = this.controller.getStageController(this.stageName);
++	if(stageController) {
++		stageController.activate();
++		return;
+ 	}
+ 	else{
+ 		this.controller.pushScene({name: "welcome", disableSceneScroller: false});
+@@ -6,8 +10,15 @@
+ 	if( this.cookie.get() ){
+ 		this.controller.pushScene({name: "main", disableSceneScroller: false});
+ 	}
+-	else{
+-		this.controller.pushScene({name: "welcome", disableSceneScroller: false});
++	this.controller.createStageWithCallback(this.stageName, this.launchApp.bind(this));    
++};
++
++AppAssistant.prototype.launchApp = function(stageController){
++	this.cookie = new Mojo.Model.Cookie("privacyAccepted");
++	if(this.cookie.get()) {
++		stageController.pushScene({name: "main", disableSceneScroller: false}, this.params);
++	} else{
++		stageController.pushScene({name: "welcome", disableSceneScroller: false});
+ 	}
+ 	
+ };
+@@ -9,5 +20,4 @@
+ 	else{
+ 		this.controller.pushScene({name: "welcome", disableSceneScroller: false});
+ 	}
+-	
+ };
+\ No newline at end of file
+--- .orig/media/cryptofs/apps/usr/palm/applications/com.rustyapps.photoeffectsplus/app/assistants/main-assistant.js
++++ /media/cryptofs/apps/usr/palm/applications/com.rustyapps.photoeffectsplus/app/assistants/main-assistant.js
+@@ -1,4 +1,5 @@
+ function MainAssistant(argFromPusher) {
++	this.params = argFromPusher;
+ }
+ 
+ MainAssistant.prototype = {
+@@ -74,6 +75,9 @@
+ 		
+ 		//check for new baseUrl
+ 		this.checkForBaseUrl();  
++		if(this.params.filepath) {
++			this.handleImageSelect({fullPath:this.params.filepath});
++		}
+ 	},
+ 	showOpenIcon: function(){
+ 		this.oldCtx = this.controller.get('oldCanvas').getContext('2d');
+\ No newline at end of file

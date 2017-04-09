@@ -1,0 +1,19 @@
+{
+	"id": "ca.canuckcoding.busgadget",
+	"version": "1.0.1",
+	"vendor": "Canuck Coding",
+	"vendorurl": "http://canuckcoding.ca",
+	"type": "web",
+	"main": "index.html",
+	"theme":"dark",
+	"title": "BUSgadget",
+	"icon": "icon.png",
+	"smallicon": "mini.png",
+		"copyright": "&copy; Copyright 2011, Jason Robitaille",
+		"support": {
+			"email": {
+				"address": "support@canuckcoding.ca",
+				"subject": "BUSgadget Support Request"
+			}
+	}
+}

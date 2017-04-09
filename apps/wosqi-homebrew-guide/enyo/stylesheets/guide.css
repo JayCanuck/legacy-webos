@@ -1,0 +1,40 @@
+.device-image {
+	max-width:320px;
+	padding-left: 15%;
+	padding-right: 15%;
+	width: 70%;
+	height: auto;
+	margin-right:auto;
+	margin-right:auto;
+	text-align:center;
+}
+
+.device-image-half {
+	max-width:320px;
+	width: 100%;
+	height: auto;
+	text-align:center;
+}
+
+.computer-image {
+	max-width:700px;
+	padding-left: 2%;
+	padding-right: 2%;
+	width: 96%;
+	height: auto;
+	margin-right:auto;
+	margin-right:auto;
+	text-align:center;
+}
+
+.topic-title {
+	-webkit-border-radius: 40px 40px 40px 40px;
+	/*background: rgba(0,0,0,0.6);*/
+	background-color: #575757;
+	color: lightgray;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 1.3em;
+	margin-bottom: 10px;
+}

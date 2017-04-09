@@ -1,0 +1,36 @@
+.palm-page-header-wrapper {
+	left: 20px !important;
+}
+
+.icon {
+	background-size: 100% !important;
+	float:left !important;
+	margin-left:10px;
+}
+
+.center {
+	text-align: center;
+}
+
+.statusText {
+	font-weight: bold;
+	margin: 15px 15px 15px 15px;
+}
+
+.label {
+	text-transform:none !important;
+}
+
+.smallText, li {
+	font-size: 0.9em;
+}
+
+ul {
+	margin-top: 0;
+	margin-bottom: 10px;
+	padding-left: 30px;
+}
+
+.donate {
+	padding-top: 6px;
+}

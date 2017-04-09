@@ -1,0 +1,10 @@
+{
+  "id": "ca.canuckcoding.compass",
+  "package_format_version": 2,
+  "loc_name": "Quick Compass",
+  "version": "1.0.1",
+  "icon": "icon.png",
+  "miniicon": "icon.png",
+  "vendor": "Jason Robitaille",
+  "app": "ca.canuckcoding.compass"
+}

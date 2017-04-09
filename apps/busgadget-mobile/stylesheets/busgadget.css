@@ -1,0 +1,162 @@
+.backdrop {
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:-100;
+	width:100%;
+	height:auto;
+	min-height:100%;
+	overflow-y:hidden;
+}
+
+.borderOverlay {
+	z-index:100;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	border-width:24px;
+	-webkit-border-image: url(../images/rounded-border.png) 24 24 24 24 repeat repeat;
+	-webkit-box-sizing: border-box;
+	-webkit-palm-mouse-target: ignore;
+}
+
+#mojo-scene-stop-finder {
+	height:100%;
+	width:100%;
+}
+
+#mojo-scene-listings {
+	height:100%;
+	width:100%;
+}
+
+.mainIcon {
+	position:fixed;
+	top:8px;
+	left:45px;
+}
+
+.mainTitle {
+	font-family:sans-serif;
+	font-weight:bold;
+	font-size:1.1em;
+}
+
+.mainContent {
+	padding: 0 20px 20px 20px;
+}
+
+.bottomFade {
+	position: fixed;
+   	bottom: 0;
+   	z-index: 100;
+   	height: 14px;
+   	width: 320px;
+   	background: url(../images/scroll-fade-bottom.png) bottom center;
+   	-webkit-palm-mouse-target: ignore;
+}
+
+.spinnerContainer {
+	width:100%;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+#gpsButton {
+	padding-bottom:5px;
+}
+
+#listGPS {
+	margin-top:-12px;
+}
+
+.nearby-stops {
+	padding-left:0 !important;
+	padding-right:0 !important;
+	margin-left:0 !important;
+	margin-right:0 !important;
+	font-size:0.7em;
+	width:100%;
+	white-space:normal !important;
+	word-wrap:break-word !important;
+}
+
+.distanceLabel {
+	float:right !important;
+	position:relative !important;
+	top:12px !important;
+	text-transform:none !important;
+}
+
+.bus-number {
+	font-size:0.9em !important;
+	float:left !important;
+	position:relative !important;
+	top:15px !important;
+	left:15px !important;
+}
+
+.bus-details {
+	padding-left:40px !important;
+	padding-right:0 !important;
+	/*margin-top:-5px !important;
+	margin-bottom:-5px !important;*/
+	margin-left:0 !important;
+	margin-right:0 !important;
+	font-size:0.7em;
+	width:100%;
+	white-space:normal !important;
+	word-wrap:break-word !important;
+}
+
+.bus-time {
+	text-transform:none !important;
+	font-size:0.6em;
+}
+
+#cbAutoRefresh {
+	float: right;
+}
+
+.palm-dark .palm-page-header:not(.multi-line) {
+	background:#232323;;
+	padding-top:30px;
+	padding-left:30px;
+	opacity:0.5;
+	-webkit-border-image: none;
+}
+
+.palm-dark .app-support-info-app-name {
+	margin-top:10px;
+}
+
+.palm-dark .palm-page-header .title {
+	color: #aaa;
+  	text-shadow: #000 0px -1px 0px;
+}
+
+.palm-dark .palm-dialog-separator {
+	opacity: 0.3;
+}
+
+.palm-dark .palm-dialog-box {
+	-webkit-border-image: url(../images/dialog-dark.png) 32 24 32 24 stretch stretch;
+	color: #d4d4d4;
+}
+
+.palm-dark .palm-dialog-content .dialog-title,
+.palm-dark .palm-dialog-title {
+	color: #cfcfcf;
+  	text-shadow: #6f6f6f 0px -1px 0px;
+}
+
+.palm-dark .palm-dialog-content {
+	color: #d4d4d4;
+}
+
+.palm-dark .palm-dialog-buttons .palm-button,
+.palm-dark .palm-dialog-content img {
+	opacity: 0.5;
+}

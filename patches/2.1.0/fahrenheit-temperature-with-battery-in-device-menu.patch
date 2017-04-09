@@ -1,0 +1,53 @@
+Name: Fahrenheit Temperature with Battery in Device Menu
+Version: 2.0.1-1
+Author: Jason Robitaille
+Description: Will add a temperature value, in Fahrenheit, on the right side of the battery row of the device menu. Will not conflict with any other device menu patches.  (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/devicemenu-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/devicemenu-assistant.js
+@@ -129,6 +129,12 @@
+ 			this.controller.get('dm_wifi').hide();
+ 			this.controller.hideWidgetContainer(this.controller.get('dm_wifi'));
+ 		}
++		
++		//setup battery temperature label
++		var battery = this.controller.get("dm_battery");
++		battery.id = "batteryRow";
++		battery.innerHTML = '<span id="dm_battery">' + battery.innerHTML + '</span>' +
++				'<div class="label right" id="tempmsg" style="font-size:0.9em;">&nbsp;</div>';
+ 
+ 		//set up the the menu div
+ 		this.scrim = this.controller.sceneElement.querySelector('div[x-mojo-scrim]');
+@@ -1582,6 +1588,31 @@
+ 	activateStage: function() {
+ 		if (!this._stageRef) {
+ 			this._stageRef = 1;
++			this.controller.serviceRequest('palm://ca.canucksoftware.systoolsmgr', {
++				method: 'cpuTemperature',
++				onSuccess: function(payload) {
++					if(payload.value) {
++						this.controller.get("tempmsg").innerHTML = Math.round((payload.value*(9/5)) + 32) + "&deg;F";
++					}
++				}.bind(this),
++				onFailure: function(err) {
++					this.controller.serviceRequest('palm://com.palm.bus/signal/', {
++						method: 'addmatch',
++						parameters: {
++							"category":"/com/palm/power",
++							"method":"batteryStatus"
++						},
++						onSuccess: function(payload2) {
++							if(payload2.temperature_C) {
++								this.controller.get("tempmsg").innerHTML = Math.round((payload2.temperature_C*(9/5)) + 32) + "&deg;F";
++							}
++						}.bind(this)
++					});
++					this.controller.serviceRequest('palm://com.palm.power/com/palm/power/', {
++						method: 'batteryStatusQuery'
++					});
++				}.bind(this)
++			});
+ 			this.controller.stageController.activate();
+ 		}
+ 	},
+ 		this.systemmenu = this.controller.sceneElement.querySelector('div[x-mojo-dialog]');

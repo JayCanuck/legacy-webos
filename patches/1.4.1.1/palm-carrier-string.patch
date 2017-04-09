@@ -1,0 +1,60 @@
+Name: "Palm" Carrier String
+Version: 1.4-1
+Author: Jason Robitaille
+Description: Custom carrier string of "Palm" for the launcher.  Note: also replaces "phone offline" message.  (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
+@@ -296,7 +296,7 @@
+ 	if (payload.title) {
+ 		$('carrier').hide();
+ 		if (payload.id == "com.palm.app.phone" || payload.id == "com.palm.app.firstuse"){ 
+-			$('appname').innerHTML = this.carrierText;
++			$('appname').innerHTML = payload.appmenu || payload.title;
+ 			this.phoneIsForeground = true;
+ 		}
+ 		else if (this.isPreferences(payload))  {
+@@ -582,8 +582,8 @@
+ 				$('rssi').className = "flight-mode";
+ 			}
+ 			else {
+-				this.carrierText = this.$L("Phone offline");
+-				this.carrierTextEnglish = "Phone offline";
++				this.carrierText = "Palm";
++				this.carrierTextEnglish = this.carrierText;
+ 				$('carrier').innerHTML = this.carrierText;
+ 			}							
+ 			$('roaming').hide();
+@@ -611,8 +611,8 @@
+ 				this.carrierTextEnglish = "Palm";
+ 			}
+ 			else{
+-				this.carrierText = this.$L(payload.extended.networkName.escapeHTML());
+-				this.carrierTextEnglish = payload.extended.networkName.escapeHTML();
++				this.carrierText = "Palm";
++				this.carrierTextEnglish = this.carrierText;
+ 			} 
+ 				
+ 			$('carrier').innerHTML = this.carrierText;	   	
+@@ -988,8 +988,8 @@
+ 				this.updateAirplaneModeProgress('phone');
+ 			}
+ 			else {
+-				this.carrierText = this.$L("Phone offline");
+-				this.carrierTextEnglish = "Phone offline";
++				this.carrierText = "Palm";
++				this.carrierTextEnglish = this.carrierText;
+ 				$('carrier').innerHTML = this.carrierText;
+ 			}
+ 			$('datanet').className = 'off';
+@@ -1015,8 +1015,8 @@
+ 				}
+ 					
+ 				else{
+-					this.carrierText = this.$L(networkMsg.networkName.escapeHTML());
+-					this.carrierTextEnglish = networkMsg.networkName.escapeHTML();
++					this.carrierText = "Palm";
++					this.carrierTextEnglish = this.carrierText;
+ 				}	
+ 					
+ 				$('carrier').innerHTML = this.carrierText;

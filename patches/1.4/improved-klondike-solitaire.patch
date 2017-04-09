@@ -1,0 +1,44 @@
+Name: Improved Klondike Solitaire
+Version: 1.3.5.1-1
+Author: Northguard
+Description: Removes the ads and splash screen from the Free Klondike Solitaire app (by no2.es). Also removes "Free" from the app name.
+
+--- .orig/media/cryptofs/apps/usr/palm/applications/es.no2.solitaire/app/views/game/game-scene.html
++++ /media/cryptofs/apps/usr/palm/applications/es.no2.solitaire/app/views/game/game-scene.html
+@@ -6,4 +6,4 @@
+ 
+ <div id="scoreph"></div>
+ 
+-<div id="ads"></div>
++<div id="ads" style="display:none"></div>
+--- .orig/media/cryptofs/apps/usr/palm/applications/es.no2.solitaire/appinfo.json
++++ /media/cryptofs/apps/usr/palm/applications/es.no2.solitaire/appinfo.json
+@@ -4,6 +4,6 @@
+ 	"vendor": "NO2.es",
+ 	"type": "web",
+ 	"main": "index.html",
+-	"title": "Free Klondike Solitaire",
++	"title": "Klondike Solitaire",
+ 	"icon": "icon.png"
+ }
+--- .orig/media/cryptofs/apps/usr/palm/applications/es.no2.solitaire/app/assistants/game-assistant.js
++++ /media/cryptofs/apps/usr/palm/applications/es.no2.solitaire/app/assistants/game-assistant.js
+@@ -247,4 +247,7 @@
+ 				Mojo.Controller.stageController.pushScene('support');
+ 				break;
+ 		}
++	} else if(event.type == Mojo.Event.back){
++		Event.stop(event);
++		this.doUndo();
+ 	}
+--- .orig/media/cryptofs/apps/usr/palm/applications/es.no2.solitaire/app/assistants/stage-assistant.js
++++ /media/cryptofs/apps/usr/palm/applications/es.no2.solitaire/app/assistants/stage-assistant.js
+@@ -59,7 +59,7 @@
+ 	}
+ 
+ 	//Mojo.Log.info('pushScene game');
+-	this.controller.pushScene('splash');
++	this.controller.pushScene('game');
+ }
+ 
+ StageAssistant.prototype.cleanup = function() {

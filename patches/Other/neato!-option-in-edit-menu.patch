@@ -1,0 +1,111 @@
+Name: Neato! Option in Edit Menu
+Version: 1.4.5-1
+Author: Jason Robitaille
+Description: Adds a Neato! option to the system Edit menu. Will send any highlighted text via Neato!, to your PC.
+
+--- .orig/usr/palm/frameworks/mojo/submissions/347/javascripts/controller_scene.js
++++ /usr/palm/frameworks/mojo/submissions/347/javascripts/controller_scene.js
+@@ -893,6 +893,20 @@
+ 				case Mojo.Menu.selectAllCmd:
+ 					this.doExecCommand(event, 'selectall');
+ 					break;
++				case Mojo.Menu.neatoCmd:
++					var txt = this.window.getSelection();
++					if(txt.length>0) {
++						this.serviceRequest("palm://com.palm.applicationManager", {
++							method: "open",
++							parameters: {
++								id: "com.zhephree.neato",
++								params: {
++									send: txt
++								}
++							}
++						});
++					}
++					break;
+ 			}
+ 			
+ 		} else if (event.type === Mojo.Event.commandEnable) {			
+--- .orig/usr/palm/frameworks/mojo/submissions/347/javascripts/widget_menu.js
++++ /usr/palm/frameworks/mojo/submissions/347/javascripts/widget_menu.js
+@@ -421,6 +421,11 @@
+  */
+ Mojo.Menu.selectAllCmd = 'palm-selectall-cmd';
+ 
++//Neato constant
++Mojo.Menu.neatoCmd = 'palm-neato-cmd';
++//Neato menu object
++Mojo.Menu.neatoItem = {label:'Neato!', command:Mojo.Menu.neatoCmd};
++
+ /**
+  * @constant 
+  * @description Cut item menu object
+@@ -483,7 +488,8 @@
+ 												 Mojo.Menu.selectAllItem,
+ 												 Mojo.Menu.cutItem,
+ 												 Mojo.Menu.copyItem,
+-												 Mojo.Menu.pasteItem
++												 Mojo.Menu.pasteItem,
++												 Mojo.Menu.neatoItem
+ 				]};
+ 
+ /**
+@@ -497,7 +503,8 @@
+ 												 Mojo.Menu.pasteItem,
+ 												 Mojo.Menu.boldItem,
+ 												 Mojo.Menu.italicItem,
+-												 Mojo.Menu.underlineItem
++												 Mojo.Menu.underlineItem,
++												 Mojo.Menu.neatoItem
+ 				]};
+ 
+ 
+--- .orig/usr/palm/frameworks/mojo/builtins/palmInitFramework347.js
++++ /usr/palm/frameworks/mojo/builtins/palmInitFramework347.js
+@@ -4047,6 +4047,15 @@
+ case Mojo.Menu.selectAllCmd:
+ this.doExecCommand(event,'selectall');
+ break;
++case Mojo.Menu.neatoCmd:
++var txt = this.window.getSelection();
++if(txt.length>0) {
++this.serviceRequest("palm://com.palm.applicationManager", {
++method:"open",
++parameters: {id:"com.zhephree.neato", params:{send: txt} }
++});
++}
++break;
+ }
+ 
+ }else if(event.type===Mojo.Event.commandEnable){
+@@ -14296,6 +14305,10 @@
+ Mojo.Menu.selectAllCmd='palm-selectall-cmd';
+ 
+ 
++Mojo.Menu.neatoCmd = 'palm-neato-cmd';
++Mojo.Menu.neatoItem = {label:'Neato!', command:Mojo.Menu.neatoCmd, checkEnabled:true};
++
++
+ Mojo.Menu.cutItem={label:$LL('Cut'),command:Mojo.Menu.cutCmd,shortcut:'x',checkEnabled:true};
+ 
+ 
+@@ -14327,7 +14340,8 @@
+ Mojo.Menu.selectAllItem,
+ Mojo.Menu.cutItem,
+ Mojo.Menu.copyItem,
+-Mojo.Menu.pasteItem
++Mojo.Menu.pasteItem,
++Mojo.Menu.neatoItem
+ ]};
+ 
+ 
+@@ -14338,7 +14352,8 @@
+ Mojo.Menu.pasteItem,
+ Mojo.Menu.boldItem,
+ Mojo.Menu.italicItem,
+-Mojo.Menu.underlineItem
++Mojo.Menu.underlineItem,
++Mojo.Menu.neatoItem
+ ]};
+ 
+ 

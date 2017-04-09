@@ -1,0 +1,26 @@
+Name: Improved PIXI Photo Naming
+Version: 2.0.1-1
+Author: Jason Robitaille
+Description: Will output images from the camera in the format: PIXI_YYYY-MM-DD-hhmmss.jpg  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.camera/javascripts/camera-control.js
++++ /usr/palm/applications/com.palm.app.camera/javascripts/camera-control.js
+@@ -706,7 +706,17 @@
+ 				} 
+ 
+ 				llog("Capture Options: ", JSON.stringify(imagecaptureoptions));
+-
++				if(!this.scene.sublaunch) {
++					var date = new Date();
++					var YYYY = date.getFullYear();
++					var MM = (1+date.getMonth()); if (MM<10) { MM = "0"+MM; }
++					var DD = (0+date.getDate()); if (DD<10) { DD = "0"+DD; }
++					var hh = date.getHours(); if (hh < 10) { hh = "0"+hh; }
++					var mm = date.getMinutes(); if (mm < 10) { mm = "0"+mm; }
++					var ss = date.getSeconds(); if (ss < 10) { ss = "0"+ss; }
++					var fileBase = "_" + YYYY + "-" +  MM + "-" + DD + "-" + hh + mm + ss;
++					this.scene.defaultFilename = "/media/internal/DCIM/100PALM/PIXI" + fileBase + ".jpg";
++				}
+ 				cam.startImageCapture(this.scene.defaultFilename, imagecaptureoptions);
+ 
+ 				break;

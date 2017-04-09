@@ -1,0 +1,138 @@
+.backdrop {
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:-100;
+	width:100%;
+	height:auto;
+	min-height:100%;
+	overflow-y:hidden;
+	background-color:#a7a7a7;
+}
+
+/*.backdrop {
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:-100;
+	width:100%;
+	height:auto;
+	min-height:100%;
+	overflow-y:hidden;
+}*/
+
+#mojo-scene-browser {
+	height:100%;
+	width:100%;
+}
+
+#mojo-scene-viewer {
+	height:100%;
+	width:100%;
+}
+
+.mainIcon {
+	position:fixed;
+	top:1px;
+	left:55px;
+	width:45px;
+	height:45px;
+}
+
+.mainTitle {
+	font-family:sans-serif;
+	font-size:1.2em;
+}
+
+#loadingSpinner {
+	opacity: 0.4;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
+	margin-bottom:30px;
+	text-align:center;
+}
+
+.nameLabel {
+	position:relative;
+	padding: 0 5px 0 5px;
+	font-size:0.85em;
+	width:100%;
+	white-space:normal !important;
+	word-wrap:break-word !important;
+}
+
+.icon {
+	width:48px;
+	height:100%;
+	margin: 0px;
+	padding: 0px;
+	vertical-align:middle;
+	position:relative;
+	float:left;
+	left: 10px;
+	border:0;
+}
+
+.icon.file { background:url(../images/icons/video.png) center center no-repeat; }
+
+.icon.up-dir { background:url(../images/icons/base.png) center center no-repeat; }
+
+.icon.dir { background:url(../images/icons/folder.png) center center  no-repeat; }
+
+.icon.x-3gp { background:url(../images/icons/3gp.png) center center  no-repeat; }
+
+.icon.x-asf { background:url(../images/icons/asf.png) center center  no-repeat; }
+
+.icon.x-asx { background:url(../images/icons/asx.png) center center  no-repeat; }
+
+.icon.x-avi { background:url(../images/icons/avi.png) center center  no-repeat; }
+
+.icon.x-flac { background:url(../images/icons/flac.png) center center  no-repeat; }
+
+.icon.x-flv { background:url(../images/icons/flv.png) center center  no-repeat; }
+
+.icon.x-mkv { background:url(../images/icons/mkv.png) center center  no-repeat; }
+
+.icon.x-mov, .icon.x-qt
+{ background:url(../images/icons/mov.png) center center  no-repeat; }
+
+.icon.x-mp3 { background:url(../images/icons/mp3.png) center center  no-repeat; }
+
+.icon.x-mp4 { background:url(../images/icons/mp4.png) center center  no-repeat; }
+
+.icon.x-mpeg, .icon.x-mpg, .icon.x-vob
+{ background:url(../images/icons/mpeg.png) center center  no-repeat; }
+
+.icon.x-ogg, .icon.x-ogv, .icon.x-oga
+{ background:url(../images/icons/ogg.png) center center  no-repeat; }
+
+.icon.x-rm, .icon.x-rv, .icon.x-ra
+{ background:url(../images/icons/rm.png) center center  no-repeat; }
+
+.icon.x-wav { background:url(../images/icons/wav.png) center center  no-repeat; }
+
+.icon.x-wma { background:url(../images/icons/wma.png) center center  no-repeat; }
+
+.icon.x-wmv { background:url(../images/icons/wmv.png) center center  no-repeat; }
+
+
+hr {
+	margin: 0px;
+	padding: 0px;
+	height: 1px;
+	border: 0;
+	background-color:#8c8c8c;
+	border-bottom:solid 1px #d7d7d7;
+}
+
+#cbHandler {
+	float: right;
+}
+
+.inputBox {
+	width:100%;
+	padding: 3px 3px 3px 3px !important;
+	margin: 8px -0 -5px -2px !important;
+	border: groove black 1px;
+}

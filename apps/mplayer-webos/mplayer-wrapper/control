@@ -1,0 +1,9 @@
+Package: ca.canucksoftware.mplayer
+Version: 1.0.2
+Section: misc
+Priority: optional
+Architecture: armv7
+Depends: ca.canucksoftware.js-service-framework
+Maintainer: Jason Robitaille
+Description: MPlayer
+Source: {"Homepage":"http://code.google.com/p/mplayer-webos/","LastUpdated":"1300670688","Screenshots":["http://img841.imageshack.us/img841/624/mplayer20112003195552.png","http://img826.imageshack.us/img826/3273/mplayer20112003195559.png"],"Type":"Application","Location":"http://mplayer-webos.googlecode.com/files/ca.canucksoftware.mplayer_1.0.0_armv7.ipk","Title":"MPlayer","PostInstallFlags":"RestartJava","Source":"http://code.google.com/p/mplayer-webos/source/browse/","Category":"Entertainment","License":"GPL v2 Open Source","FullDescription":"MPlayer is a movie player which runs on many systems. It plays most MPEG/VOB, FLV, AVI, Ogg/OGM, VIVO, ASF/WMA/WMV, QT/MOV/MP4, RealMedia, Matroska, NUT, NuppelVideo, FLI, YUV4MPEG, FILM, RoQ, PVA files, supported by many native, XAnim, and Win32 DLL codecs. You can watch VideoCD, SVCD, DVD, 3ivx, DivX 3/4/5, WMV and even H.264 movies.","PostRemoveFlags":"RestartJava","Icon":"http://img545.imageshack.us/img545/3186/iconro.png","PostUpdateFlags":"RestartJava"}

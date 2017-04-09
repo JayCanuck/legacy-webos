@@ -1,0 +1,22 @@
+Name: AM/PM Indicator in Top Bar
+Version: 1.4.5-1
+Author: Jason Robitaille
+Description: Adds an AM/PM indicator to the top bar's time display
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
+@@ -2552,7 +2552,13 @@
+ 		}
+ 	}
+ 	format = format.replace(/\s?a\s?/,"");	
++	var suffix = "";
++	if(new Date().getHours() < 12) {
++		suffix = "a";
++	} else {
++		suffix = "p";
++	}
+-	$('clock').innerHTML = Mojo.Format.formatDate(date, {time: format});				
++	$('clock').innerHTML = Mojo.Format.formatDate(date, {time: format}) + suffix;	
+ 	$('today').innerHTML = Mojo.Format.formatDate(date,{date:'short'});
+ },
+ 

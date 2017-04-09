@@ -1,0 +1,28 @@
+Name: YouTube URL Copy
+Version: 2.0.1-1
+Author: Jason Robitaille
+Description: Adds the ability to copy a video's URL to the clipboard in the YouTube app  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.youtube/app/controllers/video-assistant.js
++++ /usr/palm/applications/com.palm.app.youtube/app/controllers/video-assistant.js
+@@ -78,6 +78,10 @@
+ 						}});
+ 				event.stop(event);
+ 			}	
++			else if (event.command == 'clipboard' && this.video.shareLink && this.video.shareLink != "") {
++				this.controller.stageController.setClipboard(this.video.shareLink);
++				event.stop(event);
++			}
+ 			else {
+ 				AppAssistant.common.handleCommand(event);	
+ 			}
+@@ -93,7 +97,8 @@
+ 	shareMenuModel: {label: $L('Share'), 
+ 					items: [
+ 						{label: $L('Email'), command:'email'}, 
+-						{label: $L('Text Message'), command:'msg' }
++						{label: $L('Text Message'), command:'msg'},
++						{label: $L('Copy URL to Clipboard'), command:'clipboard'}
+ 					]}
+ 	
+ });

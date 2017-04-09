@@ -1,0 +1,13 @@
+<div class="palm-page-header">
+	<div class="palm-page-header-wrapper">
+		<div class="icon" id="icon"></div>
+		<div class="title center left" id="title" align="center"></div>
+	</div>
+</div>
+<div class="palm-body-text">
+	<div class="statusText" id="status"></div>
+	<div id="description"></div>
+	<br>
+	<div id="changelog"></div>
+	<div class="center" id="footer"></div>
+</div>

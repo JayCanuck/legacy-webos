@@ -1,0 +1,22 @@
+Name: Fix German Time Categories in App Catalog
+Version: 1.4.5-1
+Author: Jason Robitaille
+Description: Fixes the issue preventing the App Catalog from properly displaying time-based categories. Based on the fix discovered by ArthurThornton.  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.findapps/resources/de_de/strings.json
++++ /usr/palm/applications/com.palm.app.findapps/resources/de_de/strings.json
+@@ -394,7 +394,7 @@
+ 	"older": "Ältere",
+ 	"package not found": "Paket nicht gefunden",
+ 	"times.": "Bewertungen",
+-	"today": "Heute",
++	"today": "heute",
+ 	"unknown MB": "MB unbekannt",
+ 	"unknown Mb": "MB unbekannt",
+ 	"unknown status": "Unbekannter Status",
+@@ -401,4 +401,4 @@
+ 	"unpacking": "Entpacken",
+ 	"unpacking failed": "Fehler beim Entpacken",
+ 	"verifying": "Überprüfen",
+-	"yesterday": "Gestern"
++	"yesterday": "gestern"

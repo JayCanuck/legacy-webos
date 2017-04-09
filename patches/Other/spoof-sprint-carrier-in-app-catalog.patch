@@ -1,0 +1,29 @@
+Name: Spoof Sprint Carrier in App Catalog
+Version: 1.3.5.1-1
+Author: Anonymous
+Description: Will make the App Catalog think your device is Sprint and show full USA app offerings.
+
+--- .orig/usr/palm/applications/com.palm.app.findapps/weave/services/deviceprofile.js
++++ /usr/palm/applications/com.palm.app.findapps/weave/services/deviceprofile.js
+@@ -30,6 +30,8 @@
+ 		},
+ 		function(response)
+ 		{
++			response.mcc = 310;
++			response.shortName = "sprint";
+ 			callback(true, response);
+ 		},
+ 		function()
+\ No newline at end of file
+--- .orig/usr/palm/applications/com.palm.app.findapps/weave/services/systemproperties.js
++++ /usr/palm/applications/com.palm.app.findapps/weave/services/systemproperties.js
+@@ -14,7 +14,7 @@
+ 		},
+ 		function(response)
+ 		{
+-			callback(true, response['com.palm.properties.DMCARRIER']);
++			callback(true, "Sprint");
+ 		},
+ 		function()
+ 		{
+\ No newline at end of file

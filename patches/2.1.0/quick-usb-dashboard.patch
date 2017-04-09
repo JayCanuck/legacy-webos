@@ -1,0 +1,10 @@
+Name: Quick USB Dashboard
+Version: 2.0.1-1
+Author: Jason Robitaille
+Description: This will skip the "Charging battery" banner when connected to a computer via USB  (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
+@@ -2431,1 +2431,1 @@
+-			Mojo.Controller.getAppController().showBanner(bannerParams, {},'chargingAlert');
++			//Mojo.Controller.getAppController().showBanner(bannerParams, {},'chargingAlert');

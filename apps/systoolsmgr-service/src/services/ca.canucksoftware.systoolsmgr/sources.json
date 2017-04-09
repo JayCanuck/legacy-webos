@@ -1,0 +1,17 @@
+[
+	{
+		"library": { "name": "foundations", "version": "1.0" }
+	},
+	{
+    		"source": "systoolsmgr-assistant.js"
+    	},
+    	{
+	    	"source": "common.js"
+    	},
+    	{
+		"source": "commandline.js"
+    	},
+    	{
+		"source": "lunasend.js"
+    	}
+]

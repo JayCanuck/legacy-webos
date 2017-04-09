@@ -1,0 +1,21 @@
+#! /bin/sh
+
+FRAMEWORKS_PATH=/usr/palm/frameworks
+NODE_ADDONS=/usr/palm/nodejs
+NODE=/bin/node
+PARAMS="--notimeout_script_execution /usr/palm/services/jsservicelauncher/bootstrap-node.js -- /var/palm/ls2"
+COMMAND_STRING="$NODE $PARAMS"
+SERVICE_PATH=$1
+
+if [ "$1" == "-k" ] ; then
+	SERVICE_PATH=$2
+	COMMAND_STRING="$COMMAND_STRING --disable-timeouts"
+fi
+
+cd $SERVICE_PATH
+
+if [-f /usr/lib/libmemcpy.so ] ; then
+	export LD_PRELOAD="/usr/lib/libmemcpy.so:${LD_PRELOAD}"
+fi
+export NODE_PATH="$FRAMEWORKS_PATH:$NODE_ADDONS"
+exec $COMMAND_STRING

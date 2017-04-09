@@ -1,0 +1,49 @@
+{
+	"id": "ca.canucksoftware.mplayer",
+	"description": "MPlayer Service",
+	"commandTimeout": 120000,
+	"activityTimeout": 120000,
+	"services": [
+		{
+			"name": "ca.canucksoftware.mplayer",
+			"description": "Custom homebrew service for MPlayer",
+			"commands": [
+				{
+					"name": "status",
+					"assistant": "StatusAssistant",
+					"public": true
+                		},
+                		{
+					"name": "version",
+					"assistant": "VersionAssistant",
+					"public": true
+                		},
+                		{
+					"name": "list",
+					"assistant": "ListAssistant",
+					"public": true
+				},
+				{
+					"name": "open",
+					"assistant": "OpenAssistant",
+					"public": true
+                		},
+                		{
+					"name": "exists",
+					"assistant": "ExistsAssistant",
+					"public": true
+                		},
+                		{
+					"name": "delete",
+					"assistant": "DeleteAssistant",
+					"public": true
+                		},
+                		{
+					"name": "registerAsHandler",
+					"assistant": "RegisterHandlerAssistant",
+					"public": true
+				}
+			] 
+		}
+	]
+}

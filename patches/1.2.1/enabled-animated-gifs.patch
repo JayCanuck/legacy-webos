@@ -1,0 +1,16 @@
+Name: Enabled Animated Gifs
+Version: 1.2.1-1
+Author: Jason Robitaille
+Description: Enables animated gifs in the web browser (MIT license)
+
+--- .orig/etc/palm/browser-app.conf
++++ /etc/palm/browser-app.conf
+@@ -45,7 +45,7 @@
+ DiskCacheLargestObjectSize=1MB
+ 
+ # disable gif animations till display list is optimized
+-DisableGifAnimations=true
++DisableGifAnimations=false
+ 
+ [JavaScript]
+ Enabled=true

@@ -1,0 +1,27 @@
+Name: Fahrenheit Temperature in Device Info
+Version: 1.4.0-1
+Author: Jason Robitaille
+Description: Adds the current battery temperature to the Device Info application.  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.deviceinfo/app/controllers/list-assistant.js
++++ /usr/palm/applications/com.palm.app.deviceinfo/app/controllers/list-assistant.js
+@@ -139,6 +139,9 @@
+ 		if ("percent_ui" in response) {
+ 			this.fields.battery = Mojo.Format.formatPercent(response["percent_ui"]);
+ 		}
++		if("temperature_C" in response) {
++			this.fields.temperature = Math.round((response["temperature_C"]*(9/5)) + 32) + "&deg;F";
++		}
+ 		this.updateFields(this.softwareItems, this.softwareModel);
+ 	},
+ 	  
+@@ -437,6 +440,9 @@
+         title: $L("Battery"),
+         field: "battery"
+     },{
++        title: "Temperature",
++        field: "temperature"
++    },{
+         title: $L("Memory"),
+         field: "totalMem"
+     },{

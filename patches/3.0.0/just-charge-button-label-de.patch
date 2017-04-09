@@ -1,0 +1,17 @@
+Name: Just Charge Button Label DE
+Version: 3.0.0-1
+Author: Jason Robitaille
+Description: On the USB Mode popup, it'll rename the Cancel button back to the classic Just Charge button  (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/StoragedAlerts/StoragedAlerts.js
++++ /usr/lib/luna/system/luna-systemui/app/StoragedAlerts/StoragedAlerts.js
+@@ -41,7 +41,7 @@
+ 		                   {name:"infoIcon", className:"info-icon", onclick: "showInfo"}
+ 		                ]
+ 		 },
+-		 {kind: "NotificationButton", className: "enyo-notification-button", layoutKind:"HFlexLayout", pack:"center", onclick:"charge", components:[{content: $L("Cancel")}]},
++		 {kind: "NotificationButton", className: "enyo-notification-button", layoutKind:"HFlexLayout", pack:"center", onclick:"charge", components:[{content: "Nur aufladen"}]},
+ 		 {
+ 		 	kind:enyo.PalmService, name:"enterMSMMode", service:"palm://com.palm.storage/diskmode/", method:"enterMSM"
+ 		 },
+\ No newline at end of file

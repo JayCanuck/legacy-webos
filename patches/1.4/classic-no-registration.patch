@@ -1,0 +1,16 @@
+Name: Classic No Registration
+Version: 1.4-1
+Author: Orginally Jacovasquez, patch by C4PDA
+Description: Patches Classic to avoid registration
+
+--- .orig/media/cryptofs/apps/usr/palm/applications/com.motionapps.app.classic/javascript/support_info.js
++++ /media/cryptofs/apps/usr/palm/applications/com.motionapps.app.classic/javascript/support_info.js
+@@ -20,6 +20,6 @@
+  */
+ 
+ // Required
+-_APP_LicCode = 0;
+-_APP_Type = 'FreeTrial';
++_APP_LicCode = 84596;
++_APP_Type = 'Full';
+ _APP_Name = 'Classic';

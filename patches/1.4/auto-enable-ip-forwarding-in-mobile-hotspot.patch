@@ -1,0 +1,49 @@
+Name: Auto-Enable IP Forwarding In Mobile Hotspot
+Version: 1.4-1
+Author: Jason Robitaille
+Description: Will automatically toggle IP forwarding when using Mobile Hotspot. Note: requires freeTetherD.  (MIT license)
+
+--- .orig/media/cryptofs/apps/usr/palm/applications/com.palm.app.mobilehotspot/app/controllers/microap-assistant.js
++++ /media/cryptofs/apps/usr/palm/applications/com.palm.app.mobilehotspot/app/controllers/microap-assistant.js
+@@ -139,7 +139,7 @@
+ 	this.controller.get('changePassphrase').observe(Mojo.Event.tap, this.passphraseSelectionHandler.bindAsEventListener(this));
+ 	this.controller.get('clientList').observe(Mojo.Event.listTap, this.clientSelectionHandler.bindAsEventListener(this));
+ 
+-    	this.controller.listen('microaponoff', Mojo.Event.propertyChange, this.toggleSelectionHandler.bindAsEventListener(this));
++    	this.controller.listen('microaponoff', Mojo.Event.propertyChange, this.toggleHotspot.bindAsEventListener(this));
+         this.controller.listen(this.controller.sceneElement, Mojo.Event.stageActivate, this.appFocusActivatedEventHandler.bindAsEventListener(this));
+         this.controller.listen(this.controller.sceneElement, Mojo.Event.stageDeactivate, this.appFocusDeactivatedEventHandler.bindAsEventListener(this));
+ 
+@@ -174,6 +174,32 @@
+         }
+     }, 
+ 
++    toggleHotspot: function(event) {
++    	this.controller.serviceRequest('palm://us.ryanhope.freeTetherD', {
++	    	method: 'get_ip_forward',
++	    	parameters: {},
++	    	onSuccess: function(response) {
++	    		if(response.state != microapassistant.toggleModel.value) {
++				if(!microapassistant.toggleModel.value) { //enable ip forwarding before
++					this.toggleSelectionHandler(); 
++				}
++				this.controller.serviceRequest('palm://us.ryanhope.freeTetherD', {
++					method: 'toggle_ip_forward',
++					parameters: {},
++					onSuccess: function() {
++						if(microapassistant.toggleModel.value) { //disable ip forwarding after
++							this.toggleSelectionHandler();
++						}
++					}.bind(this)
++				});
++    			} else {
++				this.toggleSelectionHandler();
++			}
++	    	}.bind(this)
++    	});
++    	
++    },
++    
+     toggleSelectionHandler: function(event)
+     {
+         if (microapassistant.toggleModel.value)

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="height=device-height"/>
+	<title>WOSQI Homebrew Guide</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// Setup
+		var loc = window.location.href;
+		var path = loc.substr(0, loc.lastIndexOf("/") + 1);
+		var app = "enyo.html"; // default version
+		// Switching logic
+		var deviceInfo, majorVersion;
+		if(window.PalmSystem) {
+			deviceInfo = JSON.parse(PalmSystem.deviceInfo);
+			majorVersion = deviceInfo["platformVersionMajor"];
+            if(majorVersion < 3) {
+                app = "mojo.html";
+            }
+		}
+		// Redirection
+		window.location.href = path + app;
+	</script>	
+</body>
+</html>

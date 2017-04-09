@@ -1,0 +1,82 @@
+#enabled {
+	position:fixed;
+	top:0px;
+	right:5px;
+	z-index:100000 !important;
+}
+
+.weekSpacer {
+	height: 50px;
+}
+.weekBorder {
+	top:102px;
+	left:22px;
+	height:44px;
+	width:273px;
+	position:absolute;
+	border: solid 1px black;
+}
+
+.day {
+	top:90px;
+	position:absolute;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+.sun {
+	left:19px;
+}
+
+.mon {
+	left:56px;
+}
+
+.tue {
+	left:99px;
+}
+
+.wed {
+	left:137px;
+}
+
+.thu {
+	left:180px;
+}
+
+.fri {
+	left:218px;
+}
+
+.sat {
+	left:255px;
+}
+
+#time {
+	margin-top: 5px;
+	margin-left: 15px;
+}
+
+.system-notification {
+	overflow: hidden;
+	background: #000;
+}
+
+#buttonTable {
+	margin-top:-15px
+}
+
+#groupSpacer {
+	height:5px;
+}
+
+#btnList {
+	margin-top: 10px;
+	margin-bottom: -10px;
+}
+
+.inputBox {
+	width:94%;
+	padding: 0 0 0 0 !important;
+	margin: 10px 0 -5px 0 !important;
+}

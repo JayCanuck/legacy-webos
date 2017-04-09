@@ -1,0 +1,71 @@
+.backdrop {
+	position:fixed;
+	top:0;
+	z-index:-1000;
+	width:100%;
+	height:auto;
+	overflow-y:hidden;
+}
+
+#mojo-scene-listview {
+	height:100%;
+	width:100%;
+}
+
+/*#title {
+	text-align:center;
+	font-size:1.2em;
+	font-family: serif;
+}
+
+#titleImg, #titleIcon {
+	height: 40px;
+	width: auto;
+	vertical-align:middle;
+}*/
+
+.header {
+	position:fixed;
+	width:100%;
+	padding-top:6px;
+	vertical-align:middle;
+	text-align:center;
+	background: url(../images/palm-header.png) no-repeat center;
+}
+
+.palm-header-spacer {
+	height: 75px !important;
+}
+
+#headerImage {
+	height:60px;
+	/*width:auto;*/
+}
+
+.palm-group {
+	-webkit-border-image: url(../images/palm-group.png) 40 18 18 18 repeat repeat !important;
+}
+
+.info-text {
+	font-size:0.8em !important;
+}
+
+.label {
+	text-align:center !important;
+}
+
+hr {
+	margin: 0px;
+	padding: 0px;
+}
+
+#cbMetric, #pickNumber {
+	float: right;
+}
+
+#pickNumber {
+	position:relative;
+	right:-10px;
+	top:-15px;
+}
+

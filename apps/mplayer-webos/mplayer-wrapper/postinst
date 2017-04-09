@@ -1,0 +1,38 @@
+#!/bin/sh
+
+ID=ca.canucksoftware.mplayer
+SERVICES_PATH=/media/cryptofs/apps/usr/palm/services/$ID
+
+if [ -z "$IPKG_OFFLINE_ROOT" ]; then
+	/usr/sbin/rootfs_open -w
+fi
+
+if [ -f /usr/bin/java-serviceboot ] ; then
+	#java exists, so install java service
+	
+	/bin/chmod -R 777 $SERVICES_PATH
+	
+	#copy service files
+	/bin/cp -f $SERVICES_PATH/java/MPlayer.jar /usr/lib/luna/java/MPlayer.jar
+	/bin/cp -f $SERVICES_PATH/java/$ID.service /usr/share/dbus-1/system-services/$ID.service
+	/bin/cp -f $SERVICES_PATH/java/$ID /etc/event.d/$ID
+else
+	#no java, so install js service
+
+	#remove java service if any files remain
+	/bin/rm -f /usr/lib/luna/java/MPlayer.jar
+	/bin/rm -f /usr/share/dbus-1/system-services/$ID.service
+	/bin/rm -f /etc/event.d/$ID
+	
+	/bin/chmod -R 777 $SERVICES_PATH
+	
+	#make directories in the rare event they don't exist
+	/bin/mkdir -p /var/palm/ls2/services/prv
+	/bin/mkdir -p /var/palm/ls2/services/pub
+	
+	#copy dbus service file
+	/bin/cp -f $SERVICES_PATH/dbus /var/palm/ls2/services/prv/$ID.service
+	/bin/cp -f $SERVICES_PATH/dbus /var/palm/ls2/services/pub/$ID.service
+fi
+
+exit 0

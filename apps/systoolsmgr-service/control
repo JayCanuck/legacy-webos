@@ -1,0 +1,9 @@
+Package: ca.canucksoftware.systoolsmgr
+Version: 1.0.0
+Section: misc
+Priority: optional
+Architecture: all
+Depends: ca.canucksoftware.js-service-framework
+Maintainer: Jason Robitaille
+Description: SysToolsMgr Service
+Source: {"Homepage":"http://www.precentral.net/systoolsmgr-service","Category":"Services and Plugins","LastUpdated":"1298664399","License":"MIT Open Source","Type":"Service","FullDescription":"A custom 'odds and ends' service library for getting various bits of system information and various other system functions. API publicly available for developers to use.","PostRemoveFlags":"RestartJava","PostUpdateFlags":"RestartJava","Icon":"http://media.precentral.net/resources/application-icons/000/011/004/stringio.txt","Title":"SysToolsMgr Service","PostInstallFlags":"RestartJava"}

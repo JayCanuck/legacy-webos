@@ -1,0 +1,38 @@
+Name: Show Hidden Apps in Device Info
+Version: 1.4.5-1
+Author: Jason Robitaille
+Description: Will display hidden apps in the installed applications list in the Device Info app.  (MIT license)
+
+--- .orig/usr/palm/applications/com.palm.app.deviceinfo/app/controllers/more-assistant.js
++++ /usr/palm/applications/com.palm.app.deviceinfo/app/controllers/more-assistant.js
+@@ -148,7 +148,7 @@
+ 		
+ 		this.btPanChange = AppAssistant.telephonyService.getBtPanRouteStatus(this.btPanChangeCallback.bind(this), this.controller);
+ 		
+-		this.appManagerQuery = AppAssistant.appManagerService.listLaunchPoints(this.takeApps.bind(this), this.controller);
++		this.appManagerQuery = AppAssistant.appManagerService.listApps(this.takeApps.bind(this), this.controller);
+ 		
+ 		this._subscribeToAppChanges();
+     },
+@@ -405,8 +405,8 @@
+ 	takeApps: function(payload) {
+ 		Mojo.Log.info("takeApps ", Object.toJSON(payload));
+ 		
+-//		this.allApps = payload.apps;
+-		this.allApps = payload.launchPoints;
++		this.allApps = payload.apps;
++//		this.allApps = payload.launchPoints;
+ 		this.allApps.sort(this.sortFunction);
+ 		
+ 		$A(this.palmAppModel.items).clear();
+@@ -418,9 +418,7 @@
+ 			if (item.removable == false) {				
+ 				this.palmAppModel.items.push(item);
+ 			} else {
+-				if (item.launchPointId.startsWith(item.id)) {
+-					this.otherAppModel.items.push(item);
+-				}
++				this.otherAppModel.items.push(item);
+ 			}
+ 		}.bind(this));
+ 		

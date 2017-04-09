@@ -1,0 +1,7 @@
+#!/bin/sh
+
+/bin/rmdir /media/cryptofs/apps/usr/palm/applications/ca.canucksoftware.js-service-framework
+/bin/mkdir -p /var/usr/bin
+/usr/bin/install -m 777 /media/cryptofs/apps/usr/bin/run-homebrew-js-service /var/usr/bin/run-homebrew-js-service
+
+exit 0

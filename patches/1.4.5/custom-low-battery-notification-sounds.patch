@@ -1,0 +1,25 @@
+Name: Custom Low-Battery Notification Sounds
+Version: 1.4.5-1
+Author: Jason Robitaille
+Description: Let's you specify custom low-battery notification sounds for the <20% and <10% battery marks. Files must be mp3 format, in /media/internal/.sounds/ and named twentyPercent.mp3 and tenPercent.mp3 respectively.  (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
++++ /usr/lib/luna/system/luna-systemui/app/controllers/bar-assistant.js
+@@ -1813,7 +1813,7 @@
+ 					this.controller.showBanner({
+ 						messageText: batteryalert,
+ 						icon: "/usr/lib/luna/system/luna-systemui/images/battery-"+i+'.png',
+-						soundClass: "notifications"
++						soundFile: "/media/internal/.sounds/tenPercent.mp3"
+ 					},{}, 'batteryAlert');
+ 				}				
+ 				else if(this.batteryLevel > 10 && this.batteryLevel <= 20 && !this.batteryLevel20Shown) {
+@@ -1822,7 +1822,7 @@
+ 					this.controller.showBanner({
+ 						messageText: batteryalert,
+ 						icon: "/usr/lib/luna/system/luna-systemui/images/battery-"+i+'.png',
+-						soundClass: "notifications"
++						soundFile: "/media/internal/.sounds/twentyPercent.mp3"
+ 					},{}, 'batteryAlert');	
+ 				}
+ 				
