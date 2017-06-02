@@ -1,7 +1,7 @@
 {
 	"id": "ca.canucksoftware.systoolsmgr",
 	"serviceId": "ca.canucksoftware.systoolsmgr",
-	"version": "1.0.0",
+	"version": "1.0.6",
 	"vendor": "Jason Robitaille",
 	"type": "web",
 	"main": "index.html",
@@ -10,6 +10,36 @@
 	"description": "This is power homebrew service for webOS. It contains many useful system functions, including LED flash control, and is publicly available for any developer to use.",
 	"donate": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9500502",
 	"changelog": [
+		{
+			"version": "1.0.6",
+			"changes": [
+				"Fixed SysToolsMgr ipkg feed download issue"
+			]
+		},
+		{
+			"version": "1.0.5",
+			"changes": [
+				"Added Pre3 LED flash support"
+			]
+		},
+		{
+			"version": "1.0.3",
+			"changes": [
+				"Added a hasFlash function"
+			]
+		},
+		{
+			"version": "1.0.2",
+			"changes": [
+				"Fixed clock theme list updater"
+			]
+		},
+		{
+			"version": "1.0.1",
+			"changes": [
+				"Minor code cleanup"
+			]
+		},
 		{
 			"version": "1.0.0",
 			"changes": [
@@ -50,4 +80,6 @@
 		},
 	],
 	"copyright": "&copy; Copyright 2010-2011, Jason Robitaille",
+	"visible": true,
+	"uiRevision": 2
 }

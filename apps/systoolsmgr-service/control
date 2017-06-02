@@ -1,9 +1,9 @@
 Package: ca.canucksoftware.systoolsmgr
-Version: 1.0.0
+Version: 1.0.3
 Section: misc
 Priority: optional
 Architecture: all
 Depends: ca.canucksoftware.js-service-framework
 Maintainer: Jason Robitaille
 Description: SysToolsMgr Service
-Source: {"Homepage":"http://www.precentral.net/systoolsmgr-service","Category":"Services and Plugins","LastUpdated":"1298664399","License":"MIT Open Source","Type":"Service","FullDescription":"A custom 'odds and ends' service library for getting various bits of system information and various other system functions. API publicly available for developers to use.","PostRemoveFlags":"RestartJava","PostUpdateFlags":"RestartJava","Icon":"http://media.precentral.net/resources/application-icons/000/011/004/stringio.txt","Title":"SysToolsMgr Service","PostInstallFlags":"RestartJava"}
+Source: {"Homepage":"http://www.precentral.net/systoolsmgr-service","LastUpdated":"1302017898","Screenshots":["http://media.precentral.net/resources/application-screenshot/000/011/004/systoolsmgr_2011-03-03_201327.png"],"Type":"Service","Location":"http://media.precentral.net/resources/applications/000/011/004/ca.canucksoftware.systoolsmgr_1.0.0_all.ipk","Title":"SysToolsMgr Service","PostInstallFlags":"RestartJava","Source":"http://code.google.com/p/systoolsmgr-service/","Category":"Services and Plugins","License":"MIT Open Source","FullDescription":"A custom 'odds and ends' service library for getting various bits of system information and various other system functions. API publicly available for developers to use.","PostRemoveFlags":"RestartJava","Icon":"http://media.precentral.net/resources/application-icons/000/011/004/stringio.txt","PostUpdateFlags":"RestartJava"}

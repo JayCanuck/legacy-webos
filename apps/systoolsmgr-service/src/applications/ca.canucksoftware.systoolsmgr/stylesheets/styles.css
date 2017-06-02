@@ -12,6 +12,12 @@
 	text-align: center;
 }
 
+.horizontalCenter {
+	margin-left: auto;
+	margin-right: auto;
+	width:100%;
+}
+
 .statusText {
 	font-weight: bold;
 	margin: 15px 15px 15px 15px;

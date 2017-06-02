@@ -2,7 +2,7 @@
   "id": "ca.canucksoftware.systoolsmgr",
   "package_format_version": 2,
   "loc_name": "SysToolsMgr",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "icon": "icon.png",
   "miniicon": "icon.png",
   "vendor": "Jason Robitaille",

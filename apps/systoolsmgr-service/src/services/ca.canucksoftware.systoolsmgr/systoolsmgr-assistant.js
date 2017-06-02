@@ -5,7 +5,7 @@ StatusAssistant.prototype.run = function(future){
 
 function VersionAssistant() {}; //version
 VersionAssistant.prototype.run = function(future){
-	future.result = {version:"1.0.5"};
+	future.result = {version:"1.0.6"};
 };
 
 function SetDisplayAssistant() {}; //setDisplay
