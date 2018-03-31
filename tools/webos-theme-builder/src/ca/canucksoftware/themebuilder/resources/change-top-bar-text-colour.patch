@@ -1,0 +1,43 @@
+Name: Change Top Bar Text Colour
+Version: 1.2.1-1
+Author: Jason Robitaille
+Description: Changes the colour of the top bar's text
+
+--- .orig/usr/lib/luna/system/luna-systemui/stylesheets/systemui.css
++++ /usr/lib/luna/system/luna-systemui/stylesheets/systemui.css
+@@ -23,7 +23,7 @@
+ }
+ 
+ .status-bar {
+-		color: #fff;
++		color: #FF00FF; /*Edit Here*/
+ 		font-weight: bold;
+ 		font-size: 14px;
+ 		line-height: 25px;
+@@ -75,7 +75,7 @@
+ 		font-weight: bold;
+ 		font-size: 14px;
+ 		line-height: 26px;
+-		color: #fff;
++		color: #FF00FF; /*Edit Here*/
+ 		margin: 0px 3px 0 -4px;
+ 		max-width: 106px;
+ }
+@@ -84,7 +84,7 @@
+ 		font-weight: bold;
+ 		font-size: 14px;
+ 		line-height: 27px;
+-		color: #fff;
++		color: #FF00FF; /*Edit Here*/
+ 		max-width: 132px;
+ }
+ 
+@@ -90,7 +90,7 @@
+ 
+ #carrier {
+ 		float: left;
+-		color: #fff;
++		color: #FF00FF; /*Edit Here*/
+ 		margin-left: 2px;
+ 		white-space: nowrap;
+ 		overflow: hidden;

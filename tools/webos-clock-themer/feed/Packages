@@ -1,0 +1,396 @@
+Package: ca.canucksoftware.clock.basic
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 75f71ef5350b0173f79cc2bbe0baf140
+Size: 78382
+Filename: basic_1.0.0.ipk
+Description: Basic
+Maintainer: KDB Productions
+Source: {"Homepage":"http://www.KDBProdo.webs.com","Category":"Clock","LastUpdated":"1306901565","License":"Creative Commons","Feed":"Clock Themes","Screenshots":["http://kdbprodo.webs.com/clock_2011-03-04_201013.png"],"Type":"Theme","FullDescription":"This is a very simple, basic clock.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Basic","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.blue-glow-clock-theme
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 91f4aa31ef54e39f45bb7008e269d5b6
+Size: 703906
+Filename: blue-glow-clock-theme_1.0.0.ipk
+Description: Blue Glow
+Maintainer: Warlord9159
+Source: {"Category":"Clock","LastUpdated":"1306901672","Feed":"Clock Themes","Screenshots":["http://dl.dropbox.com/u/12521579/blueglow.png"],"Type":"Theme","FullDescription":"Has a blue glow to the hands and clock face.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Blue Glow","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock-theme-recovery
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 2151a824aec52cdb34f3d81e06216b72
+Size: 2252
+Filename: ca.canucksoftware.clock-theme-recovery_1.0.0_all.ipk
+Description: Clock Theme Recovery
+Maintainer: Jason Robitaille
+Source: {"Category":"Utilities","LastUpdated":"1306905628","Type":"Linux Application","FullDescription":"WARNING: This is a self-removing package that will remove all installed clock themes completely. In addition, it will reset the themes.json contents in the event you've accidentally destroyed that. Should fix most clock theme problems you may encounter.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Clock Theme Recovery","PostInstallFlags":"RestartLuna","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock-theme-reinstaller
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: deef1e3d6a4c9c1a73ec599e77326b9e
+Size: 1016
+Filename: ca.canucksoftware.clock-theme-reinstaller_1.0.0_all.ipk
+Description: Clock Theme Reinstaller
+Maintainer: Jason Robitaille
+Source: {"Homepage":"http://code.google.com/p/webos-clock-themer/","Category":"Utilities","LastUpdated":"1305344675","Type":"Linux Application","FullDescription":"This is a self-removing package that will re-install all Clock themes made with the WebOS Clock Theme Builder. This is useful in the event an OTA update wipes the theme entries from the Clock app.","PostRemoveFlags":"RestartLuna","PostUpdateFlags":"RestartLuna","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Clock Theme Reinstaller","PostInstallFlags":"RestartLuna","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.cogs-clock-theme
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: e195b24ff837213fd1825208607b707a
+Size: 163310
+Filename: cogs-clock-theme_1.0.0.ipk
+Description: Cogs
+Maintainer: Warlord9159
+Source: {"Category":"Clock","LastUpdated":"1306901885","Feed":"Clock Themes","Screenshots":["http://dl.dropbox.com/u/12521579/cogs.png"],"Type":"Theme","FullDescription":"Install and see :)<br>Runs a little slow in app view.<br> In Exhibition Mode, it runs really well and smooth...","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Cogs","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.darkcarbon
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: a721f57bbe0060d94c6e8fa2f78c1e40
+Size: 107536
+Filename: darkcarbon_1.0.0.ipk
+Description: DarkCarbon
+Maintainer: KDB Productions
+Source: {"Homepage":"http://www.kdbprodo.webs.com","MinWebOSVersion":"2.0.0","Category":"Clock","LastUpdated":"1306901988","License":"Creative Commons","Feed":"Clock Themes","Screenshots":["http://kdbprodo.webs.com/clock_2011-12-05_185525.png"],"Type":"Theme","FullDescription":"A dark carbon theme for the Clock.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"DarkCarbon","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.darkhex-clock-theme
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 40144f7812c3432914b110b3191ca41f
+Size: 232158
+Filename: darkhex-clock-theme_1.0.0.ipk
+Description: Dark Hex
+Maintainer: Warlord9159
+Source: {"Category":"Clock","LastUpdated":"1306903954","Feed":"Clock Themes","Screenshots":["http://dl.dropbox.com/u/12521579/clock_2011-15-05_205537.png"],"Type":"Theme","FullDescription":"Dark style clock with background image.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Dark Hex","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.daydatehex-clock-theme
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 8f88d596fb198239a185fd2cb709a695
+Size: 222534
+Filename: daydatehex-clock-theme_1.0.0.ipk
+Description: Date Hex
+Maintainer: Warlord9159
+Source: {"Homepage":"http://dl.dropbox.com/u/12521579/clock_2011-16-05_144643.png","Category":"Clock","LastUpdated":"1306904059","Feed":"Clock Themes","Screenshots":[""],"Type":"Theme","FullDescription":"This theme has the day and date showing in the theme","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Date Hex","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.digitalblue
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: e37c7e51ffa54a467abd7109e6cc68ca
+Size: 150058
+Filename: digitalblue_1.0.0.ipk
+Description: DigitalBlue
+Maintainer: KBD Productions
+Source: {"Homepage":"http://www.kdbprodo.webs.com","Category":"Clock","LastUpdated":"1306902076","License":"Creative Commons","Feed":"Clock Themes","Screenshots":["http://kdbprodo.webs.com/clock_2011-11-05_175639.png"],"Type":"Theme","FullDescription":"A blue theme for the Digital Clock.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"DigitalBlue","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.digitalred
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 624056434175a6adf0bcc0f384a00739
+Size: 99774
+Filename: digitalred_1.0.0.ipk
+Description: DigitalRed
+Maintainer: KDB Productions
+Source: {"Homepage":"http://www.kdbprodo.webs.com","Category":"Clock","LastUpdated":"1306902196","License":"Creative Commons","Feed":"Clock Themes","Screenshots":["http://kdbprodo.webs.com/clock_2011-11-05_184000.png"],"Type":"Theme","FullDescription":"A red theme for the Digital Clock.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"DigitalRed","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.flameage-clock-theme
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 83941f2711261e62bc20725f74697a0b
+Size: 1700476
+Filename: flameage-clock-theme_1.0.0.ipk
+Description: Flameage
+Maintainer: Warlord9159
+Source: {"Category":"Clock","LastUpdated":"1306904191","Feed":"Clock Themes","Screenshots":["http://dl.dropbox.com/u/12521579/screenscoot.png"],"Type":"Theme","FullDescription":"Kinda hot!!!","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Flameage","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.grunge-clock-theme
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 1a0f4b966acdce2fc07192cadb4217c2
+Size: 934942
+Filename: grunge-clock-theme_1.0.0.ipk
+Description: Grunge
+Maintainer: Warlord9159
+Source: {"Category":"Clock","LastUpdated":"1306902271","Feed":"Clock Themes","Screenshots":["http://dl.dropbox.com/u/12521579/clock_grunge-theme.png"],"Type":"Theme","FullDescription":"Grunge look to this clock theme.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Grunge","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.guinness
+Version: 1.0
+Section: misc
+Architecture: all
+MD5Sum: 793e4ac7cfa3415e8583440a52bd2539
+Size: 426504
+Filename: guinness_1.0.ipk
+Description: Guinness
+Maintainer: StuntmanMark
+Source: {"Category":"Clock","LastUpdated":"1306904373","Feed":"Clock Themes","Screenshots":["http://i60.photobucket.com/albums/h10/Sketchz64/photos-temp-1jpg-1.jpg"],"Type":"Theme","FullDescription":"A clock inspired by a great beer and a real life clock.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Guinness","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.honeycomb
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 12156e9e08966a2e34357f8f2df2e784
+Size: 168304
+Filename: honeycomb_1.0.0.ipk
+Description: Honeycomb
+Maintainer: KDB Productions
+Source: {"Homepage":"http://www.kdbprodo.webs.com","MinWebOSVersion":"2.0.0","Category":"Clock","LastUpdated":"1306902400","License":"Creative Commons","Feed":"Clock Themes","Screenshots":["http://kdbprodo.webs.com/clock_2011-12-05_012058.png"],"Type":"Theme","FullDescription":"A honeycomb Clock theme for WebOS (Based off Android)","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Honeycomb","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.latigid
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 413c0ca4a545a2a57817e0c31a2d940b
+Size: 76006
+Filename: latigid_1.0.0.ipk
+Description: Latigid
+Maintainer: KDB Productions
+Source: {"Homepage":"http://www.KDBProdo.webs.com","Category":"Clock","LastUpdated":"1306902491","License":"Creative Commons","Feed":"Clock Themes","Screenshots":["http://kdbprodo.webs.com/clock_2011-04-04_013800.png"],"Type":"Theme","FullDescription":"This is an exact invert of the standard Digital theme for the Clock App.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Latigid","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.lock
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 0215ad36281730dbac5017b1f082a5fc
+Size: 137212
+Filename: lock_1.0.0.ipk
+Description: Lock
+Maintainer: KDB Productions
+Source: {"Homepage":"http://www.kdbprodo.webs.com","MinWebOSVersion":"2.0.0","Category":"Clock","LastUpdated":"1306902578","License":"Creative Commons","Feed":"Clock Themes","Screenshots":["http://kdbprodo.webs.com/clock_2011-12-05_190754.png"],"Type":"Theme","FullDescription":"A lock based theme for the Clock.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Lock","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.mayanclock
+Version: 1.0
+Section: misc
+Architecture: all
+MD5Sum: 440076eb58c0f0688c0cbacfe92ccb2a
+Size: 301090
+Filename: mayanclock_1.0.ipk
+Description: Mayan
+Maintainer: Holley Pittman
+Source: {"Homepage":"www.prethemer.com/profile/Holley2583/themes","Category":"Clock","LastUpdated":"1306904628","License":"n/a","Feed":"Clock Themes","Screenshots":["www.prethemer.com/Mayan_Clock-Screenshot-wallpaper2196.html"],"Type":"Theme","FullDescription":"Mayan style clock.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Mayan","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.medieval-clock-theme
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 345ba7a2e0522874b68462b505e30179
+Size: 219772
+Filename: medieval-clock-theme_1.0.0.ipk
+Description: Medieval
+Maintainer: Warlord9159
+Source: {"Category":"Clock","LastUpdated":"1306902647","Feed":"Clock Themes","Screenshots":["http://dl.dropbox.com/u/12521579/medieval.jpg"],"Type":"Theme","FullDescription":"Skeleton Medieval theme","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Medieval","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.neongreen
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 1c9c3b9312a2d501f09c8cfd95f8d550
+Size: 163860
+Filename: neongreen_1.0.0.ipk
+Description: NeonGreen
+Maintainer: KDB Productions
+Source: {"Homepage":"http://www.KDBProdo.webs.com","MinWebOSVersion":"2.0.0","Category":"Clock","LastUpdated":"1306902716","License":"Creative Commons","Feed":"Clock Themes","Screenshots":["http://kdbprodo.webs.com/clock_2011-04-04_172822.png"],"Type":"Theme","FullDescription":"This is a green neon theme with a great glow.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"NeonGreen","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.old-school-clock-theme
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 56a45aecbeb3a91bc41076359ca78b37
+Size: 830234
+Filename: old-school-clock-theme_1.0.0.ipk
+Description: Old
+Maintainer: Warlord9159
+Source: {"Category":"Clock","LastUpdated":"1306902767","Feed":"Clock Themes","Screenshots":["http://dl.dropbox.com/u/12521579/clock-theme-old-school.png"],"Type":"Theme","FullDescription":"Kind of an old look to this clock theme.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Old","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.palm-analogblack
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 8a65f05f725036d7efa4a4a697270eda
+Size: 2010
+Filename: palm-analogblack_1.0.0_all.ipk
+Description: Analog Black
+Maintainer: Palm Inc.
+Source: {"Category":"Clock","LastUpdated":"1306901285","Type":"Theme","Screenshots":["http://img571.imageshack.us/img571/7646/clock20111602040444.png"],"FullDescription":"This will enable the built-in unused Analog Black theme.<br><br>NOTE: When switching to this theme, the second hand may freeze. Just close the Clock app and relaunch it and it'll be working again.","MaxWebOSVersion":"1.9.9","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Analog Black","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.hpisthesun
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 3a1b2019c95366c656a1975faadddfec
+Size: 152894
+Filename: pelcu.hpisthesun-clocktheme_1.0.0.ipk
+Description: HP is the Sun
+Maintainer: Pelcu
+Source: {"Homepage":"erpe.pol.pl","Category":"Clock","LastUpdated":"1307319278","License":"free","Feed":"Clock Themes","Screenshots":["http://www.erpe.pol.pl/palm/hpisthesun-clock-scr.png"],"Type":"Theme","FullDescription":"HP centered universe clock theme with HP logo playing the sun... Palms are planets and stars.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"HP is the Sun","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.pelcu-senator-clocktheme
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: be645ae103464ae7c1d43a02b48c6e13
+Size: 62546
+Filename: pelcu.senator-clocktheme_1.0.0.ipk
+Description: Senator
+Maintainer: Pelcu
+Source: {"Homepage":"http://www.erpe.pol.pl","Category":"Clock","LastUpdated":"1309659389","License":"free","Feed":"Clock Themes","Screenshots":["http://www.logoweb.pol.pl/palm/clock-senator-scr.png"],"Type":"Theme","FullDescription":"Clear, classic elegant clock with blue background.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Senator","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.whocares
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 2e285c4afb91ede898b89a0d5b78a8c6
+Size: 176232
+Filename: pelcu.whocares-clocktheme_1.0.0.ipk
+Description: Who Cares
+Maintainer: Pelcu
+Source: {"Homepage":"erpe.pol.pl","Category":"Clock","LastUpdated":"1307320754","License":"free","Feed":"Clock Themes","Screenshots":["http://www.erpe.pol.pl/palm/clock-whocares-scr.png"],"Type":"Theme","FullDescription":"Who cares about the time? For sure not you :).","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Who Cares","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.royalblue
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: ded8f7ebcc168e58afedb01dd4ca89a8
+Size: 225542
+Filename: royalblue_1.0.0.ipk
+Description: RoyalBlue
+Maintainer: KDB Productions
+Source: {"Homepage":"http://www.KDBProdo.webs.com","Category":"Clock","LastUpdated":"1306902912","License":"Creative Commons","Feed":"Clock Themes","Screenshots":["http://kdbprodo.webs.com/clock_2011-11-05_003505.png"],"Type":"Theme","FullDescription":"A classy royal blue theme with a neon glow.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"RoyalBlue","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.silver-clock-theme
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 07525e8dd9b78fcdbfa9cb8a8662d656
+Size: 267150
+Filename: silver-clock-theme_1.0.0.ipk
+Description: Silver
+Maintainer: Warlord9159
+Source: {"Category":"Clock","LastUpdated":"1306902996","Feed":"Clock Themes","Screenshots":["http://dl.dropbox.com/u/12521579/star.jpg"],"Type":"Theme","FullDescription":"Silver star","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Silver","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.skull-clock-theme
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: d3b702cefa19257906cbe7f996feb259
+Size: 498920
+Filename: skull-clock-theme_1.0.0.ipk
+Description: Skull
+Maintainer: Warlord9159
+Source: {"Category":"Clock","LastUpdated":"1306903143","Feed":"Clock Themes","Screenshots":["http://dl.dropbox.com/u/12521579/clock-theme-skull.png"],"Type":"Theme","FullDescription":"Black back drop with an out line skull image.<br><br>Second hand is a small skull.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Skull","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.slickred
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: 5d4a3fcb2b5e515da096cd6dc974b131
+Size: 48872
+Filename: slickred_1.0.0.ipk
+Description: SlickRed
+Maintainer: KDB Productions
+Source: {"Homepage":"http://www.KDBprodo.webs.com","Category":"Clock","LastUpdated":"1306903262","License":"Creative Commons","Feed":"Clock Themes","Screenshots":["http://kdbprodo.webs.com/clock_2011-03-04_201037.png"],"Type":"Theme","FullDescription":"A slick red theme with a touch of red glow.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"SlickRed","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.squared
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: dc3e3ccad056c4453386255baf042b30
+Size: 54894
+Filename: squared_1.0.0.ipk
+Description: Squared
+Maintainer: KDB Productions
+Source: {"Homepage":"http://www.kdbprodo.webs.com","MinWebOSVersion":"2.0.0","Category":"Clock","LastUpdated":"1306903320","License":"Creative Commons","Feed":"Clock Themes","Screenshots":["http://kdbprodo.webs.com/clock_2011-12-05_184434.png"],"Type":"Theme","FullDescription":"An elegant \"square\" theme for the clock.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Squared","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.toon
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: d55b0c2fdafe2696fe46a9eb22c3ffb6
+Size: 143132
+Filename: toon_1.0.0.ipk
+Description: Toon
+Maintainer: KDB Productions
+Source: {"Homepage":"http://www.kdbprodo.webs.com","MinWebOSVersion":"2.0.0","Category":"Clock","LastUpdated":"1306903375","License":"Creative Commons","Feed":"Clock Themes","Screenshots":["http://kdbprodo.webs.com/clock_2011-12-05_182827.png"],"Type":"Theme","FullDescription":"A humerous toon clock theme.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Toon","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.tron-clock-theme
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: fedfdf5cd7406f23774d79f50e0581e8
+Size: 523818
+Filename: tron-clock-theme_1.0.0.ipk
+Description: Tron
+Maintainer: Warlord9159
+Source: {"Category":"Clock","LastUpdated":"1306903576","Feed":"Clock Themes","Screenshots":["http://dl.dropbox.com/u/12521579/clock-theme-tron.png"],"Type":"Theme","FullDescription":"Clock theme I made in reference to the movie Tron.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Tron","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.tronclassic
+Version: 1.0.0
+Section: misc
+Architecture: all
+MD5Sum: c25ef042c01a5f1cf74118cb1b743f68
+Size: 223114
+Filename: tronclassic_1.0.0.ipk
+Description: TronClassic
+Maintainer: KBD Productions
+Source: {"Homepage":"http://www.kdbprodo.webs.com","Category":"Clock","LastUpdated":"1306903511","License":"Creative Commons","Feed":"Clock Themes","Screenshots":["http://kdbprodo.webs.com/clock_2011-03-04_201027.png"],"Type":"Theme","FullDescription":"A elegant Tron Based Theme with a touch of cool, blue glow.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"TronClassic","MaxWebOSVersion":"2.9.9"}
+
+
+Package: ca.canucksoftware.clock.wkghrs917-clocktheme
+Version: 1.0
+Section: misc
+Architecture: all
+MD5Sum: 57a88b673722282756a7a10ab38a5421
+Size: 171962
+Filename: wkghrs917-clocktheme_1.0.ipk
+Description: Working Hours
+Maintainer: Pelcu
+Source: {"Homepage":"http://www.erpe.pol.pl","Category":"Clock","LastUpdated":"1306904915","License":"free","Feed":"Clock Themes","Screenshots":["http://erpe.pol.pl/palm/wkghrs917-clock-scr.png"],"Type":"Theme","FullDescription":"If you work from 9am to 5pm this clock is for you.","Icon":"http://www.webos-internals.org/images/8/8d/Icon_WebOSInternals_Patches_Clock.png","Title":"Working Hours","MaxWebOSVersion":"2.9.9"}
+
+

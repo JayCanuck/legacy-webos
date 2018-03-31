@@ -1,0 +1,6 @@
+[submodule "tools/webos-quick-install"]
+	path = tools/webos-quick-install
+	url = ../webos-quick-install.git
+[submodule "tools/java-weboslib"]
+	path = tools/java-weboslib
+	url = ../java-weboslib.git

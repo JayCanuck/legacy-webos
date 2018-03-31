@@ -1,0 +1,34 @@
+PATH=/media/cryptofs/apps/usr/palm/applications/ca.canucksoftware.clock.$ID
+THEMES=/usr/palm/applications/com.palm.app.clock/themes
+NODE_FRAMEWORKS=/usr/palm/frameworks
+NODE_ADDONS=/usr/palm/nodejs
+
+if [ -z "$IPKG_OFFLINE_ROOT" ] ; then
+	/bin/mount -o remount,rw /
+	if [ $? -ne 0 ]; then
+		/usr/sbin/rootfs_open -w
+		if [ $? -ne 0 ]; then
+			echo "Error remounting root partition read-write."
+			echo "Reboot device then try installing again."
+			exit 1
+		fi
+	fi
+fi
+
+if [ -h /usr/palm/applications/com.palm.app.clock/images/list-icon-$ID.png ] ; then
+	/bin/rm /usr/palm/applications/com.palm.app.clock/images/list-icon-$ID.png
+fi
+
+/bin/rm -f $THEMES/$ID
+/bin/rm -fr $PATH/theme
+
+if [ -f /usr/bin/java-serviceboot ] ; then
+	/usr/bin/luna-send -n 1 palm://ca.canucksoftware.systoolsmgr/updateClockThemes {\"action\":\"remove\",\"id\":\"$ID\",\"name\":\"$NAME\"}
+else
+	if [ -f /usr/lib/libmemcpy.so ] ; then
+		export LD_PRELOAD="/usr/lib/libmemcpy.so:${LD_PRELOAD}"
+	fi
+	export NODE_PATH="$NODE_FRAMEWORKS:$NODE_ADDONS"
+
+	/bin/node --notimeout_script_execution $PATH/theme.js remove "$ID" "$NAME"
+fi

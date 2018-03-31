@@ -1,0 +1,53 @@
+Name: Change Launcher Opacity
+Version: 1.2.1-1
+Author: Jason Robitaille
+Description: Changes the launcher background transparency  (MIT license)
+
+--- .orig/usr/lib/luna/system/luna-applauncher/app/views/launcher/launcher-scene.html
++++ /usr/lib/luna/system/luna-applauncher/app/views/launcher/launcher-scene.html
+@@ -1,3 +1,4 @@
+ <div id="root" class="root">
++	<div class="bg"></div>
+ 	<div class="palm-dark palm-noheader offscreen" id="global-search-main" x-mojo-element="Scroller">
+ 		<div class="palm-group unlabeled search" id="dialDiv"></div>
+--- .orig/usr/lib/luna/system/luna-applauncher/stylesheets/launcher.css
++++ /usr/lib/luna/system/luna-applauncher/stylesheets/launcher.css
+@@ -3,6 +3,14 @@
+ body.palm-default
+ {
+ 	background:transparent;
++}
++
++.bg{
++	position:absolute;
++	left: 0;
++	top: 0;
++	width:320px;
++	height: 480px;
+ 	background-image:url(../images/scrim.png);
+ }
+ 
+@@ -4,6 +12,7 @@
+ {
+ 	background:transparent;
+ 	background-image:url(../images/scrim.png);
++	opacity:0.5; /*Edit Here*/
+ }
+ 
+ .root {
+@@ -26,6 +35,7 @@
+ 	position: absolute;
+ 	bottom: 0px;
+ 	background: url(../images/launcher-page-fade-bottom.png) center center no-repeat;
++	opacity: 0.5; /*Edit Here*/
+ 	z-index:20;
+ 	left:0px;
+ 	width:320px;
+@@ -46,6 +56,7 @@
+ .launcher_fade_top {
+ 	position:absolute;
+ 	background: url(../images/launcher-page-fade-top.png) center center no-repeat;
++	opacity: 0.5; /*Edit Here*/
+ 	z-index:20;
+ 	left:0px;
+ 	top:0px;
