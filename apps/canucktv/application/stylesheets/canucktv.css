@@ -1,0 +1,7 @@
+
+.mainPaneBackdrop {
+	/*background: url(../images/bg.jpg) right center no-repeat;*/
+	position:absolute;
+	bottom:0;
+	left:0;
+}

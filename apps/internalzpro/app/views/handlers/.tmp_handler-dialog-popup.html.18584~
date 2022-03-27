@@ -1,0 +1,28 @@
+<div class="palm-dialog-title" id="title">&nbsp;&nbsp;</div>
+<div class="palm-dialog-separator"></div>
+<div class="palm-dialog-content no-margin">
+	<div x-mojo-element="Scroller" id="scrollHandler">
+	<div class="dialog-message" id="message"></div>
+	<table border=0 align=center>
+		<tr>
+		    <td><div id="imagesInfo"></div></td>
+			<td><div x-mojo-element="ToggleButton" id="tbImages"></div></td>
+		</tr>
+		<tr>
+		    <td><div id="editorInfo"></div></td>
+		    <td><div x-mojo-element="ToggleButton" id="tbEditor"></div></td>
+		</tr>
+		<tr>
+		    <td><div id="ipkInfo"></div></td>
+		    <td><div x-mojo-element="ToggleButton" id="tbIpk"></div></td>
+		</tr>
+	</table>
+	</div>
+</div>
+<div class="palm-dialog-buttons center">
+	<table border="0" cellpadding="10" width="100%" style="margin: -20px 0 -14px 0;padding:0;">
+		<tr><td>
+			<div class="dismiss palm-button" id="okButton" x-mojo-tap-highlight="momentary"></div>
+		</td></tr>
+	</table>
+</div>

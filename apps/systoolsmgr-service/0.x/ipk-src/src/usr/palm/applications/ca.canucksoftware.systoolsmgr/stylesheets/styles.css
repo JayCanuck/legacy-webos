@@ -1,0 +1,22 @@
+.palm-page-header-wrapper {
+	left: 20px !important;
+}
+
+.icon {
+	background-size: 100% !important;
+}
+
+.center {
+	text-align: center;
+}
+
+.statusText {
+	font-weight: bold;
+	margin: 15px 15px 15px 15px;
+}
+
+.footerText {
+	position: fixed;
+	bottom: 15px;
+	float: left;
+}

@@ -1,0 +1,8 @@
+Package: ca.canucksoftware.mediapermission.bugfix
+Version: 1.0.0
+Section: misc
+Priority: optional
+Architecture: all
+Maintainer: DanPLC, Jason Robitaille
+Description: Media Permission Bug Fix
+Source: {"LastUpdated":"1299692661","Type":"Linux Application","Title":"Media Permission Bug Fix","PostInstallFlags":"RestartLuna"}

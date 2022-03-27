@@ -1,0 +1,14 @@
+<div class="palm-page-header">
+	<div class="palm-page-header-wrapper">
+		<div class="icon" id="icon"></div>
+		<div class="title" id="title"></div>
+	</div>
+</div>
+<div class="palm-body-text">
+	<br>
+	<div class="statusText" id="status"></div>
+	<br>
+	NOTE: This is a stub application that will disappear from the
+	launcher next system restart.
+	<div class="footerText center" id="footer"></div>
+</div>

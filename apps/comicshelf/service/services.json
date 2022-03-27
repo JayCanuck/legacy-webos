@@ -1,0 +1,68 @@
+{
+	"id": "ca.canuckcoding.comicshelf.service",
+	"description": "ComicShelf Service",
+	"commandTimeout": 120000,
+	"services": [
+		{
+			"name": "ca.canuckcoding.comicshelf.service",
+			"description": "Scans and handles comic cbr/cbz files.",
+			"commands": [
+				{
+					"name": "status",
+					"assistant": "StatusAssistant",
+					"public": true
+                		},
+                		{
+					"name": "list",
+					"assistant": "ListAssistant",
+					"public": true
+				},
+				{
+					"name": "allComics",
+					"assistant": "AllComicsAssistant",
+					"public": true
+				},
+				{
+					"name": "delete",
+					"assistant": "DeleteAssistant",
+					"public": true
+				},
+				{
+					"name": "query",
+					"assistant": "QueryAssistant",
+					"public": true
+				},
+				{
+					"name": "extract",
+					"assistant": "ExtractAssistant",
+					"public": true
+				},
+				{
+					"name": "save",
+					"assistant": "SaveAssistant",
+					"public": true
+				},
+				{
+					"name": "unload",
+					"assistant": "UnloadAssistant",
+					"public": true
+				},
+				{
+					"name": "unloadAll",
+					"assistant": "UnloadAllAssistant",
+					"public": true
+				},
+				{
+					"name": "a",
+					"assistant": "AAssistant",
+					"public": true
+				},
+				{
+					"name": "b",
+					"assistant": "BAssistant",
+					"public": true
+				}
+			] 
+		}
+	]
+}

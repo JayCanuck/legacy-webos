@@ -1,0 +1,12 @@
+{
+	"id": "ca.canucksoftware.wowdotcom",
+	"version": "0.3.0",
+	"vendor": "Jason Robitaille",
+	"type": "web",
+	"main": "index.html",
+	"title": "WoW.com",
+	"icon": "icon.png",
+	"noWindow": true,
+	"splashicon": "icon-256x256.png",
+	"splashBackground": "images/splash-bg.png"
+}

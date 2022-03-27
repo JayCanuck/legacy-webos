@@ -1,0 +1,5 @@
+luna-send -n 1 -a com.palm.filenotifyd.js palm://com.palm.db/del '{"query":{"from":"com.palm.media.permissions:1"}}'
+
+ipkg -o /media/cryptofs/apps remove ca.canucksoftware.mediapermission.bugfix
+
+exit 0

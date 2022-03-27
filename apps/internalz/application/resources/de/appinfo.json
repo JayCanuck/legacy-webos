@@ -1,0 +1,39 @@
+{
+	"id": "ca.canuckcoding.internalz",
+	"version": "1.1.2",
+	"vendor": "Jason Robitaille",
+	"type": "web",
+	"main": "../../index.html",
+	"title": "Internalz",
+	"icon": "../../icon.png",
+	"noWindow": true,
+	"smallicon": "mini.png",
+	"copyright": "&copy; Copyright 2009-2011, Jason Robitaille",
+	"support": {
+		"email": {
+			"address": "support@canuckcoding.ca",
+			"subject": "Supportanfrage"
+		},
+		"resources": [
+			{
+				"type": "scene",
+				"label": "Change Log",
+				"sceneName": "changelog"
+			},
+			{
+				"type": "scene",
+				"label": "Tutorial Videos",
+				"sceneName": "youtube"
+			},
+			{
+				"type": "web",
+				"label": "Diskussionsforum",
+				"url": "http://m.forums.precentral.net/canuck-coding/"
+			}
+		]
+	},
+	"splashicon": "../../icon-256x256.png",
+	"splashBackground": "../../images/splash-bg.png",
+	"keywords" : [ "Dateien", "Dateimanager" ],
+	"visible": true
+}

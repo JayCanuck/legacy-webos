@@ -1,0 +1,18 @@
+[
+    {"source": "app/assistants/app-assistant.js"},
+    {"source": "app/models/Preferences.js"},
+    {"source": "app/models/Services.js"},
+    {"source": "app/models/Utils.js"},
+    {
+        "scenes": "settings",
+        "source": "app/assistants/settings-assistant.js"
+    },
+    {
+        "scenes": "dashboard",
+        "source": "app/assistants/dashboard-assistant.js"
+    },
+    {
+        "scenes": "main",
+        "source": "app/assistants/main-assistant.js"
+    }
+]

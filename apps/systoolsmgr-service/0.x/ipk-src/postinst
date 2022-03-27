@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [ -z "$IPKG_OFFLINE_ROOT" ]; then
+  echo "/usr/sbin/rootfs_open -w" > /var/remount.sh
+  sh /var/remount.sh
+  if [ $? -ne 0 ]; then
+  	echo "Error remounting root partition read-write."
+  	echo "Reboot device then try installing again."
+  	exit 1
+  fi
+fi
+
+APP_PATH=/media/cryptofs/apps/usr/palm/applications/ca.canucksoftware.systoolsmgr
+
+/bin/cp -f $APP_PATH/service/SysToolsMgr.jar /usr/lib/luna/java/SysToolsMgr.jar
+
+/bin/cp -f $APP_PATH/service/ca.canucksoftware.systoolsmgr.service /usr/share/dbus-1/system-services/ca.canucksoftware.systoolsmgr.service
+
+/bin/cp -f $APP_PATH/service/ca.canucksoftware.systoolsmgr /etc/event.d/ca.canucksoftware.systoolsmgr
+
+if [ -z "$IPKG_OFFLINE_ROOT" ]; then
+  killall -9 java
+  mount -o remount,ro /
+fi
+
+exit 0

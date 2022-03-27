@@ -1,0 +1,87 @@
+v1.4.0 RC1 - December 31, 2011
+- Removed zoom-retention option due to bugs
+- Improved filetype compatability fallback
+- Maximum zoom ratio increased
+- Added first-usage tips dialog
+
+v1.4.0 beta 1 - December 27, 2011
+- Added Auto-fit/Fit-by-Width/Fit-by-height option
+- Added option to retain zoom level between pages
+
+v1.3.2 - December 26, 2011
+- Improved "Cancel" button layout
+- Fixed "Mark All Read" and "Mark All Unread" options
+- Comics are now marked as read after extraction is finished, so cancelling mid-extraction won't leave it marked as read incorrectly
+- Added a "Set as thumbnail" option in the Page Options section of the appmenu when a comic is open
+
+v1.3.1 - December 25, 2011
+- Private release; 1.3.2 will be the version that goes public
+- Large comic file support fixed
+- Added a "Cancel" button to the comic loading screen to cancel opening a comic
+
+v1.0.2 (Beta 2) - July 1, 2011
+- Now properly rotates
+- Some TouchPad-specfic imageview issues may be seen (images getting cut off at left/bottom, etc.)
+- "MMS This Page" option is hidded on TouchPad devices
+- Gesture settings and screen orientation settings are hidden on the TouchPad
+- No long fullscreen on the TouchPad as it makes less sense than on a small phone screen
+- Added "Back" as an option to the settings screen
+
+v1.0.2 (Beta 1) - June 19, 2011
+- Added a "Close" option to the header menu dropdown
+- Adjusted for proper fullscreen performance on TouchPad
+- Fixed permissions issue that theoretically shouldn't affect anyone anyway, heh
+
+
+------------------------------------------------
+
+v1.0.0 (Beta 8) - March 1, 2011
+- New header image in file listings
+- Added option to auto-resume to last comic page (if previous closed with a comic open); disabled by default
+
+v1.0.0 (Beta 7) - February 26, 2011
+- Added additional safeguards to prevent moving to impossible/non-existent page numbers
+
+v1.0.0 (Beta 6) - February 26, 2011
+- Darkened increased the opacity of the top header of the file listings browser
+- File/directory listinfs are now properly sorted alphabetically
+- Gesture-swipe-to-change-page preference is now enabled by default
+
+v1.0.0 (Beta 5) - February 26, 2011
+- Fixed a serious issue where directories with invalid fomatting would cause unzip/unrar to massively fail
+- Added fallback support; if a "cbr" is actually a "cbz" (or vice-versa) the file will still open properly
+- Added a new loading/splashscreen icon
+
+v1.0.0 (Beta 4) - February 22, 2011
+- Fixed a bug incorrectly grabbing page URL, thus bugging out the share, wallpaper, and save options
+
+v1.0.0 (Beta 3) - February 21, 2011
+- Fixed a bug that occationally caused pages to appear in the wrong order
+- Fixed issue where massively large images failed to render
+- Improved quality of page images. Should have greater clarity when zoomed in
+- In all likelihood, this is probably the 1.0 release candidate
+
+v1.0.0 (Beta 2) - February 21, 2011
+- Comics now display in proper high resolution (adds a very slight delay when changing between pages)
+- Improve page order detection
+- Improved comic book detection (MacOS "shadow" files are no longer displayed)
+- Fixed the bug where long names would wrap incorrectly with in the viewer's header bar
+- Tapping the comic viewer header will toggle a dropdown with the following options:
+	- "Email whole comic"
+	- "Email this page"
+	- "MMS this page"
+	- "Set as wallpaper"
+	- "Save this image"  Note: this saves the image file to /media/internal/<comicname><page#>.<ext>
+- Fixed a bug where icons wouldn't adjust properly to wrapped directory/file names
+- Back gesture on the listings screen goes backwards in directory browsing history (if any)
+- Forward gesture on the listings screen reloads the listings
+- Fixed a bug where last browsed directory wasn't saved on exit
+- Added a settings screen with the following options:
+	- Choose if you want to be able to swipe-to-delete files on the listings screen
+	- Set if you want swipes left/right to change pages  (Note: this doesn't affect the function of the previous/next buttons). Disabling the swipe comes in handy if you find page switching to be overly sesitive on finger movement
+	- Set if you want back/forward gestures (in the gesture area) to change pages when the controls are hidden. This can come in handy as it allows you to change pages when the controls are hidden and the previous option is disabled
+	- Specify the screen orientation for the viewer
+- Added a help screen with a built-in changelog list
+
+v1.0.0 (Beta 1) - February 19, 2011
+- Initial release

@@ -1,0 +1,9 @@
+enyo.depends(
+	"app/CanuckTV.js",
+	"app/models/Common.js",
+	"app/controls/ScrimSpinner.js",
+	"app/dialogs/SimpleDialog.js",
+	"app/dialogs/ErrorDialog.js",
+	"app/dialogs/AboutDialog.js",
+	"stylesheets/canucktv.css"
+);

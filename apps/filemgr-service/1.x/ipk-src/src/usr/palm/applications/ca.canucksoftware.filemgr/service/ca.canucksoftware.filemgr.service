@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=ca.canucksoftware.filemgr
+Exec=/usr/bin/luna-helper 'luna://com.palm.vm/launch' '{"serviceName":"ca.canucksoftware.filemgr","className":"ca.canucksoftware.filemgr.LunaService"}'

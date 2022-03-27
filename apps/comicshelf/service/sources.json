@@ -1,0 +1,17 @@
+[
+	{
+		"library": { "name": "foundations", "version": "1.0" }
+	},
+	{
+    		"source": "comics-assistant.js"
+    	},
+    	{
+	    	"source": "comicfile.js"
+    	},
+    	{
+	    	"source": "common.js"
+    	},
+    	{
+		"source": "commandline.js"
+    	}
+]

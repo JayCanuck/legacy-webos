@@ -1,0 +1,197 @@
+<div id="loadingScrim" class="palm-scrim"> 
+	<div x-mojo-element="Spinner" id="spinLoading"></div>
+</div>
+<div class="palm-page-header multi-line">
+	<div class="palm-page-header-wrapper">
+		<div class="title left un-capitalize">Preferences</div>
+	</div>
+</div>
+<div class="palm-group">
+	<div class="palm-group-title">Home Folder</div>
+	<div class="palm-list">
+        <div class="palm-row single" x-mojo-tap-highlight="momentary" id="homeDir">
+        	<div class="palm-row-wrapper">
+        		<div class="title">
+					<div id="homeLabel"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="palm-group unlabeled">
+	<div class="palm-list">
+        <div class="palm-row single">
+			<div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Theme style</div>
+            	<div x-mojo-element="ListSelector" id="selTheme" class="settingsSelector"></div>
+            </div>
+		</div>
+	</div>
+</div>
+<div class="palm-group">
+	<div class="palm-group-title">File Explorer</div>
+    <div class="palm-list">
+        <div class="palm-row first">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleHidden"></div>
+            	<div class="title left settingsLabel">Show hidden</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Font size</div>
+            	<div x-mojo-element="ListSelector" id="selFont" class="settingsSelector"></div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleWrapNames"></div>
+           		<div class="title left settingsLabel">Wrap long names</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleSwipeDelete"></div>
+           		<div class="title left settingsLabel">Swipe-delete files</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row last">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Orientation</div>
+            	<div x-mojo-element="ListSelector" id="selOrientFile" class="settingsSelector"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="palm-group">
+	<div class="palm-group-title">Image Viewer</div>
+    <div class="palm-list">
+        <div class="palm-row first">
+            <div class="palm-row-wrapper">
+           		<div x-mojo-element="ToggleButton" id="toggleImageCard"></div>
+           		<div class="title left settingsLabel">Open in new card</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleImageFull"></div>
+           		<div class="title left settingsLabel">Full screen</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleImageSwipe"></div>
+           		<div class="title left settingsLabel">Swipe to change image</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleImageHandler"></div>
+           		<div class="title left settingsLabel">Register as file handler</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row last">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Orientation</div>
+            	<div x-mojo-element="ListSelector" id="selOrientImage" class="settingsSelector"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="palm-group">
+	<div class="palm-group-title">Text Editor</div>
+    <div class="palm-list">
+        <div class="palm-row first">
+            <div class="palm-row-wrapper">
+           		<div x-mojo-element="ToggleButton" id="toggleEditorCard"></div>
+           		<div class="title left settingsLabel">Open in new card</div>
+            </div>
+        </div>
+		<!--<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleEditorAutosave"></div>
+           		<div class="title left settingsLabel">Autosave on close</div>
+            </div>
+        </div>-->
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Newline format</div>
+            	<div x-mojo-element="ListSelector" id="selNewline" class="settingsSelector"></div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Font size</div>
+		<div x-mojo-element="ListSelector" id="selEditorFont" class="settingsSelector"></div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleEditorWordWrap"></div>
+           		<div class="title left settingsLabel">Word wrap</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleEditorHandler"></div>
+           		<div class="title left settingsLabel">Register as file handler</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row last">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Orientation</div>
+            	<div x-mojo-element="ListSelector" id="selOrientText" class="settingsSelector"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="palm-group">
+	<div class="palm-group-title">Ipk Installer</div>
+    <div class="palm-list">
+        <div class="palm-row first">
+            <div class="palm-row-wrapper">
+           		<div x-mojo-element="ToggleButton" id="toggleIpkCard"></div>
+           		<div class="title left settingsLabel">Open in new card</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleIpkHandler"></div>
+           		<div class="title left settingsLabel">Register as file handler</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row last">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Orientation</div>
+            	<div x-mojo-element="ListSelector" id="selOrientIpk" class="settingsSelector"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="palm-group unlabeled">
+	<div class="palm-list">
+        <div class="palm-row single">
+			<div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleMaster"></div>
+           		<div class="title left settingsLabel">Master mode</div>
+            </div>
+		</div>
+	</div>
+</div>

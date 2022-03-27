@@ -1,0 +1,9 @@
+Package: ca.canucksoftware.filemgr
+Version: 2.0.5
+Section: misc
+Priority: optional
+Architecture: all
+Depends: ca.canucksoftware.js-service-framework
+Maintainer: Jason Robitaille
+Description: FileMgr
+Source: {"Homepage":"http://www.precentral.net/homebrew-apps/filemgr-service","Category":"Services and Plugins","LastUpdated":"1298664350","License":"Closed Source","Type":"Service","Screenshots":["http://images.precentral.net/sites/precentral.net/files/webos-homebrew-apps/591/filemgr_service.jpg"],"FullDescription":"FileMgr is a powerful custom homebrew webOS service to provide file IO and file management control for Mojo apps.<br><br>It's is probably best known for being the component powering my file manager, Internalz.<br><br>Although it's closed source, a public API specsheet is available for developers to freely use with their applications, and is already being done successfully by a few developers.","PostRemoveFlags":"RestartJava","PostUpdateFlags":"RestartJava","Icon":"http://www.precentral.net/sites/precentral.net/files/apps/icons/FileMgr.png","Title":"FileMgr","PostInstallFlags":"RestartJava"}

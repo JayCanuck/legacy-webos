@@ -1,0 +1,47 @@
+<div class="palm-page-header multi-line">
+	<div class="palm-page-header-wrapper">
+		<div class="title left un-capitalize">Preferences</div>
+	</div>
+</div>
+<div class="palm-group unlabeled">
+    <div class="palm-list">
+        <div class="palm-row first">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleSwipeDelete" class="settingsToggle"></div>
+            	<div class="title left settingsLabel">Swipe-to-delete files in listings</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleSwipePage" class="settingsToggle"></div>
+           		<div class="title left settingsLabel">Swipe left/right to change page</div>
+            </div>
+        </div>
+		<div id="gestureWrapper">
+			<div class="palm-section-divider"></div>
+	        <div class="palm-row">
+	            <div class="palm-row-wrapper">
+	            	<div x-mojo-element="ToggleButton" id="toggleGesturePage" class="settingsToggle"></div>
+	           		<div class="title left settingsLabel">Back/forward gestures change page when controls are hidden</div>
+	            </div>
+	        </div>
+		</div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row" id="autoResumeRow">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleAutoResume" class="settingsToggle"></div>
+           		<div class="title left settingsLabel">Auto-resume comic when app is closed with comic left open</div>
+            </div>
+        </div>
+		<div id="orientationWrapper">
+			<div class="palm-section-divider"></div>
+	        <div class="palm-row last">
+	            <div class="palm-row-wrapper">
+	            	<div class="title left floatLeft settingsLabel">Viewer Orientation</div>
+	            	<div x-mojo-element="ListSelector" id="selOrientation" class="settingsSelector"></div>
+	            </div>
+	        </div>
+		</div>
+    </div>
+</div>

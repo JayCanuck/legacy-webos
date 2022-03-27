@@ -1,0 +1,132 @@
+{
+	"id": "ca.canuckcoding.internalz.service",
+	"description": "Internalz Service",
+	"services": [
+		{
+			"name": "ca.canuckcoding.internalz.service",
+			"description": "File management service",
+			"commands": [
+				{
+					"name": "status",
+					"assistant": "StatusAssistant",
+					"public": true
+                		},
+                		{
+					"name": "version",
+					"assistant": "VersionAssistant",
+					"public": true
+                		},
+                		{
+					"name": "read",
+					"assistant": "ReadAssistant",
+					"public": true
+				},
+				{
+					"name": "write",
+					"assistant": "WriteAssistant",
+					"public": true
+				},
+				{
+					"name": "append",
+					"assistant": "AppendAssistant",
+					"public": true
+				},
+                		{
+					"name": "list",
+					"assistant": "ListAssistant",
+					"public": true
+                		},
+                		{
+					"name": "listDirs",
+					"assistant": "ListDirAssistant",
+					"public": true
+                		},
+                		{
+					"name": "listFiles",
+					"assistant": "ListFilesAssistant",
+					"public": true
+                		},
+                		{
+					"name": "query",
+					"assistant": "QueryAssistant",
+					"public": true
+                		},
+                		{
+					"name": "size",
+					"assistant": "SizeAssistant",
+					"public": true
+                		},
+                		{
+					"name": "delete",
+					"assistant": "DeleteAssistant",
+					"public": true
+                		},
+                		{
+					"name": "exists",
+					"assistant": "ExistsAssistant",
+					"public": true
+                		},
+                		{
+					"name": "getParent",
+					"assistant": "ParentAssistant",
+					"public": true
+                		},
+                		{
+					"name": "isDirectory",
+					"assistant": "IsDirectoryAssistant",
+					"public": true
+				},
+				{
+					"name": "isFile",
+					"assistant": "IsFileAssistant",
+					"public": true
+                		},
+                		{
+					"name": "hasDirectory",
+					"assistant": "HasDirectoryAssistant",
+					"public": true
+				},
+				{
+					"name": "hasFile",
+					"assistant": "HasFileAssistant",
+					"public": true
+                		},
+                		{
+					"name": "isTextFile",
+					"assistant": "IsTextFileAssistant",
+					"public": true
+                		},
+                		{
+					"name": "getLastModified",
+					"assistant": "LastModifiedAssistant",
+					"public": true
+                		},
+                		{
+					"name": "createDir",
+					"assistant": "CreateDirAssistant",
+					"public": true
+				},
+				{
+					"name": "createFile",
+					"assistant": "CreateFileAssistant",
+					"public": true
+                		},
+                		{
+					"name": "rename",
+					"assistant": "RenameAssistant",
+					"public": true
+				},
+				{
+					"name": "move",
+					"assistant": "MoveAssistant",
+					"public": true
+                		},
+                		{
+					"name": "copy",
+					"assistant": "CopyAssistant",
+					"public": true
+                		}
+			] 
+		}
+	]
+}

@@ -1,0 +1,26 @@
+[
+	{
+		"library": { "name": "foundations", "version": "1.0" }
+	},
+	{
+    		"source": "filemgr-assistant.js"
+    	},
+    	{
+	    	"source": "common.js"
+    	},
+    	{
+		"source": "commandline.js"
+    	},
+    	{
+		"source": "lunasend.js"
+    	},
+    	{
+		"source": "package.js"
+    	},
+    	{
+		"source": "patch.js"
+    	},
+    	{
+		"source": "readwrite.js"
+    	}
+]

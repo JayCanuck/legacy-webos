@@ -1,0 +1,258 @@
+{
+	"id": "ca.canucksoftware.filemgr",
+	"description": "FileMgr Service",
+	"commandTimeout": 120000,
+	"services": [
+		{
+			"name": "ca.canucksoftware.filemgr",
+			"description": "Custom homebrew file management service",
+			"commands": [
+				{
+					"name": "status",
+					"assistant": "StatusAssistant",
+					"public": true
+                		},
+                		{
+					"name": "version",
+					"assistant": "VersionAssistant",
+					"public": true
+                		},
+                		{
+					"name": "isInternalzInstalled",
+					"assistant": "InternalzInstalledAssistant",
+					"public": true
+                		},
+                		{
+					"name": "hideInternalz",
+					"assistant": "HideInternalzAssistant",
+					"public": true
+                		},
+                		{
+					"name": "hideInternalzPro",
+					"assistant": "HideInternalzProAssistant",
+					"public": true
+                		},
+                		{
+					"name": "read",
+					"assistant": "ReadAssistant",
+					"public": true
+				},
+				{
+					"name": "write",
+					"assistant": "WriteAssistant",
+					"public": true
+				},
+				{
+					"name": "append",
+					"assistant": "AppendAssistant",
+					"public": true
+				},
+                		{
+					"name": "listDirs",
+					"assistant": "ListDirAssistant",
+					"public": true
+                		},
+                		{
+					"name": "listFiles",
+					"assistant": "ListFilesAssistant",
+					"public": true
+                		},
+                		{
+					"name": "query",
+					"assistant": "QueryAssistant",
+					"public": true
+                		},
+                		{
+					"name": "size",
+					"assistant": "SizeAssistant",
+					"public": true
+                		},
+                		{
+					"name": "delete",
+					"assistant": "DeleteAssistant",
+					"public": true
+                		},
+                		{
+					"name": "exists",
+					"assistant": "ExistsAssistant",
+					"public": true
+                		},
+                		{
+					"name": "getParent",
+					"assistant": "ParentAssistant",
+					"public": true
+                		},
+                		{
+					"name": "isDirectory",
+					"assistant": "IsDirectoryAssistant",
+					"public": true
+				},
+				{
+					"name": "isFile",
+					"assistant": "IsFileAssistant",
+					"public": true
+                		},
+                		{
+					"name": "hasDirectory",
+					"assistant": "HasDirectoryAssistant",
+					"public": true
+				},
+				{
+					"name": "hasFile",
+					"assistant": "HasFileAssistant",
+					"public": true
+                		},
+                		{
+					"name": "isTextFile",
+					"assistant": "IsTextFileAssistant",
+					"public": true
+                		},
+                		{
+					"name": "isHidden",
+					"assistant": "IsHiddenAssistant",
+					"public": true
+                		},
+                		{
+					"name": "setHidden",
+					"assistant": "SetHiddenAssistant",
+					"public": true
+                		},
+                		{
+					"name": "getLastModified",
+					"assistant": "LastModifiedAssistant",
+					"public": true
+                		},
+                		{
+					"name": "isReadOnly",
+					"assistant": "IsReadOnlyAssistant",
+					"public": true
+				},
+				{
+					"name": "setReadOnly",
+					"assistant": "SetReadOnlyAssistant",
+					"public": true
+                		},
+                		{
+					"name": "permissions",
+					"assistant": "PermissionsAssistant",
+					"public": true
+                		},
+                		{
+					"name": "chmod",
+					"assistant": "ChmodAssistant",
+					"public": true
+                		},
+                		{
+					"name": "createDir",
+					"assistant": "CreateDirAssistant",
+					"public": true
+				},
+				{
+					"name": "createFile",
+					"assistant": "CreateFileAssistant",
+					"public": true
+                		},
+                		{
+					"name": "rename",
+					"assistant": "RenameAssistant",
+					"public": true
+				},
+				{
+					"name": "move",
+					"assistant": "MoveAssistant",
+					"public": true
+                		},
+                		{
+					"name": "copy",
+					"assistant": "CopyAssistant",
+					"public": true
+                		},
+                		{
+					"name": "rescanFileindexer",
+					"assistant": "RescanFileindexerAssistant",
+					"public": true
+                		},
+                		{
+					"name": "gc",
+					"assistant": "GCAssistant",
+					"public": true
+                		},
+                		{
+					"name": "registerAsHandler",
+					"assistant": "RegisterHandlerAssistant",
+					"public": true
+				},
+				{
+					"name": "dumpMimeTable",
+					"assistant": "MimeTableAssistant",
+					"public": true
+				},
+				{
+					"name": "swapResource",
+					"assistant": "SwapResourceAssistant",
+					"public": true
+				},
+				{
+					"name": "getPackageInfo",
+					"assistant": "PkgInfoAssistant",
+					"public": true
+				},
+				{
+					"name": "isPackageInstalled",
+					"assistant": "IsPkgInstalledAssistant",
+					"public": true
+				},
+				{
+					"name": "installPackage",
+					"assistant": "InstallPkgAssistant",
+					"public": true
+				},
+				{
+					"name": "uninstallPackage",
+					"assistant": "UninstallPkgAssistant",
+					"public": true
+                		},
+                		{
+					"name": "isPatchInstalled",
+					"assistant": "IsPatchInstalledAssistant",
+					"public": true
+				},
+				{
+					"name": "installPatch",
+					"assistant": "InstallPatchAssistant",
+					"public": true
+				},
+				{
+					"name": "uninstallPatch",
+					"assistant": "UninstallPatchAssistant",
+					"public": true
+				},
+				{
+					"name": "javaRestart",
+					"assistant": "JavaRestartAssistant",
+					"public": true
+                		},
+                		{
+					"name": "lunaRestart",
+					"assistant": "LunaRestartAssistant",
+					"public": true
+                		},
+                		{
+					"name": "deviceRestart",
+					"assistant": "DeviceRestartAssistant",
+					"public": true
+                		},
+                		{
+					"name": "a",
+					"assistant": "ATestAssistant",
+					"public": true
+                		},
+                		{
+					"name": "b",
+					"assistant": "BTestAssistant",
+					"public": true
+                		}
+			] 
+		}
+	]
+}

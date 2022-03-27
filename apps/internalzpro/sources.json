@@ -1,0 +1,67 @@
+[
+    {"source": "app/assistants/app-assistant.js"},
+    {"source": "javascripts/dtree.js"},
+    {"source": "app/models/common.js"},
+    {"source": "app/models/preferences.js"},
+    {"source": "app/models/resource-handling.js"},
+    {"source": "app/models/filemgr-service.js"},
+    {
+        "scenes": "explorer",
+        "source": "app/assistants/explorer-assistant.js"
+    },
+    {
+        "scenes": "folder-chooser",
+        "source": "app/assistants/folder-chooser-assistant.js"
+    },
+    {
+        "scenes": "imageview",
+        "source": "app/assistants/imageview-assistant.js"
+    },
+    {"source": "app/assistants/input-dialog-assistant.js"},
+    {"source": "app/assistants/permissions-dialog-assistant.js"},
+    {"source": "app/assistants/error-dialog-assistant.js"},
+    {
+        "scenes": "texteditor",
+        "source": "app/assistants/texteditor-assistant.js"
+    },
+    {
+        "scenes": "settings",
+        "source": "app/assistants/settings-assistant.js"
+    },
+    {
+        "scenes": "info",
+        "source": "app/assistants/info-assistant.js"
+    },
+    {
+        "scenes": "downloadfile",
+        "source": "app/assistants/downloadfile-assistant.js"
+    },
+    {
+        "scenes": "wallpaper",
+        "source": "app/assistants/wallpaper-assistant.js"
+    },
+    {
+        "scenes": "patcher",
+        "source": "app/assistants/patcher-assistant.js"
+    },
+    {
+        "scenes": "ipkinstaller",
+        "source": "app/assistants/ipkinstaller-assistant.js"
+    },
+    {
+        "scenes": "handlers",
+        "source": "app/assistants/handlers-assistant.js"
+    },
+    {
+        "scenes": "youtube",
+        "source": "app/assistants/youtube-assistant.js"
+    },
+    {
+        "scenes": "changelog",
+        "source": "app/assistants/changelog-assistant.js"
+    },
+    {
+        "scenes": "favourites",
+        "source": "app/assistants/favourites-assistant.js"
+    }
+]

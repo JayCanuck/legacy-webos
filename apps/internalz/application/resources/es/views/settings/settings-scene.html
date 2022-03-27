@@ -1,0 +1,148 @@
+<div id="loadingScrim" class="palm-scrim">
+	<div x-mojo-element="Spinner" id="spinLoading"></div>
+</div>
+<div class="palm-page-header multi-line">
+	<div class="palm-page-header-wrapper">
+		<div class="title left un-capitalize">Preferencias</div>
+	</div>
+</div>
+<div class="palm-group">
+	<div class="palm-group-title">Directorio Hogar</div>
+	<div class="palm-list">
+        <div class="palm-row single" x-mojo-tap-highlight="momentary" id="homeDir">
+        	<div class="palm-row-wrapper">
+        		<div class="title">
+					<div id="homeLabel"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="palm-group unlabeled">
+	<div class="palm-list">
+        <div class="palm-row single">
+			<div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Estilo de Tema</div>
+            	<div x-mojo-element="ListSelector" id="selTheme" class="settingsSelector"></div>
+            </div>
+		</div>
+	</div>
+</div>
+<div class="palm-group">
+	<div class="palm-group-title">Explorador de Archivos</div>
+    <div class="palm-list">
+        <div class="palm-row first">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleHidden"></div>
+            	<div class="title left settingsLabel">Mostrar ocultos</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Tamaño de letras</div>
+            	<div x-mojo-element="ListSelector" id="selFont" class="settingsSelector"></div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleWrapNames"></div>
+           		<div class="title left settingsLabel">Conservar nombres largos</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleSwipeDelete"></div>
+           		<div class="title left settingsLabel">Deslizar-borrar archivos</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Ipk controlador</div>
+            	<div x-mojo-element="ListSelector" id="selIpk" class="settingsSelector"></div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row last">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Orientación</div>
+            	<div x-mojo-element="ListSelector" id="selOrientFile" class="settingsSelector"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="palm-group">
+	<div class="palm-group-title">Visor de Imágenes</div>
+    <div class="palm-list">
+        <div class="palm-row first">
+            <div class="palm-row-wrapper">
+           		<div x-mojo-element="ToggleButton" id="toggleImageCard"></div>
+           		<div class="title left settingsLabel">Abrir en nueva carta</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleImageFull"></div>
+           		<div class="title left settingsLabel">Pantalla completa</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleImageSwipe"></div>
+           		<div class="title left settingsLabel">Pase para cambiar la imagen</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row last">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Orientación</div>
+            	<div x-mojo-element="ListSelector" id="selOrientImage" class="settingsSelector"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="palm-group">
+	<div class="palm-group-title">Editor de Textos</div>
+    <div class="palm-list">
+        <div class="palm-row first">
+            <div class="palm-row-wrapper">
+           		<div x-mojo-element="ToggleButton" id="toggleEditorCard"></div>
+           		<div class="title left settingsLabel">Abrir en nueva carta</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Formato de nueva línea</div>
+            	<div x-mojo-element="ListSelector" id="selNewline" class="settingsSelector"></div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Tamaño de letras</div>
+            	<div x-mojo-element="ListSelector" id="selEditorFont" class="settingsSelector"></div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleEditorWordWrap"></div>
+           		<div class="title left settingsLabel">Ajuste de línea</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row last">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">Orientación</div>
+            	<div x-mojo-element="ListSelector" id="selOrientText" class="settingsSelector"></div>
+            </div>
+        </div>
+    </div>
+</div>
+

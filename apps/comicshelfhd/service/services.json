@@ -1,0 +1,85 @@
+{
+	"id": "ca.canuckcoding.comicshelfhd.service",
+	"description": "ComicShelf HD Service",
+	"services": [
+		{
+			"name": "ca.canuckcoding.comicshelfhd.service",
+			"description": "Scans and handles comic cbr/cbz files.",
+			"commands": [
+				{
+					"name": "status",
+					"assistant": "StatusAssistant",
+					"public": true
+                		},
+                		{
+					"name": "list",
+					"assistant": "ListAssistant",
+					"public": true
+				},
+				{
+					"name": "allComics",
+					"assistant": "AllComicsAssistant",
+					"public": true
+				},
+				{
+					"name": "fetchCovers",
+					"assistant": "FetchCoversAssistant",
+					"subscribe": true,
+					"public": true
+				},
+				{
+					"name": "setThumb",
+					"assistant": "SetThumbAssistant",
+					"public": true
+				},
+				{
+					"name": "removeThumbs",
+					"assistant": "RemoveThumbsAssistant",
+					"public": true
+				},
+				{
+					"name": "clearThumbCache",
+					"assistant": "ClearThumbCacheAssistant",
+					"public": true
+				},
+				{
+					"name": "delete",
+					"assistant": "DeleteAssistant",
+					"public": true
+				},
+				{
+					"name": "query",
+					"assistant": "QueryAssistant",
+					"public": true
+				},
+				{
+					"name": "extract",
+					"assistant": "ExtractAssistant",
+					"subscribe": true,
+					"public": true
+				},
+				{
+					"name": "save",
+					"assistant": "SaveAssistant",
+					"public": true
+				},
+				{
+					"name": "unload",
+					"assistant": "UnloadAssistant",
+					"public": true
+				},
+				{
+					"name": "unloadAll",
+					"assistant": "UnloadAllAssistant",
+					"public": true
+				},
+				{
+					"name": "test",
+					"assistant": "TestAssistant",
+					"subscribe": true,
+					"public": true
+				}
+			] 
+		}
+	]
+}

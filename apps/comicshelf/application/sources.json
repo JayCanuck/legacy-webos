@@ -1,0 +1,22 @@
+[
+    {"source": "app/assistants/app-assistant.js"},
+    {"source": "app/models/common.js"},
+    {"source": "app/models/preferences.js"},
+    {"source": "app/models/comic-service.js"},
+    {
+        "scenes": "browser",
+        "source": "app/assistants/browser-assistant.js"
+    },
+    {
+        "scenes": "viewer",
+        "source": "app/assistants/viewer-assistant.js"
+    },
+    {
+    	"scenes": "settings",
+        "source": "app/assistants/settings-assistant.js"
+    },
+    {
+        "scenes": "changelog",
+        "source": "app/assistants/changelog-assistant.js"
+    }
+]

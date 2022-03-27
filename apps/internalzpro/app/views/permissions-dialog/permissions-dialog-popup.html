@@ -1,0 +1,46 @@
+<div class="palm-dialog-title" id="title">&nbsp;&nbsp;</div>
+<div class="palm-dialog-separator"></div>
+<div class="palm-dialog-content no-margin">
+	<table border=0 align=center>
+	<tr align=center>
+		<td id="userLabel"></td>
+		<td id="groupLabel"></td>
+		<td id="otherLabel"></td>
+	</tr>
+	<tr>
+	    <td><div x-mojo-element="ToggleButton" id="tbUserRead"></div></td>
+		<td><div x-mojo-element="ToggleButton" id="tbGroupRead"></div></td>
+		<td><div x-mojo-element="ToggleButton" id="tbOtherRead"></div></td>
+	</tr>
+	
+	<tr>
+	    <td><div x-mojo-element="ToggleButton" id="tbUserWrite"></div></td>
+	    <td><div x-mojo-element="ToggleButton" id="tbGroupWrite"></div></td>
+	    <td><div x-mojo-element="ToggleButton" id="tbOtherWrite"></div></td>
+	</tr>
+	
+	<tr>
+	    <td><div x-mojo-element="ToggleButton" id="tbUserExecute"></div></td>
+	    <td><div x-mojo-element="ToggleButton" id="tbGroupExecute"></div></td>
+	    <td><div x-mojo-element="ToggleButton" id="tbOtherExecute"></div></td>
+	</tr>
+
+</table>
+</div>
+<div class="palm-dialog-buttons center">
+	<table border="0" cellpadding="10" width="100%" style="margin: -20px 0 -14px 0;padding:0;">
+		<tr id="singleButtonRow">
+			<td>
+				<div class="dismiss palm-button" id="okButton" x-mojo-tap-highlight="momentary"></div>
+			</td>
+		</tr>
+		<tr id="doubleButtonRow">
+			<td>
+				<div class="dismiss palm-button" id="acceptButton" x-mojo-tap-highlight="momentary"></div>
+			</td>
+			<td>
+				<div class="dismiss palm-button" id="dismissButton" x-mojo-tap-highlight="momentary"></div>
+			</td>
+		</tr>
+	</table>
+</div>

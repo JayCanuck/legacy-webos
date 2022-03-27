@@ -1,0 +1,353 @@
+/* ComicShelf */
+.backdrop {
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:-100;
+	width:100%;
+	height:auto;
+	min-height:100%;
+	overflow-y:hidden;
+}
+
+.borderOverlay {
+	z-index:100;
+	position:fixed;
+	opacity:0.3;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	border-width:24px;
+	-webkit-border-image: url(../images/rounded-border.png) 24 24 24 24 repeat repeat;
+	-webkit-box-sizing: border-box;
+	-webkit-palm-mouse-target: ignore;
+}
+
+#mojo-scene-browser {
+	height:100%;
+	width:100%;
+}
+
+#mojo-scene-viewer {
+	height:100%;
+	width:100%;
+}
+
+.header {
+	position:fixed;
+	top:0px;
+	/*background-color: black;*/
+	/*background:url(../images/header-bg.png) repeat;
+	border-bottom: #1e1e1e 1px solid;*/
+	opacity:0.75;
+	padding: 0px 0px 0px 0px;
+	width:100%;
+	height:60px;
+	text-align:center;
+	z-index:99;
+}
+
+.banner {
+	margin-top:3px;
+	opacity: 1.0 !important;
+	z-index:100;
+}
+
+.header-spacer {
+	height:70px;
+	display: block;
+}
+
+.menupanel-row {
+	/*text-align:center !important;*/
+	color:black !important;
+}
+
+#menupanel-container {
+	visibility:hidden;
+}
+
+.enyo-header-dark:not(.main) {
+	/*opacity:0.90;*/
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:100;
+	background-color: rgba(23, 24, 25, 0.85) !important;
+	/*-webkit-border-image:none !important;*/
+}
+
+.toolbarContainer {
+	position:fixed;
+	bottom:0;
+	width:100%;
+	z-index:100;
+}
+.enyo-toolbar-dark {
+	background: rgba(23, 24, 25, 0.85);
+}
+
+.share-icon { background:url(../images/share.png) center center no-repeat; }
+
+.wallpaper-icon { background:url(../images/wallpaper.png) center center  no-repeat; }
+
+.save-icon { background:url(../images/save.png) center center  no-repeat; }
+
+.close-icon { background:url(../images/close.png) center center  no-repeat; }
+
+
+.menupanel-icon {
+	width:32px;
+	height:32px;
+	float:left;
+	left:10px;
+	top:10px;
+	position:relative;
+}
+
+.menupanel-text {
+	padding-left:20px !important;
+}
+
+#shareDrawer {
+	background-color: #a4a4a4;
+}
+
+#loadingSpinner {
+	opacity: 0.4;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
+	margin-bottom:30px;
+	text-align:center;
+}
+
+.iconLabel {
+	margin: 0 0 0 0 !important;
+	padding: 0 0 0 0 !important;
+}
+
+.nameLabel {
+	/*padding-left:0 !important;
+	padding-right:0 !important;
+	margin-left:0 !important;
+	margin-right:0 !important;*/
+	position:relative;
+	padding: 0 5px 0 5px;
+	font-size:1em;
+	position:relative;
+	top:10px;
+	width:100%;
+	height:100%;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	color:gray;
+}
+
+.fileItem {
+	border-top: 1px solid rgba(100,100,100,0.4) !important;
+	border-bottom: 1px solid rgba(100,100,100,0.1) !important;
+	/*background-color: rgba(93,92,88,0.5) !important;*/
+	background-color: rgba(0,0,0,0.3) !important;
+}
+
+.thumbImage {
+	position:relative;
+	top:-10px;
+	right:-5px;
+}
+
+.read {
+	opacity:0.5 !important;
+}
+
+.thumbnail-label {
+	font-size:0.7em !important;
+	background-color: rgba(0,0,0,0.3) !important;
+	width:100%;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	color:lightgray;
+	white-space:nowrap;
+	text-align:center;
+	padding: 2px 6px 2px 6px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	position:relative;
+	top:-5px;
+}
+
+.enyo-held .nameLabel, .enyo-item-selected .nameLabel {
+	color: black !important;
+}
+
+.enyo-listselector-label {
+	color:#4a4a4a;
+}
+
+.toolbarButton .enyo-tool-button-client {
+	font-size:0.7em !important;
+}
+
+.icon {
+	height:48px;
+	width:48px;
+	height:100%;
+}
+
+.palm-dark .icon {
+	/*opacity: 0.8;*/
+}
+
+.shelf-left {
+	background:url(../images/shelf/left.jpg) repeat-y;
+	width:68px;
+}
+
+.shelf-right {
+	background:url(../images/shelf/right.jpg) repeat-y;
+	width:65px;
+}
+
+.shelf-top {
+	background:url(../images/shelf/top.jpg) repeat-x;
+	width:100%;
+	height:29px;
+}
+
+.shelf-top-left {
+	background:url(../images/shelf/top-left.jpg) no-repeat;
+	height:29px;
+	width:68px;
+}
+
+.shelf-top-right {
+	background:url(../images/shelf/top-right.jpg) no-repeat;
+	height:29px;
+	width:65px;
+}
+
+.shelf-bottom {
+	background:url(../images/shelf/bottom.jpg) repeat-x;
+	height:28px;
+	width:100%;
+}
+
+.shelf-bottom-left {
+	background:url(../images/shelf/bottom-left.jpg) no-repeat;
+	width:68px;
+	height:54px;
+}
+
+.shelf-bottom-right {
+	background:url(../images/shelf/bottom-right.jpg) no-repeat;
+	width:65px;
+	height:54px;
+}
+
+.shelf-center {
+	background:url(../images/shelf/center.jpg) repeat-x;
+	width:100%;
+	height:120px;
+}
+
+.shelf-cube {
+	background:url(../images/shelf/cube.jpg) repeat;
+}
+
+.upDir { background:url(../images/upDir.png) center center no-repeat; }
+
+.dir { background:url(../images/dir.png) center center  no-repeat; }
+
+.cbr { background:url(../images/cbr.png) center center  no-repeat; }
+
+.cbz { background:url(../images/cbz.png) center center  no-repeat; }
+
+.rar { background:url(../images/cbr.png) center center  no-repeat; }
+
+.zip { background:url(../images/cbz.png) center center  no-repeat; }
+
+hr {
+	margin: 0px;
+	padding: 0px;
+	height: 1px;
+	border: 0;
+	background-color:#bfbfbd;
+	border-bottom:solid 1px #f1f1f0;
+}
+
+.palm-dark hr {
+	background-color:#1b1e20 !important;
+	border-bottom:solid 1px #5b5f63 !important;
+	opacity:0.5;
+}
+
+.palm-dark .palm-section-divider {
+	opacity:0.5;
+}
+
+.palm-dark .palm-page-header.multi-line {
+	opacity: 0.5;
+}
+
+.palm-dark .palm-page-header:not(.multi-line) {
+	background:#232323;;
+	padding-top:30px;
+	padding-left:30px;
+	opacity:0.5;
+	-webkit-border-image: none;
+}
+
+.palm-dark .app-support-info-app-name {
+	margin-top:10px;
+}
+
+.palm-dark .palm-dialog-box {
+	-webkit-border-image: url(../images/dialog-dark.png) 32 24 32 24 stretch stretch;
+	color: #d4d4d4;
+}
+
+.palm-dark .palm-dialog-content .dialog-title,
+.palm-dark .palm-dialog-title {
+	color: #cfcfcf;;
+  	text-shadow: #6f6f6f 0px -1px 0px;
+}
+
+.palm-dark .palm-dialog-content .dialog-message {
+	color: #d4d4d4;
+}
+
+.palm-dark .palm-dialog-buttons .palm-button,
+.palm-dark .palm-dialog-content img {
+	opacity: 0.5;
+}
+
+.palm-dark .palm-page-header .title {
+	color: #aaa;
+  	text-shadow: #000 0px -1px 0px;
+}
+
+.palm-dark .palm-dialog-separator {
+	opacity: 0.3;
+}
+
+.list-selector-value,
+.settingsLabel {
+	font-size:0.9em !important;
+}
+
+.floatLeft {
+	width:50% !important;
+}
+
+.settingsToggle {
+	position:relative;
+	top:10px;
+}
+
+.settingsSelector {
+	margin-top:-50px;
+	float:right;
+	width:50%;
+}

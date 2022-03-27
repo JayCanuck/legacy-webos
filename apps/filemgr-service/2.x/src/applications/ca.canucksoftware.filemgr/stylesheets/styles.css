@@ -1,0 +1,85 @@
+.palm-page-header-wrapper {
+	left: 20px !important;
+}
+
+.icon {
+	background-size: 100% !important;
+	float:left !important;
+	margin-left:10px;
+}
+
+.center {
+	text-align: center;
+}
+
+.statusText {
+	font-weight: bold;
+	margin: 15px 15px 15px 15px;
+}
+
+.label {
+	text-transform:none !important;
+}
+
+.smallText, li {
+	font-size: 0.9em;
+}
+
+ul {
+	margin-top: 0;
+	margin-bottom: 10px;
+	padding-left: 30px;
+}
+
+.donate {
+	padding-top: 6px;
+}
+
+#buttonTable {
+	position: fixed;
+	bottom: 0px;
+}
+
+#folderChooser {
+	padding: 5px;
+}
+
+.dtree {
+	float:left;
+	color: #666;
+	white-space: nowrap;
+}
+.dtree img {
+	border: 0px;
+	vertical-align: middle;
+}
+.palm-dark .dtree img {
+	opacity: 0.8;
+}
+.dtree a {
+	color: #333;
+	text-decoration: none;
+}
+.palm-dark .dtree a {
+	color: #d4d4d4;
+	text-decoration: none;
+}
+.dtree a.node, .dtree a.nodeSel {
+	white-space: nowrap;
+	padding: 1px 2px 1px 2px;
+}
+.dtree a.node:hover, .dtree a.nodeSel:hover {
+	background-color: #c0d2ec;
+}
+.palm-dark .dtree a.node:hover, .dtree a.nodeSel:hover {
+	color: black;
+}
+.dtree a.nodeSel {
+	background-color: #c0d2ec;
+}
+.palm-dark .dtree a.nodeSel {
+	color: black;
+}
+.dtree .clip {
+	/*overflow: hidden;*/
+}

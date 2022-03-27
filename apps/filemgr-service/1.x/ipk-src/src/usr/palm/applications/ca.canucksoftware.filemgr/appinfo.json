@@ -1,0 +1,11 @@
+{
+	"id": "ca.canucksoftware.filemgr",
+	"version": "1.1.9",
+	"vendor": "Jason Robitaille",
+	"type": "web",
+	"main": "index.html",
+	"title": "FileMgr",
+	"icon": "icon.png",
+	"copyright": "&copy; Copyright 2009-2010, Jason Robitaille",
+	"visible": false
+}

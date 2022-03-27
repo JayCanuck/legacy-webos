@@ -1,0 +1,148 @@
+<div id="loadingScrim" class="palm-scrim"> 
+	<div x-mojo-element="Spinner" id="spinLoading"></div>
+</div>
+<div class="palm-page-header multi-line">
+	<div class="palm-page-header-wrapper">
+		<div class="title left un-capitalize">设置</div>
+	</div>
+</div>
+<div class="palm-group">
+	<div class="palm-group-title">主目录</div>
+	<div class="palm-list">
+        <div class="palm-row single" x-mojo-tap-highlight="momentary" id="homeDir">
+        	<div class="palm-row-wrapper">
+        		<div class="title">
+					<div id="homeLabel"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="palm-group unlabeled">
+	<div class="palm-list">
+        <div class="palm-row single">
+			<div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">主题风格</div>
+            	<div x-mojo-element="ListSelector" id="selTheme" class="settingsSelector"></div>
+            </div>
+		</div>
+	</div>
+</div>
+<div class="palm-group">
+	<div class="palm-group-title">文件管理器</div>
+    <div class="palm-list">
+        <div class="palm-row first">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleHidden"></div>
+            	<div class="title left settingsLabel">显示隐藏文件</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">字体大小</div>
+            	<div x-mojo-element="ListSelector" id="selFont" class="settingsSelector"></div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleWrapNames"></div>
+           		<div class="title left settingsLabel">裹长名称</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleSwipeDelete"></div>
+           		<div class="title left settingsLabel">滑动删除文件</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">的IPK文件处理程序</div>
+            	<div x-mojo-element="ListSelector" id="selIpk" class="settingsSelector"></div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row last">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">屏幕方向</div>
+            	<div x-mojo-element="ListSelector" id="selOrientFile" class="settingsSelector"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="palm-group">
+	<div class="palm-group-title">图像查看器</div>
+    <div class="palm-list">
+        <div class="palm-row first">
+            <div class="palm-row-wrapper">
+           		<div x-mojo-element="ToggleButton" id="toggleImageCard"></div>
+           		<div class="title left settingsLabel">新窗口打开</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleImageFull"></div>
+           		<div class="title left settingsLabel">全屏</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleImageSwipe"></div>
+           		<div class="title left settingsLabel">轻扫屏幕来改变形象</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row last">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">屏幕方向</div>
+            	<div x-mojo-element="ListSelector" id="selOrientImage" class="settingsSelector"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="palm-group">
+	<div class="palm-group-title">文本编辑器</div>
+    <div class="palm-list">
+        <div class="palm-row first">
+            <div class="palm-row-wrapper">
+           		<div x-mojo-element="ToggleButton" id="toggleEditorCard"></div>
+           		<div class="title left settingsLabel">新窗口打开</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">换行格式</div>
+            	<div x-mojo-element="ListSelector" id="selNewline" class="settingsSelector"></div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">字体大小</div>
+            	<div x-mojo-element="ListSelector" id="selEditorFont" class="settingsSelector"></div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row">
+            <div class="palm-row-wrapper">
+            	<div x-mojo-element="ToggleButton" id="toggleEditorWordWrap"></div>
+           		<div class="title left settingsLabel">自动换行</div>
+            </div>
+        </div>
+		<div class="palm-section-divider"></div>
+        <div class="palm-row last">
+            <div class="palm-row-wrapper">
+            	<div class="title left floatLeft settingsLabel">屏幕方向</div>
+            	<div x-mojo-element="ListSelector" id="selOrientText" class="settingsSelector"></div>
+            </div>
+        </div>
+    </div>
+</div>
+

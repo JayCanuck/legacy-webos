@@ -1,0 +1,38 @@
+<!--<div class="top-fade" x-mojo-scroll-fade="top"></div>-->
+<div class="palm-page-header multi-line">
+	<div class="palm-page-header-wrapper">
+		<img src="images/star.png" id="star"/>
+		<img src="images/home.png" id="home"/>
+		<div class="title left un-capitalize" align="center" style="font-size:1.25em">
+			Internalz
+		</div>
+		<div class="subtitle" align="center" id="subtitle" style="font-size:0.8em"></div>
+	</div>
+</div>
+<table border="0" width="100%" cellpadding=10 class="table-header">
+	<tr>
+		<td align="left">
+			<div id="nameLabel"></div>
+		</td>
+		<td align="right">
+			<div id="subLabel"></div>
+		</td>
+	</tr>
+</table>
+<div class="palm-list">
+    <div class="palm-row single" x-mojo-tap-highlight="momentary" id="baseDir">
+    	<div class="palm-row-wrapper">
+    		<div class="icon baseFolder"></div>
+			<div class="label">-DIR-</div>
+			<div class="title nameLabel truncating-text">..</div>
+		</div>
+	</div>
+</div>
+<div id="directory-divider"></div>
+<div x-mojo-element="List" id="listDir"></div>
+<div id="line-between-lists"></div>
+<div x-mojo-element="List" id="listFiles"></div>
+<div x-mojo-element="List" id="listFilesSwipeDelete"></div>
+<div x-mojo-element="Spinner" id="loadingSpinner"></div>
+<div id="line-after-lists"></div>
+<!--<div class="bottom-fade" x-mojo-scroll-fade="bottom"></div>-->

@@ -1,0 +1,227 @@
+/* ComicShelf */
+.backdrop {
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:-100;
+	width:100%;
+	height:auto;
+	min-height:100%;
+	overflow-y:hidden;
+}
+
+.borderOverlay {
+	z-index:100;
+	position:fixed;
+	opacity:0.3;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	border-width:24px;
+	-webkit-border-image: url(../images/rounded-border.png) 24 24 24 24 repeat repeat;
+	-webkit-box-sizing: border-box;
+	-webkit-palm-mouse-target: ignore;
+}
+
+#mojo-scene-browser {
+	height:100%;
+	width:100%;
+}
+
+#mojo-scene-viewer {
+	height:100%;
+	width:100%;
+}
+
+.header {
+	position:fixed;
+	top:0px;
+	/*background-color: black;*/
+	background:url(../images/header-bg.png) repeat;
+	border-bottom: #1e1e1e 1px solid;
+	opacity:0.75;
+	padding: 0px 0px 0px 0px;
+	width:100%;
+	height:60px;
+	text-align:center;
+	z-index:99;
+}
+
+.banner {
+	margin-top:3px;
+	opacity: 1.0 !important;
+	z-index:100;
+}
+
+.header-spacer {
+	height:65px;
+	display: block;
+}
+
+.menupanel-row {
+	/*text-align:center !important;*/
+	color:black !important;
+}
+
+#menupanel-container {
+	visibility:hidden;
+}
+
+.share-icon { background:url(../images/share.png) center center no-repeat; }
+
+.wallpaper-icon { background:url(../images/wallpaper.png) center center  no-repeat; }
+
+.save-icon { background:url(../images/save.png) center center  no-repeat; }
+
+.close-icon { background:url(../images/close.png) center center  no-repeat; }
+
+
+.menupanel-icon {
+	width:32px;
+	height:32px;
+	float:left;
+	left:10px;
+	top:10px;
+	position:relative;
+}
+
+.menupanel-text {
+	padding-left:20px !important;
+}
+
+#shareDrawer {
+	background-color: #a4a4a4;
+}
+
+#loadingSpinner {
+	opacity: 0.4;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
+	margin-bottom:30px;
+	text-align:center;
+}
+
+.nameLabel {
+	/*padding-left:0 !important;
+	padding-right:0 !important;
+	margin-left:0 !important;
+	margin-right:0 !important;*/
+	position:relative;
+	padding: 0 5px 0 5px;
+	font-size:0.9em;
+	width:100%;
+	white-space:normal !important;
+	word-wrap:break-word !important;
+}
+
+.icon {
+	width:48px;
+	height:100%;
+	margin: 0px;
+	padding: 0px;
+	vertical-align:middle;
+	position:relative;
+	float:left;
+	left: 10px;
+	border:0;
+}
+
+.palm-dark .icon {
+	/*opacity: 0.8;*/
+}
+
+.icon.up-dir { background:url(../images/up-dir.png) center center no-repeat; }
+
+.icon.dir { background:url(../images/dir.png) center center  no-repeat; }
+
+.icon.cbr { background:url(../images/cbr.png) center center  no-repeat; }
+.icon.rar { background:url(../images/cbr.png) center center  no-repeat; }
+
+.icon.cbz { background:url(../images/cbz.png) center center  no-repeat; }
+.icon.zip { background:url(../images/cbz.png) center center  no-repeat; }
+
+hr {
+	margin: 0px;
+	padding: 0px;
+	height: 1px;
+	border: 0;
+	background-color:#bfbfbd;
+	border-bottom:solid 1px #f1f1f0;
+}
+
+.palm-dark hr {
+	background-color:#1b1e20 !important;
+	border-bottom:solid 1px #5b5f63 !important;
+	opacity:0.5;
+}
+
+.palm-dark .palm-section-divider {
+	opacity:0.5;
+}
+
+.palm-dark .palm-page-header.multi-line {
+	opacity: 0.5;
+}
+
+.palm-dark .palm-page-header:not(.multi-line) {
+	background:#232323;;
+	padding-top:30px;
+	padding-left:30px;
+	opacity:0.5;
+	-webkit-border-image: none;
+}
+
+.palm-dark .app-support-info-app-name {
+	margin-top:10px;
+}
+
+.palm-dark .palm-dialog-box {
+	-webkit-border-image: url(../images/dialog-dark.png) 32 24 32 24 stretch stretch;
+	color: #d4d4d4;
+}
+
+.palm-dark .palm-dialog-content .dialog-title,
+.palm-dark .palm-dialog-title {
+	color: #cfcfcf;;
+  	text-shadow: #6f6f6f 0px -1px 0px;
+}
+
+.palm-dark .palm-dialog-content .dialog-message {
+	color: #d4d4d4;
+}
+
+.palm-dark .palm-dialog-buttons .palm-button,
+.palm-dark .palm-dialog-content img {
+	opacity: 0.5;
+}
+
+.palm-dark .palm-page-header .title {
+	color: #aaa;
+  	text-shadow: #000 0px -1px 0px;
+}
+
+.palm-dark .palm-dialog-separator {
+	opacity: 0.3;
+}
+
+.list-selector-value,
+.settingsLabel {
+	font-size:0.9em !important;
+}
+
+.floatLeft {
+	width:50% !important;
+}
+
+.settingsToggle {
+	position:relative;
+	top:10px;
+}
+
+.settingsSelector {
+	margin-top:-50px;
+	float:right;
+	width:50%;
+}

@@ -1,0 +1,45 @@
+{
+	"id": "ca.canucksoftware.internalz",
+	"version": "1.5.0",
+	"vendor": "Jason Robitaille",
+	"type": "web",
+	"main": "../../index.html",
+	"title": "Internalz Pro",
+	"icon": "../../icon.png",
+	"noWindow": true,
+	"smallicon": "mini.png",
+	"copyright": "&copy; 版权 2009-2011, Jason Robitaille",
+	"support": {
+		"email": {
+			"address": "support@canuck-software.ca",
+			"subject": "支持请求"
+		},
+		"resources": [
+			{
+				"type": "scene",
+				"label": "更改日志",
+				"sceneName": "changelog"
+			},
+			{
+				"type": "scene",
+				"label": "视频教程",
+				"sceneName": "youtube"
+			},
+			{
+				"type": "web",
+				"label": "论坛讨论",
+				"url": "http://m.forums.precentral.net/canuck-coding/256518-internalz-pro-v1-4-1-a.html"
+			},
+			{
+				"type": "web",
+				"label": "捐赠",
+				"url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SAD4L5QF67G5A"
+			}
+		]
+	},
+	"splashicon": "../../icon-256x256.png",
+	"splashBackground": "../../images/splash-bg.png",
+	"keywords" : [ "档", "档案管理员" ],
+	"visible": true,
+	"uiRevision": 2
+}

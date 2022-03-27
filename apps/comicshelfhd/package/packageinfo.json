@@ -1,0 +1,11 @@
+{
+  "id": "ca.canuckcoding.comicshelfhd",
+  "package_format_version": 2,
+  "loc_name": "ComicShelf HD",
+  "version": "1.4.0",
+  "icon": "icon.png",
+  "miniicon": "icon.png",
+  "vendor": "Jason Robitaille",
+  "app": "ca.canuckcoding.comicshelfhd",
+  "services": ["ca.canuckcoding.comicshelfhd.service"]
+}

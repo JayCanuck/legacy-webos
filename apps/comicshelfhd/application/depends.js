@@ -1,0 +1,22 @@
+enyo.depends(
+	"app/AppLauncher.js",
+	"app/models/Preferences.js",
+	"app/models/ComicService.js",
+	"app/models/Common.js",
+	"app/controls/ScrimSpinner.js",
+	"app/controls/ThumbFlexBox.js",
+	"app/controls/ComicPageViewer.js",
+	"app/controls/ComicPage.js",
+	"app/dialogs/SimpleDialog.js",
+	"app/dialogs/ErrorDialog.js",
+	"app/dialogs/AboutDialog.js",
+	"app/dialogs/UsageDialog.js",
+	"app/dialogs/ChangeLogDialog.js",
+	"app/dialogs/ThumbConfirmDialog.js",
+	"app/dialogs/SettingsDialog.js",
+	"app/views/Browser.js",
+	"app/views/Viewer.js",
+	"stylesheets/comicshelf.css",
+	"$enyo-lib/printdialog/",
+	"app/dialogs/SafePrintDialog.js"
+);

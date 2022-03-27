@@ -1,0 +1,126 @@
+v2.0.0 UNSTABLE (Build 3) - December 29, 2010
+- Important mdir parsing fix, which should fix listings issues in /media/internal/
+
+v2.0.0 UNSTABLE (Build 2) - December 27, 2010
+- Completely recoded the listDirs and listFiles functions; should be much faster
+- Fixed issue with scanning directories with symlinks
+
+v2.0.0 UNSTABLE (Build 1) - December 23, 2010
+- Frontend app largely upgraded to support paypal donation button and full changelog
+- Frontend app now stays in the launcher; orange+tap uninstallation will fully/properly uninstall the service
+- Service rewritten into a Node.js service
+- Both java and js services are included in the packages, with the appropriate one installing depending on webOS version
+
+v1.1.9 - September 23, 2010
+- Improved error handling
+- Added a public function to check if Internalz is installed 
+
+v1.1.8 - September 21, 2010
+- Fixed an issue with 1.1.6/1.1.7 that prevented ipk install/uninstall 
+
+v1.1.7 - September 21, 2010
+- Rescans fileindexer after file/directory deletion 
+
+v1.1.6 - September 21, 2010
+- Ipk installs check to make sure the system isn't busy
+- Much improved read/write functions
+
+v1.1.5 - August 24, 2010
+- Minor bug fixes
+
+v1.1.4 - August 21, 2010
+- Fixed bug preventing patch uninstall
+- Improved ipk info collecting error handling
+- Improved package uninstall script
+- Added image handler setting function for Internalz
+
+v1.1.2 - August 7, 2010
+- Improved text-file detection
+- Minor code cleanup
+
+v1.1.1 - August 6, 2010
+- Now uses Palm-style ipk install and uninstall
+- Fixed the rename/move/copy functions so it properly gets the fileindexer to rescan afterwards
+- Altered fileindexer rescan to happen immediately, rather than starting separately in a new thread
+- Altered ipk-related and patcher-related functions to use a much cleaner coded system.
+
+v1.1.0 (release #5) - July 24, 2010
+- FileIndexer now rescans after every rename, move, and copy action.
+
+v1.1.0 (release #4) - July 24, 2010
+- Fixed bug with Patcher not properly installing/uninstalling files with spaces in its filepath
+
+v1.1.0 (release #3) - July 24, 2010
+- Additional post-uninstallation cleanup for ipk and patch files
+
+v1.1.0 (release #2) - July 24, 2010
+- Fixed bug with Patcher not properly installing/uninstalling files
+- Fixed bug with Ipk Installer not properly reading/installing files with spaces in its filepath
+
+v1.1.0 - July 24, 2010
+- Added an optimized form of the WOSQI .patch install/uninstall functions
+- Added ipk package handling functions for getting information, and install/uninstall
+- Added functions for java restart, luna restart, and device restart
+- Added security placements to make sure all the ipk, patch, and restart can only be used by Internalz
+
+v1.0.9 - July 18, 2010
+- Added subscription ontion to "read" function, for large files
+- Minor bugfixes
+
+v1.0.8 - July 17, 2010
+- Added special compatability for luna-send
+- Implemented and debugged fat32 readonly attribute set/get functions
+- Implemented and debugged linux permissions set/get functions
+- Master Mode-related bugfixes
+
+v1.0.5 - April 24, 2010
+- Added special write/delete permissions for service calls originating from Internalz
+
+v1.0.0 - April 21, 2010
+- Last minute code cleanup for public release.
+- Created a public API pdf specsheet to go along with release.
+
+v0.9.5 - April 18, 2010
+- Minor additional optimizations
+- Several minor bug fixes
+
+v0.9.2 - April 14, 2010
+- Several optimizations for better performance
+- Fixed several isHidden/setHidden bugs
+- Fixed bug related to new file/directory creation
+
+v0.9.0 - April 14, 2010
+- Now designed with a built-in stub application that goes hidden after next system restart
+- Mini stub application detects if the service installed correctly or not
+- Redone read/write function for faster speed and new format with append option
+- Improved symlink support
+- Many optimizations
+- Much more precise
+- Fixed FAT32 hidden file attribute detection in isHidden function
+- Added getType function
+- Added directory memory usage calculation
+
+v0.7.2 - March 11, 2010
+- Symlink detection now optional (option in settings; default is enabled)
+- Added optional FAT32 attribute scanning (to detect files hidden in USB mode)
+
+v0.6.8 - February 22, 2010
+- Various symlink-related bugfixes
+
+v0.6.7 - February 22, 2010
+- Children file/directory dection bugfixes
+- Improved safeguards
+
+v0.6.6 - February 22, 2010
+- Added children file/directory detection as option for listing methods
+
+v0.6.5 - February 8, 2010
+- Added symlink detection in directory/file listing function
+- Added symlink filepath correction when determining parent directory
+
+v0.6.2 - February 8, 2010
+- Improved postinst script
+
+v0.6.1 - February 6, 2010
+- Fixed commandline stdout/stderr reporting
+- Multithreaded file read/write functions

@@ -1,0 +1,66 @@
+<div id="loadingScrim" class="palm-scrim"> 
+	<div x-mojo-element="Spinner" id="spinLoading"></div>
+</div>
+<div id="menupanel-scrim" class="palm-scrim menu-panel" x-mojo-menupanel-scrim=""></div>
+<div id="menupanel-toggle" class="palm-header truncating-text" x-mojo-tap-highlight="immediate"></div>
+<div id="menupanel-container">
+    <div id="menupanel-panel" class="palm-menu-panel" x-mojo-menupanel="">
+		<div class="palm-menu-panel-fade-top" x-mojo-scroll-fade="top">
+			<div class="palm-menu-panel-fade-top-bg"></div>
+			<div class="palm-menu-panel-fade-top-arrow"></div>
+		</div>
+		<div class="palm-menu-panel-fade-bottom" x-mojo-scroll-fade="bottom">
+			<div class="palm-menu-panel-fade-bottom-bg"></div>
+			<div class="palm-menu-panel-fade-bottom-arrow"></div>
+		</div>
+		<div class="palm-menu-panel-wrapper" x-mojo-element="Scroller" id="menupanel-scroller">
+	        <div class="palm-list">
+	        	<div id="shareRow" class="palm-row first menupanel-row" x-mojo-tap-highlight="momentary">
+					<div class="palm-row-wrapper">
+						<div class="share-icon menupanel-icon"></div> 
+				        <div class="title truncating-text menupanel-text">Share...</div>
+					</div>
+				</div>
+				<div x-mojo-element="Drawer" id="shareDrawer">
+					<div id="emailComicRow" class="palm-row first menupanel-row" x-mojo-tap-highlight="momentary">
+						<div class="palm-row-wrapper">
+							<div class="app-support-info-item email menupanel-icon"></div> 
+					        <div class="title truncating-text menupanel-text">Email whole comic</div>
+						</div>
+					</div>
+					<div id="emailPageRow" class="palm-row menupanel-row" x-mojo-tap-highlight="momentary">
+						<div class="palm-row-wrapper">
+							<div class="app-support-info-item email menupanel-icon"></div> 
+					        <div class="title truncating-text menupanel-text">Email this page</div>
+						</div>
+					</div>
+					<div id="mmsPageRow" class="palm-row menupanel-row" x-mojo-tap-highlight="momentary">
+						<div class="palm-row-wrapper">
+							<div class="app-support-info-item messaging menupanel-icon"></div> 
+					        <div class="title truncating-text menupanel-text">MMS this page</div>
+						</div>
+					</div>
+				</div>
+				<div id="wallpaperRow" class="palm-row menupanel-row" x-mojo-tap-highlight="momentary">
+					<div class="palm-row-wrapper">
+						<div class="wallpaper-icon menupanel-icon"></div> 
+				        <div class="title truncating-text menupanel-text">Set page as wallpaper</div>
+					</div>
+				</div>
+				<div id="saveRow" class="palm-row menupanel-row" x-mojo-tap-highlight="momentary">
+					<div class="palm-row-wrapper">
+						<div class="save-icon menupanel-icon"></div> 
+				        <div class="title truncating-text menupanel-text">Save this page</div>
+					</div>
+				</div>
+				<div id="closeRow" class="palm-row last menupanel-row" x-mojo-tap-highlight="momentary">
+					<div class="palm-row-wrapper">
+						<div class="close-icon menupanel-icon"></div> 
+				        <div class="title truncating-text menupanel-text">Close</div>
+					</div>
+				</div>
+	        </div>
+		</div>
+	</div>
+</div>
+<div x-mojo-element="ImageView" id="imgMain"></div>

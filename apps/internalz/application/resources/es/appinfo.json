@@ -1,0 +1,39 @@
+{
+	"id": "ca.canuckcoding.internalz",
+	"version": "1.1.2",
+	"vendor": "Jason Robitaille",
+	"type": "web",
+	"main": "../../index.html",
+	"title": "Internalz",
+	"icon": "../../icon.png",
+	"noWindow": true,
+	"smallicon": "mini.png",
+	"copyright": "&copy; Copyright 2009-2011, Jason Robitaille",
+	"support": {
+		"email": {
+			"address": "support@canuckcoding.ca",
+			"subject": "Petición de Soporte"
+		},
+		"resources": [
+			{
+				"type": "scene",
+				"label": "Listado de Cambios",
+				"sceneName": "changelog"
+			},
+			{
+				"type": "scene",
+				"label": "Tutoriales en Vídeo",
+				"sceneName": "youtube"
+			},
+			{
+				"type": "web",
+				"label": "Foros de Discusión",
+				"url": "http://m.forums.precentral.net/canuck-coding/"
+			}
+		]
+	},
+	"splashicon": "../../icon-256x256.png",
+	"splashBackground": "../../images/splash-bg.png",
+	"keywords" : [ "Archivos", "Administrador de archivos" ],
+	"visible": true
+}

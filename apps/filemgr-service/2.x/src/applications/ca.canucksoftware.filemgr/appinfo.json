@@ -1,0 +1,130 @@
+{
+	"id": "ca.canucksoftware.filemgr",
+	"serviceId": "ca.canucksoftware.filemgr",
+	"version": "2.0.9",
+	"vendor": "Jason Robitaille",
+	"type": "web",
+	"main": "index.html",
+	"title": "FileMgr",
+	"icon": "icon.png",
+	"noWindow": true,
+	"description": "FileMgr is a powerful homebrew webOS service. It freely provides custom file management API for developers and is used by many apps and patches, most notably Internalz.",
+	"donate": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NGS7CWEYWNT72",
+	"changelog": [
+		{
+			"version": "v2.0.9",
+			"changes": [
+				"Fixed issue preventing ipkg feed download of FileMgr",
+			]
+		},
+		{
+			"version": "v2.0.8",
+			"changes": [
+				"Patching is now done via AUSMT",
+			]
+		},
+		{
+			"version": "v2.0.7",
+			"changes": [
+				"Fixed patching, as the AUPT script URLs were accidentally changed"
+			]
+		},
+		{
+			"version": "v2.0.6",
+			"changes": [
+				"Improved support for larger resolution screens"
+			]
+		},
+		{
+			"version": "v2.0.5",
+			"changes": [
+				"Added query function for getting info on an array of files and directories"
+			]
+		},
+		{
+			"version": "v2.0.4",
+			"changes": [
+				"Fixed bug preventing proper filesize-based sorting"
+			]
+		},
+		{
+			"version": "v2.0.3",
+			"changes": [
+				"Improved functions to hide Internalz or Internalz Pro"
+			]
+		},
+		{
+			"version": "v2.0.0",
+			"changes": [
+				"Completely recoded into a Node.js javascript service and is now webOS 2.0 ready",
+				"Redesigned and updated frontend app",
+				"Service can now be fully uninstalled via orange+tap in launcher"
+			]
+		},
+		{
+			"version": "v1.1.9",
+			"changes": [
+				"Improved error handling",
+				"Added a public function to check if Internalz is installed"
+			]
+		},
+		{
+			"version": "v1.1.7",
+			"changes": [
+				"Rescans fileindexer after file/directory deletion"
+			]
+		},
+		{
+			"version": "v1.1.6",
+			"changes": [
+				"Much improved read/write functions"
+			]
+		},
+		{
+			"version": "v1.1.5",
+			"changes": [
+				"Minor bug fixes"
+			]
+		},
+		{
+			"version": "v1.1.2",
+			"changes": [
+				"Added image handler setting function for Internalz",
+				"Minor code cleanup"
+			]
+		},
+		{
+			"version": "v1.1.2",
+			"changes": [
+				"Improved text-file detection",
+				"Minor code cleanup"
+			]
+		},
+		{
+			"version": "v1.1.1",
+			"changes": [
+				"Fixed the rename/move/copy functions so it properly gets the fileindexer to rescan afterwards",
+				"Various minor bugfixes"
+			]
+		},
+		{
+			"version": "v1.1.0",
+			"changes": [
+				"Added special write/delete permissions for service calls originating from Internalz for its Master Mode",
+				"Implemented and debugged fat32 readonly attribute set/get functions",
+				"Implemented and debugged linux permissions set/get functions",
+				"Added subscription option for \"read\" function, for large files",
+				"FileIndexer now rescans after every rename, move, and copy action"
+			]
+		},
+		{
+			"version": "v1.0.0",
+			"changes": [
+				"Initial release"
+			]
+		},
+	],
+	"copyright": "&copy; Copyright 2009-2012, Jason Robitaille",
+	"visible": true,
+	"uiRevision": 2
+}

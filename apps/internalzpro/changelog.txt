@@ -1,0 +1,21 @@
+v1.5.0 (Beta 3) - June 16, 2011
+- Added scrollbars to the text editor/patcher
+- Improved larger file saving in the text editor/patcher
+- Now is properly labelled as v1.5.0
+- Fixed bug with non-English languages on Preferences screen
+- Fixed bug with "px" label not being on positioned correctly
+- Should now be displayed in fullscreen on TouchPad (rather than the smaller compatability window)
+- Many many other minor bug fixes
+
+v1.5.0 (Beta 2) - June 16, 2011
+- Favourites list now better formatted and shows filepath too
+- Image viewer is by default set to fullscreen
+- Added a header to the image viewer that shows the filename
+- Added the option to change image by swipes left/right in the image viewer (default is on)
+
+v1.5.0 (Beta 1) - June 15, 2011
+- Added a Favourites section
+- To add a favourite, go to the Info screen for a file/directory and toggle the star icon
+- To view favourites, tap the star icon on the main screen
+- To remove a favourite, toggle the star icon off on the Info screen, or just swipe the entry off the favourites list
+- You can re-arrange the favourites however you want

@@ -1,0 +1,8 @@
+Package: ca.canucksoftware.systoolsmgr
+Version: 0.3.0
+Architecture: all
+Maintainer: Jason Robitaille <support@canuck-software.ca>
+Description: SysToolsMgr Service
+Section: misc
+Priority: optional
+Source: { "Source":"http://canuck-software.ca", "Type":"Service", "Category":"Services and Plugins", "Title":"SysToolsMgr Service", "FullDescription":"A custom 'odds and ends' service library for getting various bits of system information and various other system functions. API available for developers on request.", "Homepage":"http://canuck-software.ca", "License":"Closed Source", "PostInstallFlags":"RestartJava", "PostUpdateFlags":"RestartJava", "PostRemoveFlags":"RestartJava", "Feed":"PreCentral" }

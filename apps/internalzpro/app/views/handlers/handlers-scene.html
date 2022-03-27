@@ -1,0 +1,34 @@
+<div id="loadingScrim" class="palm-scrim"> 
+	<div x-mojo-element="Spinner" id="spinLoading"></div>
+</div>
+<div id="handlers-box" class="palm-dialog-box" x-mojo-dialog="">
+	<div id="handlers-wrapper" class="palm-dialog-wrapper">
+		<div class="palm-dialog-title" id="title">&nbsp;&nbsp;</div>
+		<div class="palm-dialog-separator"></div>
+		<div class="palm-dialog-content no-margin">
+			<div class="dialog-message" id="message"></div>
+			<table border=0 align=center>
+				<tr>
+				    <td><div id="imagesInfo"></div></td>
+					<td><div x-mojo-element="ToggleButton" id="tbImages"></div></td>
+				</tr>
+				<tr>
+				    <td><div id="editorInfo"></div></td>
+				    <td><div x-mojo-element="ToggleButton" id="tbEditor"></div></td>
+				</tr>
+				<tr>
+				    <td><div id="ipkInfo"></div></td>
+				    <td><div x-mojo-element="ToggleButton" id="tbIpk"></div></td>
+				</tr>
+			</table>
+		</div>
+		<br/>
+		<div class="palm-dialog-buttons center">
+			<table border="0" cellpadding="10" width="100%" style="margin: -20px 0 -14px 0;padding:0;">
+				<tr><td>
+					<div class="dismiss palm-button" id="okButton" x-mojo-tap-highlight="momentary"></div>
+				</td></tr>
+			</table>
+		</div>
+	</div>
+</div>
